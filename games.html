@@ -4,16 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Games — Third Zone</title>
-<meta name="description" content="Nine real, physical games — golf, baseball, basketball and more — each read live by sensors and computer vision and scored on the board.">
+<meta name="description" content="Six real, physical games — golf, baseball, soccer and more — each read live by sensors and computer vision and scored on the board.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Third Zone">
 <meta property="og:title" content="Games — Third Zone">
-<meta property="og:description" content="Nine real, physical games — golf, baseball, basketball and more — each read live by sensors and computer vision and scored on the board.">
+<meta property="og:description" content="Six real, physical games — golf, baseball, soccer and more — each read live by sensors and computer vision and scored on the board.">
 <meta property="og:url" content="https://third-zone.com/games.html">
 <meta property="og:image" content="https://third-zone.com/assets/hero.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Games — Third Zone">
-<meta name="twitter:description" content="Nine real, physical games — golf, baseball, basketball and more — each read live by sensors and computer vision and scored on the board.">
+<meta name="twitter:description" content="Six real, physical games — golf, baseball, soccer and more — each read live by sensors and computer vision and scored on the board.">
 <meta name="twitter:image" content="https://third-zone.com/assets/hero.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,10 +63,11 @@
 <section class="section games">
   <div class="wrap">
     <div class="filterbar reveal" role="tablist" aria-label="Filter games">
-      <button class="filter active" data-filter="all">All games</button>
-      <button class="filter" data-filter="sports">Sports</button>
-      <button class="filter" data-filter="skill">Skill</button>
-      <button class="filter" data-filter="party">Party</button>
+      <span class="filter active">All games</span>
+      <span class="filter">Sports</span>
+      <span class="filter">Skill</span>
+      <span class="filter">Party</span>
+      <span class="filter">Team building</span>
     </div>
 
     <div class="gcard-grid reveal">
@@ -147,25 +148,6 @@
         </div>
       </div>
 
-      <!-- Basketball -->
-      <div class="gcard" data-cat="sports skill">
-        <a class="gcard-link" href="basketball.html" aria-label="Basketball — game details"></a>
-        <div class="gcard-top">
-          <span class="gcard-fallback"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3v18M5.6 5.6c2.9 2.6 2.9 10.2 0 12.8M18.4 5.6c-2.9 2.6-2.9 10.2 0 12.8"/></svg></span>
-          <img loading="lazy" class="gcard-photo" src="assets/basketball.jpg" alt="Player mid-jump shooting a real basketball in an indoor arena with a neon scoreboard" onerror="this.style.display='none'">
-          <span class="gcard-badge">Live now</span>
-        </div>
-        <div class="gcard-body">
-          <h3>Basketball</h3>
-          <div class="gcard-cat">Sports · Shoot</div>
-          <p>Shoot a real ball at a real hoop. The system tracks your arc and release and counts every make in a beat-the-clock shootout.</p>
-          <div class="gcard-metrics">
-            <span class="metric"><span class="mlbl">ARC</span>48°</span>
-            <span class="metric"><span class="mlbl">MAKES</span>21</span>
-            <span class="metric"><span class="mlbl">STREAK</span>7</span>
-          </div>
-        </div>
-      </div>
 
       <!-- Archery -->
       <div class="gcard" data-cat="skill">
@@ -187,25 +169,6 @@
         </div>
       </div>
 
-      <!-- Darts -->
-      <div class="gcard" data-cat="party skill">
-        <a class="gcard-link" href="darts.html" aria-label="Darts — game details"></a>
-        <div class="gcard-top">
-          <span class="gcard-fallback"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="2"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3"/></svg></span>
-          <img loading="lazy" class="gcard-photo" src="assets/darts.jpg" alt="Player throwing a dart at a smart electronic dartboard in an indoor arena with a neon scoreboard" onerror="this.style.display='none'">
-          <span class="gcard-badge">Live now</span>
-        </div>
-        <div class="gcard-body">
-          <h3>Darts</h3>
-          <div class="gcard-cat">Party · Aim</div>
-          <p>Throw real darts at a smart board. The system auto-scores every throw, runs the checkout math and keeps the whole table honest.</p>
-          <div class="gcard-metrics">
-            <span class="metric"><span class="mlbl">AVG</span>62</span>
-            <span class="metric"><span class="mlbl">CHECK</span>121</span>
-            <span class="metric"><span class="mlbl">ACC</span>89%</span>
-          </div>
-        </div>
-      </div>
 
       <!-- Table Tennis -->
       <div class="gcard" data-cat="skill party">
@@ -227,25 +190,6 @@
         </div>
       </div>
 
-      <!-- Hockey -->
-      <div class="gcard" data-cat="sports">
-        <a class="gcard-link" href="hockey.html" aria-label="Hockey — game details"></a>
-        <div class="gcard-top">
-          <span class="gcard-fallback"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v11.5a3 3 0 0 0 3 3h8.5"/><ellipse cx="20" cy="18.5" rx="2" ry="0.9"/></svg></span>
-          <img loading="lazy" class="gcard-photo" src="assets/hockey.jpg" alt="Player taking a slapshot toward a goal on a screen in an indoor arena with a neon scoreboard" onerror="this.style.display='none'">
-          <span class="gcard-badge">Live now</span>
-        </div>
-        <div class="gcard-body">
-          <h3>Hockey</h3>
-          <div class="gcard-cat">Sports · Slapshot</div>
-          <p>Fire a real puck at the goal on screen. The system clocks slapshot speed and picks apart your corners.</p>
-          <div class="gcard-metrics">
-            <span class="metric"><span class="mlbl">SHOT</span>92mph</span>
-            <span class="metric"><span class="mlbl">ACC</span>90%</span>
-            <span class="metric"><span class="mlbl">GOALS</span>8</span>
-          </div>
-        </div>
-      </div>
 
     </div>
   </div>

@@ -183,7 +183,7 @@ h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.05;letter-spac
 .filter{
   font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
   padding:9px 16px;border:1px solid var(--line);border-radius:22px;color:var(--muted);
-  background:transparent;cursor:pointer;transition:all .2s;
+  background:transparent;cursor:default;transition:all .2s;user-select:none;
 }
 .filter:hover{color:var(--text);border-color:var(--muted-2)}
 .filter.active{background:var(--green);color:#052213;border-color:var(--green);font-weight:700}
