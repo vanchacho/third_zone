@@ -265,6 +265,7 @@ h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.05;letter-spac
 .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .feat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:28px}
 .feat .fi{font-size:30px;margin-bottom:16px;display:block}
+.feat .fi svg{width:38px;height:38px;fill:none;stroke:var(--green);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;display:block}
 .feat h3{font-size:19px;margin-bottom:10px}
 .feat p{color:var(--muted);font-size:14px}
 
