@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Games — Third Zone</title>
+<meta name="description" content="Nine real, physical games — golf, baseball, basketball and more — each read live by sensors and computer vision and scored on the board.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Third Zone">
+<meta property="og:title" content="Games — Third Zone">
+<meta property="og:description" content="Nine real, physical games — golf, baseball, basketball and more — each read live by sensors and computer vision and scored on the board.">
+<meta property="og:url" content="https://third-zone.com/games.html">
+<meta property="og:image" content="https://third-zone.com/assets/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Games — Third Zone">
+<meta name="twitter:description" content="Nine real, physical games — golf, baseball, basketball and more — each read live by sensors and computer vision and scored on the board.">
+<meta name="twitter:image" content="https://third-zone.com/assets/hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html"><span class="dot"></span>THIRD ZONE</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="games.html" class="active">Games</a>
+      <a href="how.html">How it works</a>
+      <a href="model.html">Model</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="btn btn-primary">Get in touch</a>
+    </div>
+    <button class="hamb" id="hamb" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-panel" id="mobilePanel">
+    <a href="index.html">Home</a>
+    <a href="games.html" class="active">Games</a>
+    <a href="how.html">How it works</a>
+    <a href="model.html">Model</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn btn-primary">Get in touch</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<header class="page-hero">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Home</a> / Games</div>
+    <span class="eyebrow">The line-up</span>
+    <h1>Real games. One room. <span class="accent">The system keeps score.</span></h1>
+    <p class="lead">Every game is real, physical play with real equipment — a golf club, a bat, a ball. Sensors read exactly how hard and how well you hit, and the score hits the board instantly.</p>
+  </div>
+</header>
+
+<!-- GAME LIBRARY -->
+<section class="section games">
+  <div class="wrap">
+    <div class="filterbar reveal" role="tablist" aria-label="Filter games">
+      <button class="filter active" data-filter="all">All games</button>
+      <button class="filter" data-filter="sports">Sports</button>
+      <button class="filter" data-filter="skill">Skill</button>
+      <button class="filter" data-filter="party">Party</button>
+    </div>
+
+    <div class="gcard-grid reveal">
+
+      <!-- Golf -->
+      <div class="gcard" data-cat="sports skill">
+        <a class="gcard-link" href="golf.html" aria-label="Golf — game details"></a>
+        <div class="gcard-top">
+          <img src="assets/golf.jpg" alt="Player driving a golf ball in an indoor arena with a neon scoreboard">
+          <span class="gcard-badge">Live now</span>
+        </div>
+        <div class="gcard-body">
+          <h3>Golf</h3>
+          <div class="gcard-cat">Sports · Swing</div>
+          <p>Hit a real ball with a real club. The system reads clubhead speed and launch and shows exactly how hard you hit it — then dares the next player to beat it.</p>
+          <div class="gcard-metrics">
+            <span class="metric"><span class="mlbl">DIST</span>184y</span>
+            <span class="metric"><span class="mlbl">SWING</span>116mph</span>
+            <span class="metric"><span class="mlbl">ACC</span>94%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Baseball -->
+      <div class="gcard" data-cat="sports">
+        <a class="gcard-link" href="baseball.html" aria-label="Baseball — game details"></a>
+        <div class="gcard-top">
+          <img loading="lazy" src="assets/baseball.jpg" alt="Player batting in an indoor baseball arena with a live scoreboard">
+          <span class="gcard-badge">Live now</span>
+        </div>
+        <div class="gcard-body">
+          <h3>Baseball</h3>
+          <div class="gcard-cat">Sports · Power</div>
+          <p>Swing a real bat at a live pitch. The system clocks exit velocity and launch angle and calls the home runs the moment bat meets ball.</p>
+          <div class="gcard-metrics">
+            <span class="metric"><span class="mlbl">EXIT</span>78mph</span>
+            <span class="metric"><span class="mlbl">LAUNCH</span>24°</span>
+            <span class="metric"><span class="mlbl">HITS</span>HR</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Football -->
+      <div class="gcard" data-cat="sports skill">
+        <a class="gcard-link" href="football.html" aria-label="Football — game details"></a>
+        <div class="gcard-top">
+          <img loading="lazy" src="assets/football.jpg" alt="Player throwing a football at a screen target in an indoor arena">
+          <span class="gcard-badge">Live now</span>
+        </div>
+        <div class="gcard-body">
+          <h3>Football</h3>
+          <div class="gcard-cat">Sports · Throw</div>
+          <p>Throw a real ball at moving screen targets. The system grades your spiral for speed, range and how close you land to the mark.</p>
+          <div class="gcard-metrics">
+            <span class="metric"><span class="mlbl">RANGE</span>45y</span>
+            <span class="metric"><span class="mlbl">SPEED</span>55mph</span>
+            <span class="metric"><span class="mlbl">ACC</span>88%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Soccer -->
+      <div class="gcard" data-cat="sports">
+        <a class="gcard-link" href="soccer.html" aria-label="Soccer — game details"></a>
+        <div class="gcard-top">
+          <img loading="lazy" src="assets/soccer.jpg" alt="Player striking a soccer ball at a stadium screen in an indoor arena">
+          <span class="gcard-badge">Live now</span>
+        </div>
+        <div class="gcard-body">
+          <h3>Soccer</h3>
+          <div class="gcard-cat">Sports · Strike</div>
+          <p>Strike a real ball at the goal on screen. The system measures power, curve and placement — top-corner finishes score the most.</p>
+          <div class="gcard-metrics">
+            <span class="metric"><span class="mlbl">POWER</span>61mph</span>
+            <span class="metric"><span class="mlbl">CURVE</span>7°</span>
+            <span class="metric"><span class="mlbl">PLACE</span>91%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Basketball -->
+      <div class="gcard" data-cat="sports skill">
+        <a class="gcard-link" href="basketball.html" aria-label="Basketball — game details"></a>
+        <div class="gcard-top">
+          <span class="gcard-fallback">🏀</span>
+          <img loading="lazy" class="gcard-photo" src="assets/basketball.jpg" alt="Player mid-jump shooting a real basketball in an indoor arena with a neon scoreboard" onerror="this.style.display='none'">
+          <span class="gcard-badge">Live now</span>
+        </div>
+        <div class="gcard-body">
+          <h3>Basketball</h3>
+          <div class="gcard-cat">Sports · Shoot</div>
+          <p>Shoot a real ball at a real hoop. The system tracks your arc and release and counts every make in a beat-the-clock shootout.</p>
+          <div class="gcard-metrics">
+            <span class="metric"><span class="mlbl">ARC</span>48°</span>
+            <span class="metric"><span class="mlbl">MAKES</span>21</span>
+            <span class="metric"><span class="mlbl">STREAK</span>7</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Archery -->
+      <div class="gcard" data-cat="skill">
+        <a class="gcard-link" href="archery.html" aria-label="Archery — game details"></a>
+        <div class="gcard-top">
+          <span class="gcard-fallback">🏹</span>
+          <img loading="lazy" class="gcard-photo" src="assets/archery.jpg" alt="Player drawing a real bow aimed at a lit target in an indoor arena with a neon scoreboard" onerror="this.style.display='none'">
+          <span class="gcard-badge">Live now</span>
+        </div>
+        <div class="gcard-body">
+          <h3>Archery</h3>
+          <div class="gcard-cat">Skill · Aim</div>
+          <p>Draw a real bow at a smart target. The system scores every ring and tracks how tight your grouping stays under pressure.</p>
+          <div class="gcard-metrics">
+            <span class="metric"><span class="mlbl">RING</span>10</span>
+            <span class="metric"><span class="mlbl">GROUP</span>4cm</span>
+            <span class="metric"><span class="mlbl">ACC</span>96%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Darts -->
+      <div class="gcard" data-cat="party skill">
+        <a class="gcard-link" href="darts.html" aria-label="Darts — game details"></a>
+        <div class="gcard-top">
+          <span class="gcard-fallback">🎯</span>
+          <img loading="lazy" class="gcard-photo" src="assets/darts.jpg" alt="Player throwing a dart at a smart electronic dartboard in an indoor arena with a neon scoreboard" onerror="this.style.display='none'">
+          <span class="gcard-badge">Live now</span>
+        </div>
+        <div class="gcard-body">
+          <h3>Darts</h3>
+          <div class="gcard-cat">Party · Aim</div>
+          <p>Throw real darts at a smart board. The system auto-scores every throw, runs the checkout math and keeps the whole table honest.</p>
+          <div class="gcard-metrics">
+            <span class="metric"><span class="mlbl">AVG</span>62</span>
+            <span class="metric"><span class="mlbl">CHECK</span>121</span>
+            <span class="metric"><span class="mlbl">ACC</span>89%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Table Tennis -->
+      <div class="gcard" data-cat="skill party">
+        <a class="gcard-link" href="table-tennis.html" aria-label="Table Tennis — game details"></a>
+        <div class="gcard-top">
+          <span class="gcard-fallback">🏓</span>
+          <img loading="lazy" class="gcard-photo" src="assets/table-tennis.jpg" alt="Player mid-rally at a table-tennis table with a robot ball server in an indoor arena with a neon scoreboard" onerror="this.style.display='none'">
+          <span class="gcard-badge">Live now</span>
+        </div>
+        <div class="gcard-body">
+          <h3>Table Tennis</h3>
+          <div class="gcard-cat">Skill · Rally</div>
+          <p>Real paddle, real ball, a robot server that never tires. The system tracks rally length and spin and ranks your win rate.</p>
+          <div class="gcard-metrics">
+            <span class="metric"><span class="mlbl">RALLY</span>34</span>
+            <span class="metric"><span class="mlbl">SPIN</span>2.1k</span>
+            <span class="metric"><span class="mlbl">WIN</span>72%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hockey -->
+      <div class="gcard" data-cat="sports">
+        <a class="gcard-link" href="hockey.html" aria-label="Hockey — game details"></a>
+        <div class="gcard-top">
+          <span class="gcard-fallback">🏒</span>
+          <img loading="lazy" class="gcard-photo" src="assets/hockey.jpg" alt="Player taking a slapshot toward a goal on a screen in an indoor arena with a neon scoreboard" onerror="this.style.display='none'">
+          <span class="gcard-badge">Live now</span>
+        </div>
+        <div class="gcard-body">
+          <h3>Hockey</h3>
+          <div class="gcard-cat">Sports · Slapshot</div>
+          <p>Fire a real puck at the goal on screen. The system clocks slapshot speed and picks apart your corners.</p>
+          <div class="gcard-metrics">
+            <span class="metric"><span class="mlbl">SHOT</span>92mph</span>
+            <span class="metric"><span class="mlbl">ACC</span>90%</span>
+            <span class="metric"><span class="mlbl">GOALS</span>8</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- INTERACTIVE POWER METER -->
+<section class="section demo">
+  <div class="wrap demo-grid">
+    <div class="reveal">
+      <span class="eyebrow">Feel the swing</span>
+      <h2>How hard did you hit it?</h2>
+      <p class="lead">This is what the screen shows the moment you swing — real force, read live. Take a practice swing and watch the meter climb.</p>
+      <p class="how-note" style="margin-top:0"><b>Every game runs on this.</b> Swing speed, punch force, ball spin — the same sensor-and-software layer measures it and turns it into a number worth beating.</p>
+    </div>
+    <div class="meter-box reveal" id="meter">
+      <div class="meter-top"><span>SWING POWER</span><span class="hud-live"><span class="pulse"></span>LIVE</span></div>
+      <div class="meter-read" id="meterRead">0<span class="unit">MPH</span></div>
+      <div class="meter-sub">Clubhead speed at impact</div>
+      <div class="meter-track"><div class="meter-fill" id="meterFill"></div></div>
+      <div class="meter-scale"><span>0</span><span>65</span><span>130</span></div>
+      <div class="meter-grade" id="meterGrade">READY</div>
+      <div class="meter-actions">
+        <button class="btn btn-primary" id="meterSwing">Take a swing</button>
+        <button class="btn btn-ghost" id="meterReset">Reset</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW SCORED -->
+<section class="section how">
+  <div class="wrap">
+    <span class="eyebrow">Under the hood</span>
+    <h2>Every game is scored the same three ways.</h2>
+    <div class="feat-grid reveal" style="margin-top:8px">
+      <div class="feat">
+        <span class="fi">📡</span>
+        <h3>Sensors read the move</h3>
+        <p>Cameras and sensors capture speed, spin, force and placement the instant you play.</p>
+      </div>
+      <div class="feat">
+        <span class="fi">🧠</span>
+        <h3>The system turns it into a score</h3>
+        <p>Our model grades the shot in under a tenth of a second and ranks it against the room.</p>
+      </div>
+      <div class="feat">
+        <span class="fi">🏆</span>
+        <h3>The board makes it a contest</h3>
+        <p>Your number goes live for everyone to chase — the reason people book the rematch.</p>
+      </div>
+    </div>
+    <p class="how-note reveal">Want the full pipeline? <a href="how.html" class="accent">See how it works →</a></p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section cta">
+  <div class="wrap">
+    <span class="eyebrow">Bring the games in</span>
+    <h2>Want these games in <span class="accent">your space?</span></h2>
+    <p class="lead">Whether you have an empty floor or you're an operator who wants to license the tech, the line-up is ready to drop in.</p>
+    <div class="hero-cta" style="justify-content:center">
+      <a href="contact.html" class="btn btn-primary">Get in touch</a>
+      <a href="model.html" class="btn btn-ghost">See the model</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="index.html"><span class="dot"></span>THIRD ZONE, LLC</a>
+    <div class="foot-links">
+      <a href="games.html">Games</a>
+      <a href="how.html">How it works</a>
+      <a href="model.html">Model</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="foot-copy">Third-Zone.com · Not home. Not work. The Third Zone.</div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

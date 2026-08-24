@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How it works — Third Zone</title>
+<meta name="description" content="How Third Zone works: high-speed cameras, computer-vision models and in-bay sensors read your real move and score it live in under a tenth of a second.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Third Zone">
+<meta property="og:title" content="How it works — Third Zone">
+<meta property="og:description" content="How Third Zone works: high-speed cameras, computer-vision models and in-bay sensors read your real move and score it live in under a tenth of a second.">
+<meta property="og:url" content="https://third-zone.com/how.html">
+<meta property="og:image" content="https://third-zone.com/assets/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How it works — Third Zone">
+<meta name="twitter:description" content="How Third Zone works: high-speed cameras, computer-vision models and in-bay sensors read your real move and score it live in under a tenth of a second.">
+<meta name="twitter:image" content="https://third-zone.com/assets/hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html"><span class="dot"></span>THIRD ZONE</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="games.html">Games</a>
+      <a href="how.html" class="active">How it works</a>
+      <a href="model.html">Model</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="btn btn-primary">Get in touch</a>
+    </div>
+    <button class="hamb" id="hamb" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-panel" id="mobilePanel">
+    <a href="index.html">Home</a>
+    <a href="games.html">Games</a>
+    <a href="how.html" class="active">How it works</a>
+    <a href="model.html">Model</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn btn-primary">Get in touch</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<header class="page-hero">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Home</a> / How it works</div>
+    <span class="eyebrow">The tech</span>
+    <h1>The system turns a game <span class="accent">into a contest.</span></h1>
+    <p class="lead">You bring the swing. Our sensor-and-software layer does the rest — reading the move, scoring it live, and putting your number on the board for everyone to chase. Here's exactly how it works, layer by layer.</p>
+  </div>
+</header>
+
+<!-- SPEC BAND -->
+<section class="statband">
+  <div class="wrap" data-countgroup>
+    <div class="statcell"><div class="big">&lt;<span data-count="0.1">0</span><span class="unit">s</span></div><div class="cap">Move to score</div></div>
+    <div class="statcell"><div class="big"><span data-count="96">0</span><span class="unit">%</span></div><div class="cap">Read accuracy</div></div>
+    <div class="statcell"><div class="big"><span data-count="240">0</span><span class="unit">fps</span></div><div class="cap">Vision capture</div></div>
+    <div class="statcell"><div class="big"><span data-count="0">0</span></div><div class="cap">Wearables needed</div></div>
+  </div>
+</section>
+
+<!-- 5 STEPS -->
+<section class="section">
+  <div class="wrap">
+    <span class="eyebrow">Step by step</span>
+    <h2 style="font-size:clamp(30px,4vw,46px);margin-bottom:52px;max-width:640px">From swing to scoreboard in under a second.</h2>
+    <div class="steps reveal">
+      <div class="step"><div class="n">1</div><h3>Step up</h3><p>Real equipment, real physical play — without the exhaustion.</p></div>
+      <div class="step"><div class="n">2</div><h3>Play</h3><p>Sensors read your move — hit, spin, throw, speed.</p></div>
+      <div class="step"><div class="n">3</div><h3>Score</h3><p>The system turns it into a live score on the board.</p></div>
+      <div class="step"><div class="n">4</div><h3>Compete</h3><p>The next player tries to beat your number.</p></div>
+      <div class="step"><div class="n">5</div><h3>Winner</h3><p>Highest score wins. Everyone wants a rematch.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PIPELINE -->
+<section class="section how">
+  <div class="wrap">
+    <span class="eyebrow">The pipeline</span>
+    <h2 style="font-size:clamp(28px,4vw,42px);margin-bottom:14px">Three layers, one instant score.</h2>
+    <p class="lead" style="color:var(--muted);margin-bottom:36px;max-width:600px">The same stack runs under every game — which is exactly why we can keep adding new ones without rebuilding a thing.</p>
+    <div class="feat-grid reveal">
+      <div class="feat">
+        <span class="fi">📡</span>
+        <h3>1 · Capture</h3>
+        <p>High-speed cameras and motion sensors record every move — clubhead speed, ball spin, punch force, launch angle, placement — at 240 frames a second.</p>
+      </div>
+      <div class="feat">
+        <span class="fi">🧠</span>
+        <h3>2 · Understand</h3>
+        <p>Computer-vision models read the raw capture frame by frame and reconstruct exactly what your body and the ball did — no tags, no wearables.</p>
+      </div>
+      <div class="feat">
+        <span class="fi">🏆</span>
+        <h3>3 · Score &amp; compete</h3>
+        <p>The engine grades the shot in under a tenth of a second, normalises it across games, and ranks it live — head-to-head, leaderboard or team play.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HARDWARE -->
+<section class="section">
+  <div class="wrap">
+    <span class="eyebrow">In every bay</span>
+    <h2 style="font-size:clamp(28px,4vw,42px);margin-bottom:12px">The hardware behind the play.</h2>
+    <p class="lead" style="color:var(--muted);margin-bottom:44px;max-width:600px">Each arena bay is a self-contained kit — the same components in every venue, calibrated to work together out of the box.</p>
+    <div class="feat-grid reveal">
+      <div class="feat"><span class="fi">🖥️</span><h3>Arena screen</h3><p>A wall-sized, high-brightness display renders stadiums, moving targets and your live score all around you.</p></div>
+      <div class="feat"><span class="fi">🎥</span><h3>High-speed cameras</h3><p>Multi-angle 240fps cameras catch the exact frame of contact, even on the fastest swings.</p></div>
+      <div class="feat"><span class="fi">📡</span><h3>Radar &amp; motion sensors</h3><p>Doppler radar and optical sensors clock speed, spin, force and angle the instant you play.</p></div>
+      <div class="feat"><span class="fi">💻</span><h3>On-site edge compute</h3><p>A local GPU box scores everything in real time — no cloud round-trip, no lag on the board.</p></div>
+      <div class="feat"><span class="fi">🔊</span><h3>Sound &amp; lighting</h3><p>Spatial audio and neon cues turn a personal best into a crowd-roar moment the whole room feels.</p></div>
+      <div class="feat"><span class="fi">🏌️</span><h3>Smart equipment</h3><p>Real clubs, bats, bows and balls — the gear you'd actually use, tracked to the millimetre.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT THE SYSTEM READS -->
+<section class="section how">
+  <div class="wrap">
+    <span class="eyebrow">What the system reads</span>
+    <h2>It's not a screen tap. It's your real hit, measured.</h2>
+    <div class="lb reveal" style="margin-top:8px">
+      <div class="lb-row lb-head"><span class="lb-rank">·</span><span>Game</span><span class="game-lbl">Reads</span><span>Score on</span></div>
+      <div class="lb-row"><span class="lb-rank">🏌️</span><span class="who">Golf</span><span class="game-lbl">Clubhead speed, launch, spin</span><span class="score">Distance</span></div>
+      <div class="lb-row"><span class="lb-rank">⚾</span><span class="who">Baseball</span><span class="game-lbl">Exit velocity, launch angle</span><span class="score">Home runs</span></div>
+      <div class="lb-row"><span class="lb-rank">🏈</span><span class="who">Football</span><span class="game-lbl">Throw speed, target distance</span><span class="score">Accuracy</span></div>
+      <div class="lb-row"><span class="lb-rank">⚽</span><span class="who">Soccer</span><span class="game-lbl">Strike power, curve, placement</span><span class="score">Finish quality</span></div>
+      <div class="lb-row"><span class="lb-rank">🏀</span><span class="who">Basketball</span><span class="game-lbl">Release arc, makes</span><span class="score">Streak</span></div>
+      <div class="lb-row"><span class="lb-rank">🏹</span><span class="who">Archery</span><span class="game-lbl">Ring hit, grouping</span><span class="score">Accuracy</span></div>
+      <div class="lb-row"><span class="lb-rank">🎯</span><span class="who">Darts</span><span class="game-lbl">Segment hit, checkout</span><span class="score">Average</span></div>
+      <div class="lb-row"><span class="lb-rank">🏓</span><span class="who">Table Tennis</span><span class="game-lbl">Rally length, spin</span><span class="score">Win rate</span></div>
+      <div class="lb-row"><span class="lb-rank">🏒</span><span class="who">Hockey</span><span class="game-lbl">Slapshot speed, placement</span><span class="score">Goals</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERACTIVE METER -->
+<section class="section">
+  <div class="wrap demo-grid">
+    <div class="reveal">
+      <span class="eyebrow">See it in action</span>
+      <h2 style="font-size:clamp(28px,4vw,42px);margin-bottom:14px">Take a practice swing.</h2>
+      <p class="lead" style="color:var(--muted);margin-bottom:26px;max-width:460px">This is exactly what the screen shows the moment you play — real force, read live. Hit the button and watch the meter climb.</p>
+      <p class="how-note" style="margin-top:0"><b>Every game runs on this.</b> Swing speed, punch force, ball spin — the same layer measures it and turns it into a number worth beating.</p>
+    </div>
+    <div class="meter-box reveal" id="meter">
+      <div class="meter-top"><span>SWING POWER</span><span class="hud-live"><span class="pulse"></span>LIVE</span></div>
+      <div class="meter-read" id="meterRead">0<span class="unit">MPH</span></div>
+      <div class="meter-sub">Clubhead speed at impact</div>
+      <div class="meter-track"><div class="meter-fill" id="meterFill"></div></div>
+      <div class="meter-scale"><span>0</span><span>65</span><span>130</span></div>
+      <div class="meter-grade" id="meterGrade">READY</div>
+      <div class="meter-actions">
+        <button class="btn btn-primary" id="meterSwing">Take a swing</button>
+        <button class="btn btn-ghost" id="meterReset">Reset</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCURACY & FAIRNESS -->
+<section class="section how">
+  <div class="wrap">
+    <span class="eyebrow">Accurate &amp; fair</span>
+    <h2 style="font-size:clamp(28px,4vw,42px);margin-bottom:36px">Everyone plays the same game.</h2>
+    <div class="feat-grid reveal">
+      <div class="feat"><span class="fi">🎯</span><h3>Calibrated daily</h3><p>Every bay self-checks against known references at open, so a 116 mph swing reads the same on Monday as it does on Friday.</p></div>
+      <div class="feat"><span class="fi">⚖️</span><h3>Normalised across players</h3><p>Scores are scaled so first-timers and regulars can share a board — skill still wins, but everyone has a real shot.</p></div>
+      <div class="feat"><span class="fi">🛡️</span><h3>Tamper-proof scoring</h3><p>The read comes straight from the sensors, not a button press — no gaming the number, no disputes at the table.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM / LICENSING -->
+<section class="section">
+  <div class="wrap">
+    <span class="eyebrow">Why it compounds</span>
+    <h2 style="font-size:clamp(28px,4vw,42px);margin-bottom:14px">A platform, not just a place.</h2>
+    <p class="lead" style="color:var(--muted);margin-bottom:36px;max-width:620px">The sensor-and-software layer is proprietary, and it's a product in its own right — not just the thing that runs our rooms.</p>
+    <div class="feat-grid reveal">
+      <div class="feat"><span class="fi">📈</span><h3>Gets smarter with data</h3><p>Every round played sharpens the reads and the scoring — the system improves the more it's used.</p></div>
+      <div class="feat"><span class="fi">🧩</span><h3>New games plug in</h3><p>Each new game rides the same stack, so the line-up grows without rebuilding the arena.</p></div>
+      <div class="feat"><span class="fi">🔑</span><h3>Licensable to venues</h3><p>Other operators can run our games in their own space — revenue for us without building the room.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section how">
+  <div class="wrap">
+    <span class="eyebrow">Good to know</span>
+    <h2 style="font-size:clamp(28px,4vw,42px);margin-bottom:36px">Common questions.</h2>
+    <div class="model-grid reveal">
+      <div class="mcard"><h3>Do I need any experience?</h3><p>None at all. Every game is built for all levels, and clubs, bats, bows and coaching are on the house.</p></div>
+      <div class="mcard"><h3>How accurate is it?</h3><p>Reads land within about 96% of pro-grade launch monitors, and every bay is calibrated daily to stay there.</p></div>
+      <div class="mcard"><h3>Do I have to wear sensors?</h3><p>No wearables and no tags — cameras and sensors in the bay do all the tracking while you just play.</p></div>
+      <div class="mcard"><h3>Does every game use the same tech?</h3><p>Yes. One capture-and-scoring stack powers all nine games, so new ones plug straight in.</p></div>
+      <div class="mcard"><h3>Can groups and teams play together?</h3><p>Absolutely — solo, one-on-one, team relays and full tournaments all run on the same live board.</p></div>
+      <div class="mcard"><h3>Can we license the technology?</h3><p>Yes. If you run a venue, the games can drop into your space. <a href="contact.html" class="accent">Get in touch →</a></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section cta">
+  <div class="wrap">
+    <span class="eyebrow">See it live</span>
+    <h2>Ready to <span class="accent">step up?</span></h2>
+    <p class="lead">Explore the full line-up, or talk to us about bringing the tech into your space.</p>
+    <div class="hero-cta" style="justify-content:center">
+      <a href="games.html" class="btn btn-primary">Explore the games</a>
+      <a href="contact.html" class="btn btn-ghost">Partner with us</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="index.html"><span class="dot"></span>THIRD ZONE, LLC</a>
+    <div class="foot-links">
+      <a href="games.html">Games</a>
+      <a href="how.html">How it works</a>
+      <a href="model.html">Model</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="foot-copy">Third-Zone.com · Not home. Not work. The Third Zone.</div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Third Zone</title>
+<meta name="description" content="Get in touch with Third Zone — for real estate partners, investors and venue operators who want the games in their space.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Third Zone">
+<meta property="og:title" content="Contact — Third Zone">
+<meta property="og:description" content="Get in touch with Third Zone — for real estate partners, investors and venue operators who want the games in their space.">
+<meta property="og:url" content="https://third-zone.com/contact.html">
+<meta property="og:image" content="https://third-zone.com/assets/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact — Third Zone">
+<meta name="twitter:description" content="Get in touch with Third Zone — for real estate partners, investors and venue operators who want the games in their space.">
+<meta name="twitter:image" content="https://third-zone.com/assets/hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html"><span class="dot"></span>THIRD ZONE</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="games.html">Games</a>
+      <a href="how.html">How it works</a>
+      <a href="model.html">Model</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="contact.html" class="btn btn-primary">Get in touch</a>
+    </div>
+    <button class="hamb" id="hamb" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-panel" id="mobilePanel">
+    <a href="index.html">Home</a>
+    <a href="games.html">Games</a>
+    <a href="how.html">How it works</a>
+    <a href="model.html">Model</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn btn-primary">Get in touch</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<header class="page-hero">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Home</a> / Contact</div>
+    <span class="eyebrow">Get in touch</span>
+    <h1>Not home. Not work.<br>Let's build <span class="accent">The Third Zone.</span></h1>
+    <p class="lead">Whether you have an empty floor, capital to deploy, or a venue that wants the tech — tell us a little and we'll get right back to you.</p>
+  </div>
+</header>
+
+<!-- FORM -->
+<section class="section">
+  <div class="wrap form-grid">
+    <div class="reveal">
+      <span class="eyebrow">Send a message</span>
+      <h2 style="font-size:clamp(26px,3.6vw,38px);margin-bottom:24px">Tell us about your space or fund.</h2>
+      <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+        <input type="hidden" name="form-name" value="contact">
+        <p hidden><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
+        <div class="field">
+          <label for="cf-name">Name</label>
+          <input id="cf-name" name="name" type="text" placeholder="Your name" required>
+        </div>
+        <div class="field">
+          <label for="cf-email">Email</label>
+          <input id="cf-email" name="email" type="email" placeholder="you@company.com" required>
+        </div>
+        <div class="field">
+          <label for="cf-type">I'm reaching out as</label>
+          <select id="cf-type" name="type">
+            <option>Real estate partner</option>
+            <option>Investor</option>
+            <option>Venue operator (licensing)</option>
+            <option>Press</option>
+            <option>Just curious</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="cf-msg">Message</label>
+          <textarea id="cf-msg" name="message" placeholder="A line or two about what you have in mind…"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send message</button>
+        <div class="form-ok" id="formOk">Thanks — your message is on its way. We'll reply to your email shortly.</div>
+      </form>
+    </div>
+
+    <div class="contact-side reveal">
+      <div class="ccard">
+        <h3>Real estate partners</h3>
+        <p>You have the empty space. Let's talk about filling it — fast buildout, low cost, real foot traffic.</p>
+        <a href="mailto:contact@third-zone.com?subject=Real%20estate%20partnership" class="btn btn-primary">Fill your floor</a>
+      </div>
+      <div class="ccard">
+        <h3>Investors</h3>
+        <p>We have the model and the tech. Let's talk about scaling it across cities.</p>
+        <a href="mailto:contact@third-zone.com?subject=Investment" class="btn btn-ghost">Talk to us</a>
+      </div>
+      <div class="ccard">
+        <h3>Prefer email?</h3>
+        <p>Reach the team directly any time.</p>
+        <a href="mailto:contact@third-zone.com" class="accent" style="font-family:var(--mono);font-size:15px">contact@third-zone.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="index.html"><span class="dot"></span>THIRD ZONE, LLC</a>
+    <div class="foot-links">
+      <a href="games.html">Games</a>
+      <a href="how.html">How it works</a>
+      <a href="model.html">Model</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="foot-copy">Third-Zone.com · Not home. Not work. The Third Zone.</div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
