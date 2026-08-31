@@ -509,6 +509,31 @@ a.game{cursor:pointer;color:inherit}
 .padblk .p-wall{background:transparent}
 
 
+
+/* ===== directional shading so every extrusion reads as solid ===== */
+.p-wall::after{content:"";position:absolute;inset:0}
+.p-n::after{background:rgba(255,255,255,.10)}
+.p-w::after{background:rgba(255,255,255,.05)}
+.p-e::after{background:rgba(0,0,0,.26)}
+.p-s::after{background:rgba(0,0,0,.44)}
+
+/* ===== header pins ===== */
+/* square metal tips poking through the plastic on the top side */
+.pintip .p-top{
+  background:linear-gradient(140deg,#f6f9fb,#c2c9cf 45%,#8f979e);
+  border-radius:.5px;box-shadow:0 0 3px rgba(255,255,255,.35);
+}
+.pintip .p-wall{background:linear-gradient(#d3d9de,#798087)}
+
+/* male pins protruding from the underside */
+.pinpost .p-top{
+  background:linear-gradient(140deg,#eef2f5,#aab2b9 50%,#7c848b);
+  border-radius:.5px;
+}
+.pinpost .p-wall{background:linear-gradient(#cdd4d9,#6e767d)}
+.pinpost .p-e::after{background:rgba(0,0,0,.34)}
+.pinpost .p-s::after{background:rgba(0,0,0,.5)}
+
 /* ===== real component families ===== */
 
 /* AMS1117-3.3 LDO regulator (SOT-223: black body + big metal tab) */

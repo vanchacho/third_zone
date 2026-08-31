@@ -132,10 +132,11 @@
     function drawBoard() {
       var r = boardWrap.getBoundingClientRect();
       var vh = window.innerHeight || document.documentElement.clientHeight;
-      // tight window: the full turn happens inside roughly half a screen of scroll
-      var p = (vh * 0.88 - r.top) / (vh * 0.55);
-      p = Math.max(0, Math.min(1, p));
-      var rotY = -20 + p * 360;           // a full 360° turn across that window
+      // continuous: rotation tracks scroll travel and never stalls
+      var travel = vh - r.top;                 // grows steadily as you scroll down
+      var rotY = -20 + travel * 0.62;          // ~360° per 580px of scroll
+      // gentle tilt that eases while the board crosses the viewport
+      var p = Math.max(0, Math.min(1, travel / (vh + r.height)));
       var rotX = -16 + Math.sin(p * Math.PI) * 9;
       var rotZ = (p - 0.5) * 6;
       boardStage.style.transform =
