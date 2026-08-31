@@ -124,19 +124,33 @@
     reset();
   }
 
-  /* ---- Deep link: /contact.html#deck preselects the pitch-deck enquiry ---- */
-  if (location.hash === "#deck") {
-    var typeSel = document.getElementById("cf-type");
-    if (typeSel) {
-      for (var i = 0; i < typeSel.options.length; i++) {
-        if (typeSel.options[i].text.indexOf("pitch deck") !== -1) {
-          typeSel.selectedIndex = i;
-          break;
-        }
-      }
-      var nameField = document.getElementById("cf-name");
-      if (nameField) nameField.focus({ preventScroll: true });
+  /* ---- 3D board: rotates as it travels through the viewport ---- */
+  var boardWrap = document.getElementById("board3d");
+  var boardStage = document.getElementById("boardStage");
+  if (boardWrap && boardStage && !reduce) {
+    var boardTicking = false;
+    function drawBoard() {
+      var r = boardWrap.getBoundingClientRect();
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      // 0 when the board sits just below the fold, 1 once it has passed the top
+      var p = (vh - r.top) / (vh + r.height);
+      p = Math.max(0, Math.min(1, p));
+      var rotY = -170 + p * 340;          // most of a full turn across the scroll
+      var rotX = -16 + Math.sin(p * Math.PI) * 9;
+      var rotZ = (p - 0.5) * 6;
+      boardStage.style.transform =
+        "rotateX(" + rotX.toFixed(2) + "deg) rotateY(" + rotY.toFixed(2) +
+        "deg) rotateZ(" + rotZ.toFixed(2) + "deg)";
+      boardTicking = false;
     }
+    function onScrollBoard() {
+      if (!boardTicking) { boardTicking = true; requestAnimationFrame(drawBoard); }
+    }
+    window.addEventListener("scroll", onScrollBoard, { passive: true });
+    window.addEventListener("resize", onScrollBoard);
+    drawBoard();
+  } else if (boardStage) {
+    boardStage.style.transform = "rotateX(-16deg) rotateY(-24deg)";
   }
 
   /* ---- Contact form ---- */

@@ -54,7 +54,7 @@
     <div class="crumbs"><a href="index.html">Home</a> / How it works</div>
     <span class="eyebrow">The tech</span>
     <h1>The system turns a game <span class="accent">into a contest.</span></h1>
-    <p class="lead">You bring the swing. Our proprietary computer-vision and Edge AI layer does the rest — reading the move, scoring it live, and putting your number on the board for everyone to chase. Here's exactly how it works, layer by layer.</p>
+    <p class="lead">You bring the swing. Our sensor-and-software layer does the rest — reading the move, scoring it live, and putting your number on the board for everyone to chase. Here's exactly how it works, layer by layer.</p>
   </div>
 </header>
 
@@ -97,80 +97,13 @@
       </div>
       <div class="feat">
         <span class="fi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span>
-        <h3>2 · Understand (Edge AI)</h3>
-        <p>Proprietary computer-vision models run on a local GPU in the venue, reading the raw capture frame by frame to reconstruct exactly what your body and the ball did — no tags, no wearables, no cloud round-trip.</p>
+        <h3>2 · Understand</h3>
+        <p>Computer-vision models read the raw capture frame by frame and reconstruct exactly what your body and the ball did — no tags, no wearables.</p>
       </div>
       <div class="feat">
         <span class="fi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5h10V8a5 5 0 0 1-10 0V4.5z"/><path d="M7 6.5H4.2V8A3.3 3.3 0 0 0 7.5 11.3M17 6.5h2.8V8a3.3 3.3 0 0 1-3.3 3.3"/><path d="M9.5 20.5h5M12 15v5.5"/></svg></span>
         <h3>3 · Score &amp; compete</h3>
         <p>The engine grades the shot in under a tenth of a second, normalises it across games, and ranks it live — head-to-head, leaderboard or team play.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ARCHITECTURE -->
-<section class="section">
-  <div class="wrap">
-    <span class="eyebrow">System architecture</span>
-    <h2 style="font-size:clamp(28px,4vw,42px);margin-bottom:14px">Hardware to scoreboard, end to end.</h2>
-    <p class="lead" style="color:var(--muted);margin-bottom:36px;max-width:640px">Capture and inference both run <b style="color:var(--text)">on-site at the edge</b> — no cloud round-trip in the scoring path. That's what keeps the number on the wall under a tenth of a second behind your body.</p>
-
-    <div class="arch-wrap reveal">
-      <svg viewBox="0 0 1000 330" role="img" aria-label="Architecture: capture layer feeds edge AI, which feeds the scoring engine, which drives arena output; anonymised match data flows back to model training.">
-        <defs>
-          <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-            <path d="M0 0 L10 5 L0 10 z" fill="#2ee67a"/>
-          </marker>
-          <marker id="arrowOrange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-            <path d="M0 0 L10 5 L0 10 z" fill="#ff7a3c"/>
-          </marker>
-        </defs>
-
-        <!-- 01 CAPTURE -->
-        <rect class="arch-box" x="20" y="56" width="215" height="152" rx="12"/>
-        <text class="arch-t" x="40" y="84">LAYER 01 · IN THE BAY</text>
-        <text class="arch-h" x="40" y="108">Capture</text>
-        <text class="arch-p" x="40" y="134">240 fps multi-angle cameras</text>
-        <text class="arch-p" x="40" y="154">Doppler radar</text>
-        <text class="arch-p" x="40" y="174">Impact &amp; motion sensors</text>
-
-        <!-- 02 EDGE AI -->
-        <rect class="arch-box hot" x="275" y="56" width="215" height="152" rx="12"/>
-        <text class="arch-t" x="295" y="84">LAYER 02 · ON-SITE GPU</text>
-        <text class="arch-h" x="295" y="108">Edge AI</text>
-        <text class="arch-p" x="295" y="134">Computer-vision models</text>
-        <text class="arch-p" x="295" y="154">Pose &amp; object tracking</text>
-        <text class="arch-p" x="295" y="174">No wearables, no tags</text>
-
-        <!-- 03 SCORING -->
-        <rect class="arch-box hot" x="530" y="56" width="215" height="152" rx="12"/>
-        <text class="arch-t" x="550" y="84">LAYER 03 · REAL TIME</text>
-        <text class="arch-h" x="550" y="108">Scoring engine</text>
-        <text class="arch-p" x="550" y="134">Cross-game normalisation</text>
-        <text class="arch-p" x="550" y="154">Live ranking &amp; matchmaking</text>
-        <text class="arch-p" x="550" y="174">&lt;0.1s move to score</text>
-
-        <!-- 04 OUTPUT -->
-        <rect class="arch-box" x="785" y="56" width="195" height="152" rx="12"/>
-        <text class="arch-t" x="805" y="84">LAYER 04 · GUEST</text>
-        <text class="arch-h" x="805" y="108">Output</text>
-        <text class="arch-p" x="805" y="134">Arena screen</text>
-        <text class="arch-p" x="805" y="154">Live leaderboard</text>
-        <text class="arch-p" x="805" y="174">Player profiles</text>
-
-        <!-- flow arrows -->
-        <path class="arch-line" d="M237 132 H267" marker-end="url(#arrowGreen)"/>
-        <path class="arch-line" d="M492 132 H522" marker-end="url(#arrowGreen)"/>
-        <path class="arch-line" d="M747 132 H777" marker-end="url(#arrowGreen)"/>
-
-        <!-- feedback loop: match data back into training -->
-        <path class="arch-feedback" d="M882 210 V272 H386 V212" marker-end="url(#arrowOrange)"/>
-        <text class="arch-fb-t" x="470" y="292">ANONYMISED MATCH DATA → MODEL TRAINING</text>
-      </svg>
-      <div class="arch-legend">
-        <span><i></i>Real-time scoring path (on-site)</span>
-        <span><i class="dash"></i>Data flywheel — offline model training</span>
       </div>
     </div>
   </div>
@@ -247,66 +180,10 @@
   </div>
 </section>
 
-<!-- DATA FLYWHEEL -->
+<!-- PLATFORM / LICENSING -->
 <section class="section">
   <div class="wrap">
-    <span class="eyebrow">The moat</span>
-    <h2 style="font-size:clamp(28px,4vw,42px);margin-bottom:14px">A data flywheel competitors can't copy.</h2>
-    <p class="lead" style="color:var(--muted);margin-bottom:44px;max-width:640px">Anyone can buy cameras. What can't be bought is the labelled record of millions of real human swings, throws and strikes — captured in our own bays, under real conditions, and fed straight back into the models.</p>
-
-    <div class="fly-grid reveal">
-      <div class="fly-ring">
-        <svg viewBox="0 0 400 400" role="img" aria-label="Data flywheel: more play produces more proprietary data, which sharpens the models, which improves the experience, which drives more play.">
-          <circle class="fly-c" cx="200" cy="200" r="130"/>
-
-          <path class="fly-arc" d="M233.6 74.4 A130 130 0 0 1 325.6 166.4" marker-end="url(#arrowGreen2)"/>
-          <path class="fly-arc" d="M325.6 233.6 A130 130 0 0 1 233.6 325.6" marker-end="url(#arrowGreen2)"/>
-          <path class="fly-arc" d="M166.4 325.6 A130 130 0 0 1 74.4 233.6" marker-end="url(#arrowGreen2)"/>
-          <path class="fly-arc" d="M74.4 166.4 A130 130 0 0 1 166.4 74.4" marker-end="url(#arrowGreen2)"/>
-
-          <defs>
-            <marker id="arrowGreen2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
-              <path d="M0 0 L10 5 L0 10 z" fill="#2ee67a"/>
-            </marker>
-          </defs>
-
-          <circle class="fly-node" cx="200" cy="70" r="28"/>
-          <text class="fly-n" x="200" y="76" text-anchor="middle">01</text>
-          <text class="fly-l" x="200" y="30" text-anchor="middle">More play</text>
-
-          <circle class="fly-node" cx="330" cy="200" r="28"/>
-          <text class="fly-n" x="330" y="206" text-anchor="middle">02</text>
-          <text class="fly-l" x="330" y="254" text-anchor="middle">More data</text>
-
-          <circle class="fly-node" cx="200" cy="330" r="28"/>
-          <text class="fly-n" x="200" y="336" text-anchor="middle">03</text>
-          <text class="fly-l" x="200" y="376" text-anchor="middle">Sharper models</text>
-
-          <circle class="fly-node" cx="70" cy="200" r="28"/>
-          <text class="fly-n" x="70" y="206" text-anchor="middle">04</text>
-          <text class="fly-l" x="70" y="254" text-anchor="middle">Better play</text>
-
-          <text class="fly-mid" x="200" y="195" text-anchor="middle">DATA</text>
-          <text class="fly-mid" x="200" y="216" text-anchor="middle">FLYWHEEL</text>
-        </svg>
-      </div>
-
-      <ul class="fly-steps">
-        <li><span class="k">01</span><div><b>More play</b><p>Every guest, every round, every rematch runs through our own sensors and bays.</p></div></li>
-        <li><span class="k">02</span><div><b>More proprietary data</b><p>Real swings in real conditions — the labelled dataset nobody else is collecting.</p></div></li>
-        <li><span class="k">03</span><div><b>Sharper models</b><p>Reads get more accurate and scoring gets fairer across every game on the stack.</p></div></li>
-        <li><span class="k">04</span><div><b>Better play</b><p>A better experience brings guests back, and the wheel turns faster.</p></div></li>
-      </ul>
-    </div>
-
-    <p class="moat reveal"><b>Why this is defensible:</b> the models, the labelled dataset and the calibration pipeline are all proprietary — and each new venue and each licensed operator feeds the same flywheel. The advantage compounds with every round played, so a late entrant starts from zero data while we keep pulling ahead.</p>
-  </div>
-</section>
-
-<!-- PLATFORM / LICENSING -->
-<section class="section how">
-  <div class="wrap">
-    <span class="eyebrow">The product</span>
+    <span class="eyebrow">Why it compounds</span>
     <h2 style="font-size:clamp(28px,4vw,42px);margin-bottom:14px">A platform, not just a place.</h2>
     <p class="lead" style="color:var(--muted);margin-bottom:36px;max-width:620px">The sensor-and-software layer is proprietary, and it's a product in its own right — not just the thing that runs our rooms.</p>
     <div class="feat-grid reveal">

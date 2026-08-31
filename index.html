@@ -53,7 +53,36 @@
   <div class="wrap">
     <span class="eyebrow">The technology</span>
     <h2 style="font-size:clamp(30px,4vw,46px);margin-bottom:12px">What powers the zone.</h2>
-    <p class="lead" style="color:var(--muted);margin-bottom:34px;max-width:640px">Every bay runs on the same stack — a wall-sized screen, proprietary computer-vision AI running on-site at the edge, and sensors that read your real move and score it live, in under a tenth of a second. It's the same platform behind every game, and it gets sharper with each one played.</p>
+    <p class="lead" style="color:var(--muted);margin-bottom:34px;max-width:640px">Every bay runs on the same stack — a wall-sized screen, computer-vision AI, and sensors that read your real move and score it live, in under a tenth of a second. It's the same platform behind every game, and it gets sharper with each one played.</p>
+
+
+    <div class="board3d reveal" id="board3d" aria-hidden="true">
+      <div class="board3d-stage" id="boardStage">
+        <div class="pcb">
+          <div class="pcb-face pcb-front">
+            <div class="pcb-pins l"></div>
+            <div class="pcb-pins r"></div>
+            <div class="pcb-usb"></div>
+            <div class="pcb-shield"><span>ESP32</span></div>
+            <div class="pcb-ant"></div>
+            <div class="pcb-chip c1"></div>
+            <div class="pcb-chip c2"></div>
+            <div class="pcb-chip c3"></div>
+            <div class="pcb-led"></div>
+            <div class="pcb-trace t1"></div>
+            <div class="pcb-trace t2"></div>
+            <div class="pcb-trace t3"></div>
+            <div class="pcb-trace t4"></div>
+            <div class="pcb-trace t5"></div>
+          </div>
+          <div class="pcb-face pcb-back"></div>
+          <div class="pcb-edge e-left"></div>
+          <div class="pcb-edge e-right"></div>
+          <div class="pcb-edge e-top"></div>
+          <div class="pcb-edge e-bottom"></div>
+        </div>
+      </div>
+    </div>
 
     <div class="techstats reveal" data-countgroup>
       <div class="statcell"><div class="big">&lt;<span data-count="0.1">0</span><span class="unit">s</span></div><div class="cap">Move to score</div></div>
@@ -71,7 +100,7 @@
       <div class="feat">
         <span class="fi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span>
         <h3>Computer-vision AI</h3>
-        <p>Proprietary models watch every swing, throw and shot frame by frame and reconstruct exactly what you did — no wearables, no tags, no markers.</p>
+        <p>Trained models watch every swing, throw and shot frame by frame and understand exactly what you did — no wearables, no tags.</p>
       </div>
       <div class="feat">
         <span class="fi"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><path d="M12 12l7-4.5"/></svg></span>
@@ -80,13 +109,13 @@
       </div>
       <div class="feat">
         <span class="fi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4.5 13.5H11l-1 8.5 8.5-11.5H12l1-8.5z"/></svg></span>
-        <h3>Edge AI scoring engine</h3>
-        <p>Inference runs on a local GPU in the venue — no cloud round-trip — fusing every signal into a number on the board in under a tenth of a second.</p>
+        <h3>Live scoring engine</h3>
+        <p>Our software fuses every signal, normalises it across games and lands a number on the board in under a tenth of a second.</p>
       </div>
       <div class="feat">
         <span class="fi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 16.5l6-6 3.5 3.5L21 6.5"/><path d="M15.5 6.5H21v5.5"/></svg></span>
-        <h3>Data flywheel</h3>
-        <p>Every round played feeds the models. More play means more proprietary data, sharper reads and fairer scoring — an advantage that compounds.</p>
+        <h3>Self-learning models</h3>
+        <p>Every round played feeds the system. The more you all play, the sharper the reads and the fairer the scoring get.</p>
       </div>
       <div class="feat">
         <span class="fi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h18"/><rect x="6" y="11" width="3.4" height="7.5" rx="0.8"/><rect x="10.9" y="6" width="3.4" height="12.5" rx="0.8"/><rect x="15.8" y="13.5" width="3.4" height="5" rx="0.8"/></svg></span>
@@ -118,7 +147,6 @@
       <h1>From empty floors to <span class="accent">sold-out arenas.</span></h1>
       <p class="hero-sub">We turn empty urban floors into game arenas — real games you compete in, plus food and drinks, in one space.</p>
       <p class="hero-tag">The Topgolf model, built for the city.</p>
-      <p class="hero-sub" style="font-size:15px;margin-bottom:0">Powered by proprietary computer vision and on-site Edge AI.</p>
       <div class="hero-cta">
         <a href="games.html" class="btn btn-primary">Explore the games</a>
         <a href="contact.html" class="btn btn-ghost">Partner with us</a>
