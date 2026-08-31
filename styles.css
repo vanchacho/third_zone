@@ -781,6 +781,57 @@ a.game{cursor:pointer;color:inherit}
 .rpi-name{left:100px;top:158px;font-size:9px;opacity:.5;color:#dff3e6}
 .rpi-sub{left:100px;top:172px;font-size:6.5px;opacity:.38;color:#dff3e6}
 
+
+/* ===== Raspberry Pi 4 — extra detail ===== */
+
+/* metal heat spreader on the BCM2711 */
+.soclid .p-top{
+  background:linear-gradient(148deg,#f2f5f8,#c3cbd2 38%,#8f979e 70%,#b9c1c8);
+  border-radius:2px;box-shadow:inset 0 1.5px 0 rgba(255,255,255,.9), inset 0 -1px 0 rgba(0,0,0,.3);
+}
+.soclid .p-wall{background:linear-gradient(#d7dee3,#79818a)}
+
+/* plated mounting hole */
+.mhole .p-top{
+  background:radial-gradient(circle,#05070a 0 3.4px,#c9a44e 3.4px 5.2px,#8a6f34 5.2px 6.2px,transparent 6.4px);
+  border-radius:50%;
+}
+.mhole .p-wall{background:transparent}
+
+/* exposed test pad */
+.tp .p-top{
+  background:radial-gradient(circle,#e6d4a0 0 2.4px,#b3923f 2.4px 3.2px,transparent 3.4px);
+  border-radius:50%;
+}
+.tp .p-wall{background:transparent}
+
+.soc-l.xs{font-size:6px;letter-spacing:.06em;color:#98a0a7}
+
+/* Raspberry Pi logo — white silkscreen */
+.rpi-logo{
+  left:44px;top:186px;width:26px;height:33px;opacity:.9;
+}
+.rpi-logo svg{width:100%;height:100%;display:block}
+.rpi-logo svg path,.rpi-logo svg circle{fill:#f2f7f4}
+
+/* board lettering */
+.rpi-name{left:78px;top:190px;font-size:8.5px;opacity:.62;color:#e6f5ec;letter-spacing:.05em}
+.rpi-sub{left:78px;top:203px;font-size:6px;opacity:.42;color:#e6f5ec;letter-spacing:.05em}
+.rpi-j8{left:44px;top:14px;font-size:6.5px;opacity:.55;color:#e6f5ec}
+.rpi-lbl{font-size:5.6px;letter-spacing:.09em;opacity:.44;color:#e6f5ec}
+.rpi-lbl.l1{left:34px;top:48px}
+.rpi-lbl.l2{left:30px;top:84px}
+.rpi-lbl.l3{left:30px;top:116px}
+.rpi-lbl.f1{left:44px;top:162px}
+.rpi-lbl.f2{left:200px;top:168px}
+.rpi-lbl.d1{left:4px;top:188px}
+.rpi-lbl.d2{left:18px;top:188px}
+.rpi-lbl.sd{left:122px;top:188px;font-size:6px;opacity:.45}
+
+/* Pi antenna trace */
+.pcb.rpi .ant .p-top{
+  background:repeating-linear-gradient(0deg,#d9b45e 0 3px,transparent 3px 7px);opacity:.9}
+
 /* ===================== NPU accelerator parts ===================== */
 .hs-base .p-top{
   background:linear-gradient(150deg,#cfd6dc,#98a1a9 45%,#6f777e 78%,#aab2b9);
