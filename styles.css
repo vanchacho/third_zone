@@ -120,7 +120,7 @@ h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.05;letter-spac
 .hud-top{display:flex;justify-content:space-between;align-items:center;font-size:11px;letter-spacing:.12em;color:var(--green);margin-bottom:10px}
 .hud-live{display:flex;align-items:center;gap:7px}
 .hud-live .pulse{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 1.4s infinite}
-@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(46,230,122,.6)}50%{opacity:.5;box-shadow:0 0 0 6px rgba(46,230,122,0)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
 .hud-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
 .hud-stat{border-left:2px solid rgba(46,230,122,.4);padding-left:10px}
 .hud-stat .val{font-size:clamp(22px,3.4vw,30px);font-weight:700;color:#eafff2;line-height:1;letter-spacing:.02em}
@@ -408,14 +408,12 @@ a.game{cursor:pointer;color:inherit}
 .board3d::after{
   content:"";position:absolute;bottom:26px;width:360px;height:38px;border-radius:50%;
   background:radial-gradient(ellipse,rgba(46,230,122,.20),transparent 70%);
-  filter:blur(14px);pointer-events:none;
+  pointer-events:none;
 }
 .board3d-stage{transform-style:preserve-3d;will-change:transform}
 .pcb{
   position:relative;width:440px;height:220px;transform-style:preserve-3d;
-  animation:boardFloat 6s ease-in-out infinite;
 }
-@keyframes boardFloat{0%,100%{transform:translateY(-8px)}50%{transform:translateY(8px)}}
 
 /* ---- PCB substrate: matte black solder mask ---- */
 .pcb-face{
@@ -429,7 +427,7 @@ a.game{cursor:pointer;color:inherit}
     radial-gradient(120% 90% at 22% 12%,rgba(255,255,255,.055),transparent 60%),
     repeating-linear-gradient(38deg,rgba(255,255,255,.014) 0 2px,transparent 2px 5px),
     linear-gradient(152deg,#1b1c20 0%,#101114 52%,#08090b 100%);
-  box-shadow:inset 0 0 52px rgba(0,0,0,.6), inset 0 1px 0 rgba(255,255,255,.07);
+  box-shadow:inset 0 0 18px rgba(0,0,0,.5);
 }
 .pcb-back{
   transform:translateZ(-8px) rotateY(180deg);
@@ -437,7 +435,7 @@ a.game{cursor:pointer;color:inherit}
     radial-gradient(120% 90% at 78% 12%,rgba(255,255,255,.04),transparent 60%),
     repeating-linear-gradient(-38deg,rgba(255,255,255,.012) 0 2px,transparent 2px 5px),
     linear-gradient(152deg,#17181b 0%,#0c0d10 58%,#070809 100%);
-  box-shadow:inset 0 0 52px rgba(0,0,0,.6);
+  box-shadow:inset 0 0 18px rgba(0,0,0,.5);
 }
 .pcb-edge{position:absolute;left:50%;top:50%;
   background:linear-gradient(#33353a,#141518 55%,#0b0c0e)}
@@ -465,12 +463,11 @@ a.game{cursor:pointer;color:inherit}
 .p-w{width:var(--d);height:var(--h);transform:rotateY(-90deg)}
 .p-e{width:var(--d);height:var(--h);transform:translateX(var(--w)) rotateY(-90deg)}
 
-/* directional lighting so every extrusion reads solid */
-.p-wall::after{content:"";position:absolute;inset:0}
-.p-n::after{background:rgba(255,255,255,.12)}
-.p-w::after{background:rgba(255,255,255,.05)}
-.p-e::after{background:rgba(0,0,0,.28)}
-.p-s::after{background:rgba(0,0,0,.46)}
+/* directional lighting — a filter costs far less than a pseudo-element each */
+.p-n{filter:brightness(1.12)}
+.p-w{filter:brightness(1.05)}
+.p-e{filter:brightness(.72)}
+.p-s{filter:brightness(.55)}
 
 /* ---- pin headers ---- */
 .hdr .p-top{
@@ -664,10 +661,7 @@ a.game{cursor:pointer;color:inherit}
 /* --- board sizing driven by custom properties --- */
 .pcb{
   position:relative;width:var(--bw);height:var(--bh);transform-style:preserve-3d;
-  animation:boardFloat 6s ease-in-out infinite;
 }
-.pcb.rpi{animation-delay:-2s}
-.pcb.npu{animation-delay:-4s}
 .pcb-face{
   position:absolute;left:50%;top:50%;
   width:var(--bw);height:var(--bh);
@@ -697,11 +691,11 @@ a.game{cursor:pointer;color:inherit}
     radial-gradient(120% 90% at 22% 12%,rgba(255,255,255,.07),transparent 60%),
     repeating-linear-gradient(38deg,rgba(255,255,255,.02) 0 2px,transparent 2px 5px),
     linear-gradient(152deg,#1e7a49 0%,#12603a 55%,#0b4327 100%);
-  box-shadow:inset 0 0 52px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.10);
+  box-shadow:inset 0 0 18px rgba(0,0,0,.4);
 }
 .pcb.rpi .pcb-back{
   background:linear-gradient(152deg,#1a6b41 0%,#0f5433 58%,#093a22 100%);
-  box-shadow:inset 0 0 52px rgba(0,0,0,.45);
+  box-shadow:inset 0 0 18px rgba(0,0,0,.4);
 }
 .pcb.rpi .pcb-edge{background:linear-gradient(#2c9a5f,#0d4b2c 55%,#07341d)}
 .pcb.npu .pcb-front{
@@ -709,7 +703,7 @@ a.game{cursor:pointer;color:inherit}
     radial-gradient(120% 90% at 24% 10%,rgba(70,230,140,.10),transparent 60%),
     repeating-linear-gradient(38deg,rgba(255,255,255,.015) 0 2px,transparent 2px 5px),
     linear-gradient(152deg,#141a20 0%,#0c1116 55%,#070a0d 100%);
-  box-shadow:inset 0 0 52px rgba(0,0,0,.6), inset 0 1px 0 rgba(46,230,122,.12);
+  box-shadow:inset 0 0 18px rgba(0,0,0,.5);
 }
 .pcb.npu .pcb-back{background:linear-gradient(152deg,#11161b 0%,#090d11 60%,#06080a 100%)}
 
@@ -841,7 +835,6 @@ a.game{cursor:pointer;color:inherit}
   background:linear-gradient(90deg,#e9eef2,#b7bfc6 30%,#8d959c 70%,#c8cfd5);
   border-radius:1px;box-shadow:inset 0 1px 0 rgba(255,255,255,.8)}
 .fin .p-wall{background:linear-gradient(#d2d9df,#767e85)}
-.fin .p-e::after{background:rgba(0,0,0,.34)}
 .edgecon .p-top{background:linear-gradient(160deg,#2b2f34,#121517);border-radius:2px}
 .edgecon .p-wall{background:linear-gradient(#25292e,#0f1214)}
 .ec{position:absolute;left:4px;right:4px;top:5px;bottom:5px;border-radius:1px;
@@ -919,3 +912,8 @@ a.game{cursor:pointer;color:inherit}
 @media(prefers-reduced-motion:reduce){
   .steps.flow .step{opacity:1;transform:none}
 }
+
+/* ---- 3D performance ---- */
+.board-spin{will-change:transform;backface-visibility:hidden}
+.board3d.idle .cable .pulse,
+.board3d.idle .led .p-top{animation-play-state:paused}

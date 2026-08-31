@@ -129,19 +129,33 @@
   var boardStage = document.getElementById("boardStage");
   if (boardWrap && boardStage && !reduce) {
     var boardTicking = false;
+    var boardVisible = false;
+    var lastRot = null;
+
     function drawBoard() {
+      boardTicking = false;
+      if (!boardVisible) return;               // never touch the scene off-screen
       var r = boardWrap.getBoundingClientRect();
       var vh = window.innerHeight || document.documentElement.clientHeight;
-      // continuous: rotation tracks scroll travel and never stalls
       var travel = vh - r.top;                 // grows steadily as you scroll down
       var rotY = -20 + travel * 0.62;          // ~360° per 580px of scroll
-      // one variable drives all three boards at once
-      boardStage.style.setProperty("--ry", rotY.toFixed(2) + "deg");
-      boardTicking = false;
+      // skip sub-degree updates: a repaint of this scene is expensive
+      if (lastRot !== null && Math.abs(rotY - lastRot) < 0.6) return;
+      lastRot = rotY;
+      boardStage.style.setProperty("--ry", rotY.toFixed(1) + "deg");
     }
     function onScrollBoard() {
       if (!boardTicking) { boardTicking = true; requestAnimationFrame(drawBoard); }
     }
+
+    // only run — and only animate — while the rig is actually on screen
+    var vizObs = new IntersectionObserver(function (entries) {
+      boardVisible = entries[0].isIntersecting;
+      boardWrap.classList.toggle("idle", !boardVisible);
+      if (boardVisible) onScrollBoard();
+    }, { rootMargin: "120px 0px" });
+    vizObs.observe(boardWrap);
+
     window.addEventListener("scroll", onScrollBoard, { passive: true });
     window.addEventListener("resize", onScrollBoard);
     drawBoard();
