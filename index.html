@@ -56,214 +56,227 @@
     <p class="lead" style="color:var(--muted);margin-bottom:34px;max-width:640px">Every bay runs on the same stack — a wall-sized screen, computer-vision AI, and sensors that read your real move and score it live, in under a tenth of a second. It's the same platform behind every game, and it gets sharper with each one played.</p>
 
 
-    <div class="board3d reveal" id="board3d">
-      <div class="rig" id="boardStage">
-      <div class="rig-slot stage " data-stage="01" style="--s:.72">
-        <span class="stage-n">01</span>
-        <div class="board-spin">
-          <div class="pcb esp" style="--bw:440px;--bh:220px;--bt:16px">
-            <div class="pcb-face pcb-front"></div>
-            <div class="pcb-face pcb-back"></div>
-            <div class="pcb-edge e-left"></div>
-            <div class="pcb-edge e-right"></div>
-            <div class="pcb-edge e-top"></div>
-            <div class="pcb-edge e-bottom"></div>
-            <div class="side side-front">
-            <div class="part hdr" style="--x:0px;--y:6px;--z:8px;--w:440px;--h:22px;--d:10px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part hdr" style="--x:0px;--y:192px;--z:8px;--w:440px;--h:22px;--d:10px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="silk pinrow pinrow-t">3V3 GND D15 D2 D4 RX2 TX2 D5 D18 D19 GND D21 RX0 TX0</div>
-            <div class="silk pinrow pinrow-b">VIN GND D13 D12 D14 D27 D26 D25 D33 D32 D35 D34 VN VP</div>
-            <div class="part pintip" style="--x:20px;--y:12px;--z:18px;--w:7px;--h:7px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:20px;--y:198px;--z:18px;--w:7px;--h:7px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:72px;--y:12px;--z:18px;--w:7px;--h:7px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:72px;--y:198px;--z:18px;--w:7px;--h:7px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:124px;--y:12px;--z:18px;--w:7px;--h:7px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:124px;--y:198px;--z:18px;--w:7px;--h:7px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:176px;--y:12px;--z:18px;--w:7px;--h:7px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:176px;--y:198px;--z:18px;--w:7px;--h:7px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:228px;--y:12px;--z:18px;--w:7px;--h:7px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:228px;--y:198px;--z:18px;--w:7px;--h:7px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:280px;--y:12px;--z:18px;--w:7px;--h:7px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:280px;--y:198px;--z:18px;--w:7px;--h:7px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:332px;--y:12px;--z:18px;--w:7px;--h:7px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:332px;--y:198px;--z:18px;--w:7px;--h:7px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:384px;--y:12px;--z:18px;--w:7px;--h:7px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:384px;--y:198px;--z:18px;--w:7px;--h:7px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part mod" style="--x:14px;--y:36px;--z:8px;--w:230px;--h:148px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part shield" style="--x:53px;--y:40px;--z:10.6px;--w:187px;--h:140px;--d:4.4px"><div class="p-top"><span class="mod-name">ESP-32</span><span class="mod-sub">WROOM-32</span><span class="mod-wifi"></span><span class="mod-cert"></span><span class="mod-qr"></span><span class="mod-lot"></span></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part ant" style="--x:21px;--y:66px;--z:10.6px;--w:26px;--h:92px;--d:1.0px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part reg" style="--x:254px;--y:34px;--z:8px;--w:35px;--h:27px;--d:5.6px"><div class="p-top"><i class="tab"></i></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part cer" style="--x:298px;--y:35px;--z:8px;--w:11px;--h:6px;--d:3.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part cer" style="--x:314px;--y:35px;--z:8px;--w:11px;--h:6px;--d:3.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part cer" style="--x:330px;--y:35px;--z:8px;--w:11px;--h:6px;--d:3.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part res" style="--x:298px;--y:48px;--z:8px;--w:12px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part res" style="--x:315px;--y:48px;--z:8px;--w:12px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part tant" style="--x:254px;--y:72px;--z:8px;--w:35px;--h:25px;--d:7.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part led red" style="--x:300px;--y:74px;--z:8px;--w:8px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part res" style="--x:316px;--y:72px;--z:8px;--w:12px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part res" style="--x:316px;--y:84px;--z:8px;--w:12px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part ic" style="--x:254px;--y:114px;--z:8px;--w:45px;--h:43px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part sot" style="--x:310px;--y:114px;--z:8px;--w:15px;--h:12px;--d:3.6px"><div class="p-top"><i class="lg l1"></i><i class="lg l2"></i><i class="lg l3"></i></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part sot" style="--x:310px;--y:132px;--z:8px;--w:15px;--h:12px;--d:3.6px"><div class="p-top"><i class="lg l1"></i><i class="lg l2"></i><i class="lg l3"></i></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part xtal" style="--x:308px;--y:152px;--z:8px;--w:21px;--h:12px;--d:4.8px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part cer" style="--x:334px;--y:116px;--z:8px;--w:6px;--h:11px;--d:3.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part res" style="--x:254px;--y:166px;--z:8px;--w:12px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part res" style="--x:271px;--y:166px;--z:8px;--w:12px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part led blue" style="--x:306px;--y:168px;--z:8px;--w:8px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part btn" style="--x:352px;--y:43px;--z:8px;--w:30px;--h:30px;--d:7.6px"><div class="p-top"><i></i></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part btn" style="--x:352px;--y:147px;--z:8px;--w:30px;--h:30px;--d:7.6px"><div class="p-top"><i></i></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part usbc" style="--x:397px;--y:78px;--z:8px;--w:43px;--h:64px;--d:11px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="silk silk-en">EN</div>
-            <div class="silk silk-io">BOOT</div>
-            </div>
-            <div class="side side-back">
-            <div class="part solder" style="--x:0px;--y:6px;--z:8px;--w:440px;--h:22px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part solder" style="--x:0px;--y:192px;--z:8px;--w:440px;--h:22px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part pinpost" style="--x:20px;--y:14px;--z:11px;--w:7px;--h:7px;--d:17px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pinpost" style="--x:20px;--y:200px;--z:11px;--w:7px;--h:7px;--d:17px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pinpost" style="--x:124px;--y:14px;--z:11px;--w:7px;--h:7px;--d:17px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pinpost" style="--x:124px;--y:200px;--z:11px;--w:7px;--h:7px;--d:17px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pinpost" style="--x:228px;--y:14px;--z:11px;--w:7px;--h:7px;--d:17px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pinpost" style="--x:228px;--y:200px;--z:11px;--w:7px;--h:7px;--d:17px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pinpost" style="--x:332px;--y:14px;--z:11px;--w:7px;--h:7px;--d:17px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pinpost" style="--x:332px;--y:200px;--z:11px;--w:7px;--h:7px;--d:17px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part padblk" style="--x:120px;--y:66px;--z:8px;--w:120px;--h:84px;--d:0.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part res" style="--x:152px;--y:78px;--z:8px;--w:12px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part cer" style="--x:194px;--y:96px;--z:8px;--w:6px;--h:11px;--d:3.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="silk silk-b1">ESP32-DevKitC V4</div>
-            </div>
-          </div>
-        </div>
-        <div class="rig-label">SENSORS &middot; ESP32</div>
-      </div>
-      <div class="cable" data-cable="1"><span class="wire"></span><span class="wire w2"></span><i class="pulse"></i><i class="pulse d2"></i><i class="pulse d3"></i></div>
-      <div class="rig-slot stage " data-stage="02" style="--s:.84">
-        <span class="stage-n">02</span>
-        <div class="board-spin">
-          <div class="pcb rpi" style="--bw:340px;--bh:228px;--bt:14px">
-            <div class="pcb-face pcb-front"></div>
-            <div class="pcb-face pcb-back"></div>
-            <div class="pcb-edge e-left"></div>
-            <div class="pcb-edge e-right"></div>
-            <div class="pcb-edge e-top"></div>
-            <div class="pcb-edge e-bottom"></div>
-            <div class="side side-front">
-            <div class="part gpio-rail" style="--x:56px;--y:6px;--z:7px;--w:198px;--h:26px;--d:11px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="silk rpi-j8">J8</div>
-            <div class="part usbc" style="--x:0px;--y:42px;--z:7px;--w:30px;--h:22px;--d:8px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part hdmi" style="--x:0px;--y:78px;--z:7px;--w:26px;--h:20px;--d:7px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part hdmi" style="--x:0px;--y:110px;--z:7px;--w:26px;--h:20px;--d:7px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part jack" style="--x:0px;--y:146px;--z:7px;--w:26px;--h:26px;--d:10px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="silk rpi-lbl l1">PWR IN</div>
-            <div class="silk rpi-lbl l2">HDMI0</div>
-            <div class="silk rpi-lbl l3">HDMI1</div>
-            <div class="part rj45" style="--x:278px;--y:38px;--z:7px;--w:62px;--h:52px;--d:15px"><div class="p-top"><i class="rj-led a"></i><i class="rj-led b"></i><i class="rj-slot"></i></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part usba" style="--x:278px;--y:100px;--z:7px;--w:62px;--h:44px;--d:14px"><div class="p-top"><i class="ua u1 blue"></i><i class="ua u2 blue"></i></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part usba" style="--x:278px;--y:152px;--z:7px;--w:62px;--h:44px;--d:14px"><div class="p-top"><i class="ua u1"></i><i class="ua u2"></i></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part soc" style="--x:118px;--y:88px;--z:7px;--w:60px;--h:60px;--d:4.4px"><div class="p-top"><span class="soc-l">BCM<br>2711</span></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part soclid" style="--x:126px;--y:96px;--z:7px;--w:44px;--h:44px;--d:2.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part ram" style="--x:186px;--y:96px;--z:7px;--w:38px;--h:38px;--d:3.4px"><div class="p-top"><span class="soc-l sm">LPDDR4</span></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part can" style="--x:62px;--y:88px;--z:7px;--w:44px;--h:30px;--d:4.6px"><div class="p-top"><i class="can-t"></i></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part ant" style="--x:36px;--y:44px;--z:7px;--w:16px;--h:30px;--d:0.8px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part ic" style="--x:238px;--y:104px;--z:7px;--w:26px;--h:26px;--d:3.0px"><div class="p-top"><span class="soc-l xs">VL805</span></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part ic" style="--x:238px;--y:62px;--z:7px;--w:26px;--h:26px;--d:3.0px"><div class="p-top"><span class="soc-l xs">PHY</span></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part ic" style="--x:100px;--y:158px;--z:7px;--w:24px;--h:20px;--d:3.0px"><div class="p-top"><span class="soc-l xs">PMIC</span></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part fpc" style="--x:44px;--y:170px;--z:7px;--w:44px;--h:12px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part fpc" style="--x:200px;--y:176px;--z:7px;--w:44px;--h:12px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="silk rpi-lbl f1">DISPLAY</div>
-            <div class="silk rpi-lbl f2">CAMERA</div>
-            <div class="part gpio-rail poe" style="--x:260px;--y:10px;--z:7px;--w:20px;--h:20px;--d:9px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part mhole" style="--x:14px;--y:16px;--z:7px;--w:13px;--h:13px;--d:0.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part mhole" style="--x:246px;--y:16px;--z:7px;--w:13px;--h:13px;--d:0.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part mhole" style="--x:14px;--y:210px;--z:7px;--w:13px;--h:13px;--d:0.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part mhole" style="--x:246px;--y:210px;--z:7px;--w:13px;--h:13px;--d:0.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part cer" style="--x:100px;--y:76px;--z:7px;--w:10px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part cer" style="--x:128px;--y:76px;--z:7px;--w:10px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part cer" style="--x:200px;--y:76px;--z:7px;--w:10px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part cer" style="--x:186px;--y:142px;--z:7px;--w:10px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part cer" style="--x:152px;--y:158px;--z:7px;--w:10px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part res" style="--x:142px;--y:76px;--z:7px;--w:11px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part res" style="--x:214px;--y:76px;--z:7px;--w:11px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part res" style="--x:214px;--y:158px;--z:7px;--w:11px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part tant" style="--x:62px;--y:128px;--z:7px;--w:30px;--h:20px;--d:6.5px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part led red" style="--x:6px;--y:196px;--z:7px;--w:8px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part led green" style="--x:20px;--y:196px;--z:7px;--w:8px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="silk rpi-lbl d1">PWR</div>
-            <div class="silk rpi-lbl d2">ACT</div>
-            <div class="silk rpi-logo"><svg viewBox="0 0 40 50" aria-hidden="true"><path d="M19.4 17.5C14 13.6 10.2 6.6 10.8 0.8c5.4 2.4 9.2 9.4 8.6 16.7z"/><path d="M20.6 17.5c5.4-3.9 9.2-10.9 8.6-16.7-5.4 2.4-9.2 9.4-8.6 16.7z"/><circle cx="20" cy="20.5" r="5.1"/><circle cx="13.2" cy="24.4" r="5.1"/><circle cx="26.8" cy="24.4" r="5.1"/><circle cx="8.6" cy="31" r="5.1"/><circle cx="20" cy="29.6" r="5.1"/><circle cx="31.4" cy="31" r="5.1"/><circle cx="13.2" cy="37.6" r="5.1"/><circle cx="26.8" cy="37.6" r="5.1"/><circle cx="20" cy="43.6" r="5.1"/></svg></div>
-            <div class="silk rpi-name">Raspberry Pi 4 Model B</div>
-            <div class="silk rpi-sub">&copy; Raspberry Pi Ltd 2019</div>
-            </div>
-            <div class="side side-back">
-            <div class="part sdslot" style="--x:118px;--y:196px;--z:7px;--w:60px;--h:32px;--d:7px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="silk rpi-lbl sd">microSD</div>
-            <div class="part padblk" style="--x:70px;--y:56px;--z:7px;--w:200px;--h:120px;--d:0.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part res" style="--x:96px;--y:184px;--z:7px;--w:11px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part res" style="--x:196px;--y:184px;--z:7px;--w:11px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part ic" style="--x:200px;--y:96px;--z:7px;--w:30px;--h:26px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="silk silk-b1">RPi 4B</div>
+    <div class="tech-split">
+      <div class="board3d reveal" id="board3d">
+        <div class="rig" id="boardStage">
+        <div class="rig-slot stage " data-stage="01" style="--s:.72">
+          <span class="stage-n">01</span>
+          <div class="board-spin">
+            <div class="pcb esp" style="--bw:440px;--bh:220px;--bt:16px">
+              <div class="pcb-face pcb-front"></div>
+              <div class="pcb-face pcb-back"></div>
+              <div class="pcb-edge e-left"></div>
+              <div class="pcb-edge e-right"></div>
+              <div class="pcb-edge e-top"></div>
+              <div class="pcb-edge e-bottom"></div>
+              <div class="side side-front">
+              <div class="part hdr" style="--x:0px;--y:6px;--z:8px;--w:440px;--h:22px;--d:10px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part hdr" style="--x:0px;--y:192px;--z:8px;--w:440px;--h:22px;--d:10px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="silk pinrow pinrow-t">3V3 GND D15 D2 D4 RX2 TX2 D5 D18 D19 GND D21 RX0 TX0</div>
+              <div class="silk pinrow pinrow-b">VIN GND D13 D12 D14 D27 D26 D25 D33 D32 D35 D34 VN VP</div>
+              <div class="part pintip" style="--x:20px;--y:12px;--z:18px;--w:7px;--h:7px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part pintip" style="--x:20px;--y:198px;--z:18px;--w:7px;--h:7px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part pintip" style="--x:72px;--y:12px;--z:18px;--w:7px;--h:7px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part pintip" style="--x:72px;--y:198px;--z:18px;--w:7px;--h:7px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part pintip" style="--x:124px;--y:12px;--z:18px;--w:7px;--h:7px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part pintip" style="--x:124px;--y:198px;--z:18px;--w:7px;--h:7px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part pintip" style="--x:176px;--y:12px;--z:18px;--w:7px;--h:7px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part pintip" style="--x:176px;--y:198px;--z:18px;--w:7px;--h:7px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part pintip" style="--x:228px;--y:12px;--z:18px;--w:7px;--h:7px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part pintip" style="--x:228px;--y:198px;--z:18px;--w:7px;--h:7px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part pintip" style="--x:280px;--y:12px;--z:18px;--w:7px;--h:7px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part pintip" style="--x:280px;--y:198px;--z:18px;--w:7px;--h:7px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part pintip" style="--x:332px;--y:12px;--z:18px;--w:7px;--h:7px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part pintip" style="--x:332px;--y:198px;--z:18px;--w:7px;--h:7px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part pintip" style="--x:384px;--y:12px;--z:18px;--w:7px;--h:7px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part pintip" style="--x:384px;--y:198px;--z:18px;--w:7px;--h:7px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part mod" style="--x:14px;--y:36px;--z:8px;--w:230px;--h:148px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part shield" style="--x:53px;--y:40px;--z:10.6px;--w:187px;--h:140px;--d:4.4px"><div class="p-top"><span class="mod-name">ESP-32</span><span class="mod-sub">WROOM-32</span><span class="mod-wifi"></span><span class="mod-cert"></span><span class="mod-qr"></span><span class="mod-lot"></span></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part ant" style="--x:21px;--y:66px;--z:10.6px;--w:26px;--h:92px;--d:1.0px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part reg" style="--x:254px;--y:34px;--z:8px;--w:35px;--h:27px;--d:5.6px"><div class="p-top"><i class="tab"></i></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part cer" style="--x:298px;--y:35px;--z:8px;--w:11px;--h:6px;--d:3.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part cer" style="--x:314px;--y:35px;--z:8px;--w:11px;--h:6px;--d:3.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part cer" style="--x:330px;--y:35px;--z:8px;--w:11px;--h:6px;--d:3.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part res" style="--x:298px;--y:48px;--z:8px;--w:12px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part res" style="--x:315px;--y:48px;--z:8px;--w:12px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part tant" style="--x:254px;--y:72px;--z:8px;--w:35px;--h:25px;--d:7.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part led red" style="--x:300px;--y:74px;--z:8px;--w:8px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part res" style="--x:316px;--y:72px;--z:8px;--w:12px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part res" style="--x:316px;--y:84px;--z:8px;--w:12px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part ic" style="--x:254px;--y:114px;--z:8px;--w:45px;--h:43px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part sot" style="--x:310px;--y:114px;--z:8px;--w:15px;--h:12px;--d:3.6px"><div class="p-top"><i class="lg l1"></i><i class="lg l2"></i><i class="lg l3"></i></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part sot" style="--x:310px;--y:132px;--z:8px;--w:15px;--h:12px;--d:3.6px"><div class="p-top"><i class="lg l1"></i><i class="lg l2"></i><i class="lg l3"></i></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part xtal" style="--x:308px;--y:152px;--z:8px;--w:21px;--h:12px;--d:4.8px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part cer" style="--x:334px;--y:116px;--z:8px;--w:6px;--h:11px;--d:3.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part res" style="--x:254px;--y:166px;--z:8px;--w:12px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part res" style="--x:271px;--y:166px;--z:8px;--w:12px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part led blue" style="--x:306px;--y:168px;--z:8px;--w:8px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part btn" style="--x:352px;--y:43px;--z:8px;--w:30px;--h:30px;--d:7.6px"><div class="p-top"><i></i></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part btn" style="--x:352px;--y:147px;--z:8px;--w:30px;--h:30px;--d:7.6px"><div class="p-top"><i></i></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part usbc" style="--x:397px;--y:78px;--z:8px;--w:43px;--h:64px;--d:11px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="silk silk-en">EN</div>
+              <div class="silk silk-io">BOOT</div>
+              </div>
+              <div class="side side-back">
+              <div class="part solder" style="--x:0px;--y:6px;--z:8px;--w:440px;--h:22px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part solder" style="--x:0px;--y:192px;--z:8px;--w:440px;--h:22px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part pinpost" style="--x:20px;--y:14px;--z:11px;--w:7px;--h:7px;--d:17px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part pinpost" style="--x:20px;--y:200px;--z:11px;--w:7px;--h:7px;--d:17px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part pinpost" style="--x:124px;--y:14px;--z:11px;--w:7px;--h:7px;--d:17px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part pinpost" style="--x:124px;--y:200px;--z:11px;--w:7px;--h:7px;--d:17px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part pinpost" style="--x:228px;--y:14px;--z:11px;--w:7px;--h:7px;--d:17px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part pinpost" style="--x:228px;--y:200px;--z:11px;--w:7px;--h:7px;--d:17px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part pinpost" style="--x:332px;--y:14px;--z:11px;--w:7px;--h:7px;--d:17px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part pinpost" style="--x:332px;--y:200px;--z:11px;--w:7px;--h:7px;--d:17px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part padblk" style="--x:120px;--y:66px;--z:8px;--w:120px;--h:84px;--d:0.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part res" style="--x:152px;--y:78px;--z:8px;--w:12px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="part cer" style="--x:194px;--y:96px;--z:8px;--w:6px;--h:11px;--d:3.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+              <div class="silk silk-b1">ESP32-DevKitC V4</div>
+              </div>
             </div>
           </div>
+          <div class="rig-label">SENSORS &middot; ESP32</div>
         </div>
-        <div class="rig-label">EDGE COMPUTE &middot; RASPBERRY PI</div>
-      </div>
-      <div class="cable" data-cable="2"><span class="wire"></span><span class="wire w2"></span><i class="pulse"></i><i class="pulse d2"></i><i class="pulse d3"></i></div>
-      <div class="rig-slot stage s-ai" data-stage="03">
-        <span class="stage-n">03</span>
-        <div class="aicore">
-          <svg viewBox="0 0 198 160" aria-hidden="true">
-            <g class="nn-edges"><line class="nn-e" x1="30" y1="30" x2="100" y2="16" style="--d:0.00s"/><line class="nn-e" x1="30" y1="30" x2="100" y2="48" style="--d:0.22s"/><line class="nn-e" x1="30" y1="30" x2="100" y2="80" style="--d:0.44s"/><line class="nn-e" x1="30" y1="30" x2="100" y2="112" style="--d:0.66s"/><line class="nn-e" x1="30" y1="30" x2="100" y2="144" style="--d:0.88s"/><line class="nn-e" x1="30" y1="62" x2="100" y2="16" style="--d:1.10s"/><line class="nn-e" x1="30" y1="62" x2="100" y2="48" style="--d:1.32s"/><line class="nn-e" x1="30" y1="62" x2="100" y2="80" style="--d:0.00s"/><line class="nn-e" x1="30" y1="62" x2="100" y2="112" style="--d:0.22s"/><line class="nn-e" x1="30" y1="62" x2="100" y2="144" style="--d:0.44s"/><line class="nn-e" x1="30" y1="94" x2="100" y2="16" style="--d:0.66s"/><line class="nn-e" x1="30" y1="94" x2="100" y2="48" style="--d:0.88s"/><line class="nn-e" x1="30" y1="94" x2="100" y2="80" style="--d:1.10s"/><line class="nn-e" x1="30" y1="94" x2="100" y2="112" style="--d:1.32s"/><line class="nn-e" x1="30" y1="94" x2="100" y2="144" style="--d:0.00s"/><line class="nn-e" x1="30" y1="126" x2="100" y2="16" style="--d:0.22s"/><line class="nn-e" x1="30" y1="126" x2="100" y2="48" style="--d:0.44s"/><line class="nn-e" x1="30" y1="126" x2="100" y2="80" style="--d:0.66s"/><line class="nn-e" x1="30" y1="126" x2="100" y2="112" style="--d:0.88s"/><line class="nn-e" x1="30" y1="126" x2="100" y2="144" style="--d:1.10s"/><line class="nn-e" x1="100" y1="16" x2="168" y2="56" style="--d:1.32s"/><line class="nn-e" x1="100" y1="16" x2="168" y2="104" style="--d:0.00s"/><line class="nn-e" x1="100" y1="48" x2="168" y2="56" style="--d:0.22s"/><line class="nn-e" x1="100" y1="48" x2="168" y2="104" style="--d:0.44s"/><line class="nn-e" x1="100" y1="80" x2="168" y2="56" style="--d:0.66s"/><line class="nn-e" x1="100" y1="80" x2="168" y2="104" style="--d:0.88s"/><line class="nn-e" x1="100" y1="112" x2="168" y2="56" style="--d:1.10s"/><line class="nn-e" x1="100" y1="112" x2="168" y2="104" style="--d:1.32s"/><line class="nn-e" x1="100" y1="144" x2="168" y2="56" style="--d:0.00s"/><line class="nn-e" x1="100" y1="144" x2="168" y2="104" style="--d:0.22s"/></g>
-            <g class="nn-nodes"><circle class="nn-n in" cx="30" cy="30" r="7" style="--d:0.00s"/><circle class="nn-n in" cx="30" cy="62" r="7" style="--d:0.12s"/><circle class="nn-n in" cx="30" cy="94" r="7" style="--d:0.24s"/><circle class="nn-n in" cx="30" cy="126" r="7" style="--d:0.36s"/><circle class="nn-n hid" cx="100" cy="16" r="8" style="--d:0.30s"/><circle class="nn-n hid" cx="100" cy="48" r="8" style="--d:0.42s"/><circle class="nn-n hid" cx="100" cy="80" r="8" style="--d:0.54s"/><circle class="nn-n hid" cx="100" cy="112" r="8" style="--d:0.66s"/><circle class="nn-n hid" cx="100" cy="144" r="8" style="--d:0.78s"/><circle class="nn-n out" cx="168" cy="56" r="9" style="--d:0.80s"/><circle class="nn-n out" cx="168" cy="104" r="9" style="--d:0.95s"/></g>
-          </svg>
-          <div class="ai-tags"><span>POSE</span><span>SPIN</span><span>FORCE</span><span>ANGLE</span></div>
-        </div>
-        <div class="rig-label">AI MODEL &middot; SCORING</div>
-      </div>
-      <div class="cable" data-cable="3"><span class="wire"></span><span class="wire w2"></span><i class="pulse"></i><i class="pulse d2"></i><i class="pulse d3"></i></div>
-      <div class="rig-slot stage s-out" data-stage="04">
-        <span class="stage-n">04</span>
-        <div class="gscreen">
-          <div class="gs-glass"></div>
-          <div class="gs-hud">
-            <div class="gs-top">
-              <span class="gs-who"><i>AK</i>ALEX K.</span>
-              <span class="hud-live"><span class="pulse"></span>LIVE</span>
-            </div>
-
-            <div class="gs-shot">
-              <svg viewBox="0 0 300 92" aria-hidden="true">
-                <line class="gs-ground" x1="6" y1="82" x2="294" y2="82"/>
-                <path class="gs-arc" d="M14 82 Q 150 -8 282 74"/>
-                <circle class="gs-ball" cx="282" cy="74" r="5"/>
-                <g class="gs-flag">
-                  <line x1="282" y1="74" x2="282" y2="46"/>
-                  <path d="M282 46 L300 52 L282 58 Z"/>
-                </g>
-                <text class="gs-carry" x="150" y="20">CARRY 184 YDS</text>
-              </svg>
-            </div>
-
-            <div class="gs-stats">
-              <div><b>184</b><span>YDS</span><i>DISTANCE</i></div>
-              <div><b>116</b><span>MPH</span><i>SWING</i></div>
-              <div><b>94</b><span>%</span><i>ACCURACY</i></div>
-            </div>
-
-            <div class="gs-meta">
-              <div class="gs-bar"><i></i></div>
-              <span class="gs-badge">NEW PERSONAL BEST</span>
-            </div>
-
-            <div class="gs-board">
-              <div class="gs-row me"><span>1</span><b>ALEX K.</b><em>184</em></div>
-              <div class="gs-row"><span>2</span><b>NIKA G.</b><em>176</em></div>
-              <div class="gs-row"><span>3</span><b>SALOME T.</b><em>168</em></div>
+        <div class="cable" data-cable="1"><span class="wire"></span><span class="wire w2"></span><i class="pulse"></i><i class="pulse d2"></i><i class="pulse d3"></i></div>
+        <div class="rig-slot stage " data-stage="02" style="--s:.84">
+          <span class="stage-n">02</span>
+          <div class="board-spin">
+            <div class="pcb rpi" style="--bw:340px;--bh:228px;--bt:14px">
+              <div class="pcb-face pcb-front"></div>
+              <div class="pcb-face pcb-back"></div>
+              <div class="pcb-edge e-left"></div>
+              <div class="pcb-edge e-right"></div>
+              <div class="pcb-edge e-top"></div>
+              <div class="pcb-edge e-bottom"></div>
+              <div class="side side-front">
+              <div class="part gpio-rail" style="--x:56px;--y:6px;--z:7px;--w:198px;--h:26px;--d:11px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="silk rpi-j8">J8</div>
+              <div class="part usbc" style="--x:0px;--y:42px;--z:7px;--w:30px;--h:22px;--d:8px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part hdmi" style="--x:0px;--y:78px;--z:7px;--w:26px;--h:20px;--d:7px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part hdmi" style="--x:0px;--y:110px;--z:7px;--w:26px;--h:20px;--d:7px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part jack" style="--x:0px;--y:146px;--z:7px;--w:26px;--h:26px;--d:10px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="silk rpi-lbl l1">PWR IN</div>
+              <div class="silk rpi-lbl l2">HDMI0</div>
+              <div class="silk rpi-lbl l3">HDMI1</div>
+              <div class="part rj45" style="--x:278px;--y:38px;--z:7px;--w:62px;--h:52px;--d:15px"><div class="p-top"><i class="rj-led a"></i><i class="rj-led b"></i><i class="rj-slot"></i></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part usba" style="--x:278px;--y:100px;--z:7px;--w:62px;--h:44px;--d:14px"><div class="p-top"><i class="ua u1 blue"></i><i class="ua u2 blue"></i></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part usba" style="--x:278px;--y:152px;--z:7px;--w:62px;--h:44px;--d:14px"><div class="p-top"><i class="ua u1"></i><i class="ua u2"></i></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part soc" style="--x:118px;--y:88px;--z:7px;--w:60px;--h:60px;--d:4.4px"><div class="p-top"><span class="soc-l">BCM<br>2711</span></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part soclid" style="--x:126px;--y:96px;--z:7px;--w:44px;--h:44px;--d:2.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part ram" style="--x:186px;--y:96px;--z:7px;--w:38px;--h:38px;--d:3.4px"><div class="p-top"><span class="soc-l sm">LPDDR4</span></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part can" style="--x:62px;--y:88px;--z:7px;--w:44px;--h:30px;--d:4.6px"><div class="p-top"><i class="can-t"></i></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part ant" style="--x:36px;--y:44px;--z:7px;--w:16px;--h:30px;--d:0.8px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part ic" style="--x:238px;--y:104px;--z:7px;--w:26px;--h:26px;--d:3.0px"><div class="p-top"><span class="soc-l xs">VL805</span></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part ic" style="--x:238px;--y:62px;--z:7px;--w:26px;--h:26px;--d:3.0px"><div class="p-top"><span class="soc-l xs">PHY</span></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part ic" style="--x:100px;--y:158px;--z:7px;--w:24px;--h:20px;--d:3.0px"><div class="p-top"><span class="soc-l xs">PMIC</span></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part fpc" style="--x:44px;--y:170px;--z:7px;--w:44px;--h:12px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part fpc" style="--x:200px;--y:176px;--z:7px;--w:44px;--h:12px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="silk rpi-lbl f1">DISPLAY</div>
+              <div class="silk rpi-lbl f2">CAMERA</div>
+              <div class="part gpio-rail poe" style="--x:260px;--y:10px;--z:7px;--w:20px;--h:20px;--d:9px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part mhole" style="--x:14px;--y:16px;--z:7px;--w:13px;--h:13px;--d:0.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part mhole" style="--x:246px;--y:16px;--z:7px;--w:13px;--h:13px;--d:0.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part mhole" style="--x:14px;--y:210px;--z:7px;--w:13px;--h:13px;--d:0.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part mhole" style="--x:246px;--y:210px;--z:7px;--w:13px;--h:13px;--d:0.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part cer" style="--x:100px;--y:76px;--z:7px;--w:10px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part cer" style="--x:128px;--y:76px;--z:7px;--w:10px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part cer" style="--x:200px;--y:76px;--z:7px;--w:10px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part cer" style="--x:186px;--y:142px;--z:7px;--w:10px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part cer" style="--x:152px;--y:158px;--z:7px;--w:10px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part res" style="--x:142px;--y:76px;--z:7px;--w:11px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part res" style="--x:214px;--y:76px;--z:7px;--w:11px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part res" style="--x:214px;--y:158px;--z:7px;--w:11px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part tant" style="--x:62px;--y:128px;--z:7px;--w:30px;--h:20px;--d:6.5px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part led red" style="--x:6px;--y:196px;--z:7px;--w:8px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part led green" style="--x:20px;--y:196px;--z:7px;--w:8px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="silk rpi-lbl d1">PWR</div>
+              <div class="silk rpi-lbl d2">ACT</div>
+              <div class="silk rpi-logo"><svg viewBox="0 0 40 50" aria-hidden="true"><path d="M19.4 17.5C14 13.6 10.2 6.6 10.8 0.8c5.4 2.4 9.2 9.4 8.6 16.7z"/><path d="M20.6 17.5c5.4-3.9 9.2-10.9 8.6-16.7-5.4 2.4-9.2 9.4-8.6 16.7z"/><circle cx="20" cy="20.5" r="5.1"/><circle cx="13.2" cy="24.4" r="5.1"/><circle cx="26.8" cy="24.4" r="5.1"/><circle cx="8.6" cy="31" r="5.1"/><circle cx="20" cy="29.6" r="5.1"/><circle cx="31.4" cy="31" r="5.1"/><circle cx="13.2" cy="37.6" r="5.1"/><circle cx="26.8" cy="37.6" r="5.1"/><circle cx="20" cy="43.6" r="5.1"/></svg></div>
+              <div class="silk rpi-name">Raspberry Pi 4 Model B</div>
+              <div class="silk rpi-sub">&copy; Raspberry Pi Ltd 2019</div>
+              </div>
+              <div class="side side-back">
+              <div class="part sdslot" style="--x:118px;--y:196px;--z:7px;--w:60px;--h:32px;--d:7px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="silk rpi-lbl sd">microSD</div>
+              <div class="part padblk" style="--x:70px;--y:56px;--z:7px;--w:200px;--h:120px;--d:0.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part res" style="--x:96px;--y:184px;--z:7px;--w:11px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part res" style="--x:196px;--y:184px;--z:7px;--w:11px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="part ic" style="--x:200px;--y:96px;--z:7px;--w:30px;--h:26px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+              <div class="silk silk-b1">RPi 4B</div>
+              </div>
             </div>
           </div>
+          <div class="rig-label">EDGE COMPUTE &middot; RASPBERRY PI</div>
         </div>
-        <div class="rig-label">LIVE SCORE &middot; ON THE WALL</div>
+        <div class="cable" data-cable="2"><span class="wire"></span><span class="wire w2"></span><i class="pulse"></i><i class="pulse d2"></i><i class="pulse d3"></i></div>
+        <div class="rig-slot stage s-ai" data-stage="03">
+          <span class="stage-n">03</span>
+          <div class="aicore">
+            <svg viewBox="0 0 198 160" aria-hidden="true">
+              <g class="nn-edges"><line class="nn-e" x1="30" y1="30" x2="100" y2="16" style="--d:0.00s"/><line class="nn-e" x1="30" y1="30" x2="100" y2="48" style="--d:0.22s"/><line class="nn-e" x1="30" y1="30" x2="100" y2="80" style="--d:0.44s"/><line class="nn-e" x1="30" y1="30" x2="100" y2="112" style="--d:0.66s"/><line class="nn-e" x1="30" y1="30" x2="100" y2="144" style="--d:0.88s"/><line class="nn-e" x1="30" y1="62" x2="100" y2="16" style="--d:1.10s"/><line class="nn-e" x1="30" y1="62" x2="100" y2="48" style="--d:1.32s"/><line class="nn-e" x1="30" y1="62" x2="100" y2="80" style="--d:0.00s"/><line class="nn-e" x1="30" y1="62" x2="100" y2="112" style="--d:0.22s"/><line class="nn-e" x1="30" y1="62" x2="100" y2="144" style="--d:0.44s"/><line class="nn-e" x1="30" y1="94" x2="100" y2="16" style="--d:0.66s"/><line class="nn-e" x1="30" y1="94" x2="100" y2="48" style="--d:0.88s"/><line class="nn-e" x1="30" y1="94" x2="100" y2="80" style="--d:1.10s"/><line class="nn-e" x1="30" y1="94" x2="100" y2="112" style="--d:1.32s"/><line class="nn-e" x1="30" y1="94" x2="100" y2="144" style="--d:0.00s"/><line class="nn-e" x1="30" y1="126" x2="100" y2="16" style="--d:0.22s"/><line class="nn-e" x1="30" y1="126" x2="100" y2="48" style="--d:0.44s"/><line class="nn-e" x1="30" y1="126" x2="100" y2="80" style="--d:0.66s"/><line class="nn-e" x1="30" y1="126" x2="100" y2="112" style="--d:0.88s"/><line class="nn-e" x1="30" y1="126" x2="100" y2="144" style="--d:1.10s"/><line class="nn-e" x1="100" y1="16" x2="168" y2="56" style="--d:1.32s"/><line class="nn-e" x1="100" y1="16" x2="168" y2="104" style="--d:0.00s"/><line class="nn-e" x1="100" y1="48" x2="168" y2="56" style="--d:0.22s"/><line class="nn-e" x1="100" y1="48" x2="168" y2="104" style="--d:0.44s"/><line class="nn-e" x1="100" y1="80" x2="168" y2="56" style="--d:0.66s"/><line class="nn-e" x1="100" y1="80" x2="168" y2="104" style="--d:0.88s"/><line class="nn-e" x1="100" y1="112" x2="168" y2="56" style="--d:1.10s"/><line class="nn-e" x1="100" y1="112" x2="168" y2="104" style="--d:1.32s"/><line class="nn-e" x1="100" y1="144" x2="168" y2="56" style="--d:0.00s"/><line class="nn-e" x1="100" y1="144" x2="168" y2="104" style="--d:0.22s"/></g>
+              <g class="nn-nodes"><circle class="nn-n in" cx="30" cy="30" r="7" style="--d:0.00s"/><circle class="nn-n in" cx="30" cy="62" r="7" style="--d:0.12s"/><circle class="nn-n in" cx="30" cy="94" r="7" style="--d:0.24s"/><circle class="nn-n in" cx="30" cy="126" r="7" style="--d:0.36s"/><circle class="nn-n hid" cx="100" cy="16" r="8" style="--d:0.30s"/><circle class="nn-n hid" cx="100" cy="48" r="8" style="--d:0.42s"/><circle class="nn-n hid" cx="100" cy="80" r="8" style="--d:0.54s"/><circle class="nn-n hid" cx="100" cy="112" r="8" style="--d:0.66s"/><circle class="nn-n hid" cx="100" cy="144" r="8" style="--d:0.78s"/><circle class="nn-n out" cx="168" cy="56" r="9" style="--d:0.80s"/><circle class="nn-n out" cx="168" cy="104" r="9" style="--d:0.95s"/></g>
+            </svg>
+            <div class="ai-tags"><span>POSE</span><span>SPIN</span><span>FORCE</span><span>ANGLE</span></div>
+          </div>
+          <div class="rig-label">AI MODEL &middot; SCORING</div>
+        </div>
+        <div class="cable" data-cable="3"><span class="wire"></span><span class="wire w2"></span><i class="pulse"></i><i class="pulse d2"></i><i class="pulse d3"></i></div>
+        <div class="rig-slot stage s-out" data-stage="04">
+          <span class="stage-n">04</span>
+          <div class="gscreen">
+            <div class="gs-glass"></div>
+            <div class="gs-hud">
+              <div class="gs-top">
+                <span class="gs-who"><i>AK</i>ALEX K.</span>
+                <span class="hud-live"><span class="pulse"></span>LIVE</span>
+              </div>
+  
+              <div class="gs-shot">
+                <svg viewBox="0 0 300 92" aria-hidden="true">
+                  <line class="gs-ground" x1="6" y1="82" x2="294" y2="82"/>
+                  <path class="gs-arc" d="M14 82 Q 150 -8 282 74"/>
+                  <circle class="gs-ball" cx="282" cy="74" r="5"/>
+                  <g class="gs-flag">
+                    <line x1="282" y1="74" x2="282" y2="46"/>
+                    <path d="M282 46 L300 52 L282 58 Z"/>
+                  </g>
+                  <text class="gs-carry" x="150" y="20">CARRY 184 YDS</text>
+                </svg>
+              </div>
+  
+              <div class="gs-stats">
+                <div><b>184</b><span>YDS</span><i>DISTANCE</i></div>
+                <div><b>116</b><span>MPH</span><i>SWING</i></div>
+                <div><b>94</b><span>%</span><i>ACCURACY</i></div>
+              </div>
+  
+              <div class="gs-meta">
+                <div class="gs-bar"><i></i></div>
+                <span class="gs-badge">NEW PERSONAL BEST</span>
+              </div>
+  
+              <div class="gs-board">
+                <div class="gs-row me"><span>1</span><b>ALEX K.</b><em>184</em></div>
+                <div class="gs-row"><span>2</span><b>NIKA G.</b><em>176</em></div>
+                <div class="gs-row"><span>3</span><b>SALOME T.</b><em>168</em></div>
+              </div>
+            </div>
+          </div>
+          <div class="rig-label">LIVE SCORE &middot; ON THE WALL</div>
+        </div>
+        </div>
       </div>
-      </div>
+      <aside class="tech-claim reveal">
+        <span class="eyebrow">The trick</span>
+        <h3>Simple components.<br><span class="accent">Extraordinary results.</span></h3>
+        <p>The boards are off-the-shelf — anyone can buy them for pocket money. The model that turns your swing into a number on the wall is ours alone. That's the whole difference.</p>
+        <ul class="claim-list">
+          <li><b>Cheap to build.</b> Standard parts, no custom silicon, no exotic supply chain.</li>
+          <li><b>Hard to copy.</b> The models and the match data behind them are proprietary.</li>
+          <li><b>Fast to scale.</b> Every new game rides the same stack, in every venue.</li>
+        </ul>
+        <p class="claim-kicker">Ordinary hardware. <span class="accent">Uncommon software.</span></p>
+      </aside>
     </div>
 
     <div class="techstats reveal" data-countgroup>
