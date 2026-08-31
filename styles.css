@@ -494,14 +494,9 @@ a.game{cursor:pointer;color:inherit}
 .ant .p-wall{background:#8e6f2c}
 
 /* discrete parts */
-.cap .p-top{background:linear-gradient(160deg,#f5c14a,#cc9224);border-radius:2px}
-.cap .p-top::after{content:"";position:absolute;left:3px;top:3px;width:3px;height:13px;background:#7d5610}
-.cap .p-wall{background:linear-gradient(#d9a736,#9c7018)}
 .ic .p-top{background:linear-gradient(150deg,#2b2c32,#121317);border-radius:2px;
   box-shadow:inset 0 1px 0 rgba(255,255,255,.09)}
 .ic .p-wall{background:linear-gradient(#26272c,#0e0f12)}
-.smd .p-top{background:linear-gradient(#e2e6ea,#b9bfc5)}
-.smd .p-wall{background:#8f959b}
 .led .p-top{background:var(--green);border-radius:50%;box-shadow:0 0 10px var(--green);
   animation:pulse 1.6s infinite}
 .led .p-wall{background:#1c8f4c}
@@ -512,6 +507,55 @@ a.game{cursor:pointer;color:inherit}
   opacity:.7;
 }
 .padblk .p-wall{background:transparent}
+
+
+/* ===== real component families ===== */
+
+/* AMS1117-3.3 LDO regulator (SOT-223: black body + big metal tab) */
+.reg .p-top{background:linear-gradient(150deg,#2a2b30,#101114);border-radius:2px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.10)}
+.reg .p-wall{background:linear-gradient(#26272c,#0e0f12)}
+.reg .tab{position:absolute;left:2px;top:2px;width:23px;height:7px;border-radius:1px;
+  background:linear-gradient(#e3e8ec,#a8b0b7);box-shadow:0 1px 1px rgba(0,0,0,.5)}
+
+/* chip resistor — dark body, silver terminations */
+.res .p-top{
+  background:linear-gradient(90deg,#d3d8dc 0 2px,#232428 2px calc(100% - 2px),#d3d8dc calc(100% - 2px));
+  border-radius:1px;
+}
+.res .p-wall{background:#4a4d52}
+
+/* MLCC ceramic capacitor — tan body, silver terminations */
+.cer .p-top{
+  background:linear-gradient(90deg,#c9ced3 0 1.6px,#c2a571 1.6px calc(100% - 1.6px),#c9ced3 calc(100% - 1.6px));
+  border-radius:1px;
+}
+.cer .p-wall{background:#8e7a4d}
+
+/* tantalum capacitor — yellow with polarity stripe */
+.tant .p-top{background:linear-gradient(160deg,#f5c14a,#cc9224);border-radius:2px}
+.tant .p-top::after{content:"";position:absolute;left:3px;top:3px;width:3px;height:13px;background:#7d5610}
+.tant .p-wall{background:linear-gradient(#d9a736,#9c7018)}
+
+/* SOT-23 transistor — black body, three legs */
+.sot .p-top{background:linear-gradient(150deg,#2b2c32,#121317);border-radius:1.5px}
+.sot .p-wall{background:linear-gradient(#26272c,#0e0f12)}
+.sot .lg{position:absolute;width:3px;height:2px;background:#c3c9cf;border-radius:.5px}
+.sot .lg.l1{left:1px;top:-1.5px}
+.sot .lg.l2{right:1px;top:-1.5px}
+.sot .lg.l3{left:4.5px;bottom:-1.5px}
+
+/* crystal oscillator — brushed metal can */
+.xtal .p-top{background:linear-gradient(150deg,#eef2f5,#a9b1b8 55%,#7f878e);border-radius:3px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7)}
+.xtal .p-wall{background:linear-gradient(#c3cad0,#767d84)}
+
+/* LEDs */
+.led.red .p-top{background:#ff5a45;box-shadow:0 0 9px rgba(255,90,69,.85);border-radius:1.5px;animation:none}
+.led.red .p-wall{background:#8e2a1e}
+.led.blue .p-top{background:#4aa8ff;box-shadow:0 0 9px rgba(74,168,255,.8);border-radius:1.5px;
+  animation:pulse 2.4s infinite}
+.led.blue .p-wall{background:#1d4f80}
 
 /* buttons */
 .part.btn .p-top{background:linear-gradient(150deg,#2d2e34,#131418);border-radius:3px}
