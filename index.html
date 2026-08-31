@@ -58,7 +58,7 @@
 
     <div class="board3d reveal" id="board3d">
       <div class="rig" id="boardStage">
-      <div class="rig-slot stage " data-stage="01" style="--s:.46">
+      <div class="rig-slot stage " data-stage="01" style="--s:.72">
         <span class="stage-n">01</span>
         <div class="board-spin">
           <div class="pcb esp" style="--bw:440px;--bh:220px;--bt:16px">
@@ -137,7 +137,7 @@
         <div class="rig-label">SENSORS &middot; ESP32</div>
       </div>
       <div class="cable" data-cable="1"><span class="wire"></span><span class="wire w2"></span><i class="pulse"></i><i class="pulse d2"></i><i class="pulse d3"></i></div>
-      <div class="rig-slot stage " data-stage="02" style="--s:.56">
+      <div class="rig-slot stage " data-stage="02" style="--s:.84">
         <span class="stage-n">02</span>
         <div class="board-spin">
           <div class="pcb rpi" style="--bw:340px;--bh:228px;--bt:14px">
@@ -225,13 +225,40 @@
         <div class="gscreen">
           <div class="gs-glass"></div>
           <div class="gs-hud">
-            <div class="gs-top"><span>PLAYER: ALEX</span><span class="hud-live"><span class="pulse"></span>LIVE</span></div>
+            <div class="gs-top">
+              <span class="gs-who"><i>AK</i>ALEX K.</span>
+              <span class="hud-live"><span class="pulse"></span>LIVE</span>
+            </div>
+
+            <div class="gs-shot">
+              <svg viewBox="0 0 300 92" aria-hidden="true">
+                <line class="gs-ground" x1="6" y1="82" x2="294" y2="82"/>
+                <path class="gs-arc" d="M14 82 Q 150 -8 282 74"/>
+                <circle class="gs-ball" cx="282" cy="74" r="5"/>
+                <g class="gs-flag">
+                  <line x1="282" y1="74" x2="282" y2="46"/>
+                  <path d="M282 46 L300 52 L282 58 Z"/>
+                </g>
+                <text class="gs-carry" x="150" y="20">CARRY 184 YDS</text>
+              </svg>
+            </div>
+
             <div class="gs-stats">
               <div><b>184</b><span>YDS</span><i>DISTANCE</i></div>
               <div><b>116</b><span>MPH</span><i>SWING</i></div>
               <div><b>94</b><span>%</span><i>ACCURACY</i></div>
             </div>
-            <div class="gs-bar"><i></i></div>
+
+            <div class="gs-meta">
+              <div class="gs-bar"><i></i></div>
+              <span class="gs-badge">NEW PERSONAL BEST</span>
+            </div>
+
+            <div class="gs-board">
+              <div class="gs-row me"><span>1</span><b>ALEX K.</b><em>184</em></div>
+              <div class="gs-row"><span>2</span><b>NIKA G.</b><em>176</em></div>
+              <div class="gs-row"><span>3</span><b>SALOME T.</b><em>168</em></div>
+            </div>
           </div>
         </div>
         <div class="rig-label">LIVE SCORE &middot; ON THE WALL</div>
