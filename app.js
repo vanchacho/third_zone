@@ -134,6 +134,7 @@
     var visible = false;
     var lastRot = null;
     var lastLit = -1;
+    var spin = true;
 
     // how far the rig has travelled through the viewport, 0 -> 1
     function progress(r, vh) {
@@ -147,10 +148,12 @@
       var vh = window.innerHeight || document.documentElement.clientHeight;
 
       // 1. boards keep spinning with the scroll
-      var rotY = -20 + (vh - r.top) * 0.5;
-      if (lastRot === null || Math.abs(rotY - lastRot) >= 0.6) {
-        lastRot = rotY;
-        boardStage.style.setProperty("--ry", rotY.toFixed(1) + "deg");
+      if (spin) {
+        var rotY = -20 + (vh - r.top) * 0.5;
+        if (lastRot === null || Math.abs(rotY - lastRot) >= 1.4) {
+          lastRot = rotY;
+          boardStage.style.setProperty("--ry", rotY.toFixed(1) + "deg");
+        }
       }
 
       // 2. light the stages in order: sensor -> edge -> AI -> score
@@ -177,6 +180,13 @@
       boardWrap.classList.add("complete");
       boardStage.style.setProperty("--ry", "-24deg");
     } else {
+      // weak devices: keep the pipeline, drop the continuous 3D spin
+      var cores = navigator.hardwareConcurrency || 8;
+      if (cores <= 4) {
+        boardWrap.classList.add("lite");
+        boardStage.style.setProperty("--ry", "-22deg");
+      }
+      spin = cores > 4;
       var vizObs = new IntersectionObserver(function (entries) {
         visible = entries[0].isIntersecting;
         boardWrap.classList.toggle("idle", !visible);
