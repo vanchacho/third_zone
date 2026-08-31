@@ -1117,3 +1117,18 @@ a.game{cursor:pointer;color:inherit}
   .tech-split .board3d{justify-content:center}
   .tech-split .rig{margin:0 auto}
 }
+
+/* ---- social ---- */
+.social{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:34px;height:34px;border-radius:9px;flex:0 0 auto;
+  border:1px solid var(--line);color:var(--muted);
+  transition:color .2s ease,border-color .2s ease,background .2s ease,transform .15s ease;
+}
+.social svg{width:17px;height:17px;fill:currentColor;display:block}
+.social:hover{
+  color:var(--green);border-color:var(--green);
+  background:rgba(46,230,122,.08);transform:translateY(-2px);
+}
+.btn-li{display:inline-flex;align-items:center;gap:9px}
+.btn-li svg{width:16px;height:16px;fill:currentColor}
