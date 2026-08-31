@@ -401,11 +401,11 @@ a.game{cursor:pointer;color:inherit}
 
 /* ---------- 3D ESP32 DEVKIT BOARD ---------- */
 .board3d{
-  position:relative;perspective:1250px;
+  position:relative;perspective:1300px;
   display:flex;align-items:center;justify-content:center;
-  padding:44px 0 52px;
+  padding:48px 0 56px;
 }
-.board3d::after{                      /* neon floor glow */
+.board3d::after{
   content:"";position:absolute;bottom:26px;width:300px;height:34px;border-radius:50%;
   background:radial-gradient(ellipse,rgba(46,230,122,.20),transparent 70%);
   filter:blur(12px);pointer-events:none;
@@ -416,141 +416,134 @@ a.game{cursor:pointer;color:inherit}
   animation:boardFloat 6s ease-in-out infinite;
 }
 @keyframes boardFloat{0%,100%{transform:translateY(-7px)}50%{transform:translateY(7px)}}
-.pcb > *{position:absolute;left:50%;top:50%}
 
-/* matte black PCB */
+/* board substrate */
 .pcb-face{
+  position:absolute;left:50%;top:50%;
   width:340px;height:170px;margin-left:-170px;margin-top:-85px;border-radius:7px;
-  background:linear-gradient(152deg,#17171a 0%,#0d0d10 55%,#08080a 100%);
-  border:1px solid #232327;
-  box-shadow:inset 0 0 40px rgba(0,0,0,.6), 0 0 26px rgba(46,230,122,.09);
-  overflow:hidden;
+  backface-visibility:hidden;
 }
-.pcb-front{transform:translateZ(6px)}
+.pcb-front{
+  transform:translateZ(6px);
+  background:linear-gradient(152deg,#191a1d 0%,#0e0f12 55%,#08090b 100%);
+  box-shadow:inset 0 0 42px rgba(0,0,0,.55);
+}
 .pcb-back{
   transform:translateZ(-6px) rotateY(180deg);
-  background:linear-gradient(152deg,#131316 0%,#0a0a0c 60%,#070709 100%);
+  background:linear-gradient(152deg,#151619 0%,#0b0c0e 60%,#070809 100%);
+  box-shadow:inset 0 0 42px rgba(0,0,0,.55);
 }
-.pcb-back::after{                     /* solder pads on the underside */
-  content:"";position:absolute;inset:14px 10px;border-radius:4px;
-  background:
-    radial-gradient(circle at 6px 6px,#5b5f66 0 2.6px,transparent 3px) 0 0/14px 100% repeat-x,
-    radial-gradient(circle at 6px 6px,#5b5f66 0 2.6px,transparent 3px) 0 100%/14px 100% repeat-x;
-  opacity:.5;
-}
-.pcb-edge{background:linear-gradient(#26262a,#0d0d10)}
+.pcb-edge{position:absolute;left:50%;top:50%;background:linear-gradient(#2a2b2f,#0e0f11)}
 .e-left  {width:12px;height:170px;margin-left:-6px;margin-top:-85px;transform:translateX(-170px) rotateY(-90deg)}
 .e-right {width:12px;height:170px;margin-left:-6px;margin-top:-85px;transform:translateX(170px) rotateY(90deg)}
 .e-top   {width:340px;height:12px;margin-left:-170px;margin-top:-6px;transform:translateY(-85px) rotateX(90deg)}
 .e-bottom{width:340px;height:12px;margin-left:-170px;margin-top:-6px;transform:translateY(85px) rotateX(-90deg)}
 
-.pcb-front > *{position:absolute}
+/* component side containers */
+.side{position:absolute;left:50%;top:50%;width:340px;height:170px;
+  margin-left:-170px;margin-top:-85px;transform-style:preserve-3d}
+.side-back{transform:rotateY(180deg)}
 
-/* pin headers — black strip with chrome solder balls */
-.pcb-hdr{
-  left:0;width:340px;height:17px;
-  background:
-    radial-gradient(circle at 7px 8.5px,#f2f5f7 0 2.4px,#aeb6bd 2.4px 4.1px,#5c646b 4.1px 5.2px,transparent 5.6px) 0 0/14px 17px repeat-x,
-    linear-gradient(#141417,#0a0a0c);
+/* generic extruded 3D part */
+.part{
+  position:absolute;left:0;top:0;
+  width:var(--w);height:var(--h);
+  transform-style:preserve-3d;
+  transform:translate3d(var(--x),var(--y),var(--z));
 }
-.pcb-hdr.top{top:5px}
-.pcb-hdr.bot{bottom:5px}
+.p-top{position:absolute;inset:0;transform:translateZ(var(--d));backface-visibility:hidden;border-radius:1.5px}
+.p-wall{position:absolute;left:0;top:0;transform-origin:0 0;background:#111}
+.p-n{width:var(--w);height:var(--d);transform:rotateX(90deg)}
+.p-s{width:var(--w);height:var(--d);transform:translateY(var(--h)) rotateX(90deg)}
+.p-w{width:var(--d);height:var(--h);transform:rotateY(-90deg)}
+.p-e{width:var(--d);height:var(--h);transform:translateX(var(--w)) rotateY(-90deg)}
 
-/* ESP32-WROOM module */
-.pcb-mod{left:11px;top:28px;width:178px;height:114px;background:#0e0e11;border-radius:3px}
-.mod-ant{
-  position:absolute;left:5px;top:20px;width:20px;height:74px;
-  background:repeating-linear-gradient(0deg,#c9a44e 0 3px,transparent 3px 7px);
-  opacity:.85;
-}
-.mod-shield{
-  position:absolute;left:30px;top:3px;width:145px;height:108px;border-radius:3px;
+/* pin headers: black plastic bar with chrome balls on top */
+.hdr .p-top{
   background:
-    linear-gradient(158deg,#f0d489 0%,#d8b25f 26%,#b28f3f 52%,#e2c274 74%,#a8843a 100%);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.5), inset 0 -1px 0 rgba(0,0,0,.35), 0 2px 5px rgba(0,0,0,.55);
+    radial-gradient(circle at 7px 8.5px,#f4f7f9 0 2.5px,#b3bbc2 2.5px 4.2px,#596068 4.2px 5.3px,transparent 5.7px) 0 0/14px 17px repeat-x,
+    linear-gradient(#16171a,#0b0c0e);
+  border-radius:2px;
 }
-.mod-shield::before{                  /* brushed-metal sheen */
-  content:"";position:absolute;inset:0;border-radius:3px;
-  background:repeating-linear-gradient(118deg,rgba(255,255,255,.10) 0 1px,transparent 1px 5px);
+.hdr .p-wall{background:linear-gradient(#141518,#0a0b0d)}
+.hdr .p-n,.hdr .p-s{
+  background:
+    linear-gradient(90deg,rgba(165,173,181,.6) 0 5px,transparent 5px 14px) 0 0/14px 100% repeat-x,
+    linear-gradient(#141518,#0a0b0d);
 }
-.mod-name{
-  position:absolute;left:0;right:0;top:16px;text-align:center;
-  font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.06em;color:#4a3a14;
+
+/* WROOM module + gold shield */
+.mod .p-top{background:linear-gradient(150deg,#141519,#0c0d10);border-radius:2px}
+.mod .p-wall{background:#101114}
+.shield .p-top{
+  background:linear-gradient(158deg,#f4dc95 0%,#ddb964 26%,#b6923f 52%,#e7c878 74%,#ab8739 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.55), inset 0 -1px 0 rgba(0,0,0,.3);
+  border-radius:2px;overflow:hidden;
 }
-.mod-wifi{
-  position:absolute;left:12px;top:40px;width:26px;height:9px;
-  background:repeating-linear-gradient(90deg,#5c4718 0 5px,transparent 5px 8px);
-  opacity:.75;
-}
-.mod-qr{
-  position:absolute;right:12px;bottom:12px;width:26px;height:26px;
+.shield .p-wall{background:linear-gradient(#cfae5c,#8e6f2c)}
+.mod-name{position:absolute;left:0;right:0;top:15px;text-align:center;
+  font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.06em;color:#4a3a14}
+.mod-wifi{position:absolute;left:12px;top:39px;width:26px;height:9px;
+  background:repeating-linear-gradient(90deg,#5c4718 0 5px,transparent 5px 8px);opacity:.75}
+.mod-cert{position:absolute;left:12px;bottom:13px;width:52px;height:8px;
+  background:repeating-linear-gradient(90deg,#5c4718 0 7px,transparent 7px 11px);opacity:.6}
+.mod-qr{position:absolute;right:11px;bottom:11px;width:26px;height:26px;
   background:repeating-conic-gradient(#4a3a14 0% 25%,transparent 0% 50%);
-  background-size:4.4px 4.4px;opacity:.8;border:1px solid rgba(74,58,20,.6);
-}
-.mod-cert{
-  position:absolute;left:12px;bottom:14px;width:52px;height:8px;
-  background:repeating-linear-gradient(90deg,#5c4718 0 7px,transparent 7px 11px);
-  opacity:.6;
-}
+  background-size:4.4px 4.4px;opacity:.8;border:1px solid rgba(74,58,20,.55)}
+.ant .p-top{background:repeating-linear-gradient(0deg,#c9a44e 0 3px,transparent 3px 7px);opacity:.85}
+.ant .p-wall{background:#8e6f2c}
 
-/* discrete components */
-.pcb-cap{                             /* tantalum cap (yellow) */
-  left:206px;top:42px;width:27px;height:19px;border-radius:2px;
-  background:linear-gradient(160deg,#f0b93f,#c98f22);
-  box-shadow:inset 0 -2px 3px rgba(0,0,0,.35);
+/* discrete parts */
+.cap .p-top{background:linear-gradient(160deg,#f5c14a,#cc9224);border-radius:2px}
+.cap .p-top::after{content:"";position:absolute;left:3px;top:3px;width:3px;height:13px;background:#7d5610}
+.cap .p-wall{background:linear-gradient(#d9a736,#9c7018)}
+.ic .p-top{background:linear-gradient(150deg,#2b2c32,#121317);border-radius:2px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.09)}
+.ic .p-wall{background:linear-gradient(#26272c,#0e0f12)}
+.smd .p-top{background:linear-gradient(#e2e6ea,#b9bfc5)}
+.smd .p-wall{background:#8f959b}
+.led .p-top{background:var(--green);border-radius:50%;box-shadow:0 0 10px var(--green);
+  animation:pulse 1.6s infinite}
+.led .p-wall{background:#1c8f4c}
+.padblk .p-top{
+  background:
+    repeating-linear-gradient(90deg,rgba(120,128,136,.30) 0 2px,transparent 2px 8px),
+    repeating-linear-gradient(0deg,rgba(120,128,136,.22) 0 2px,transparent 2px 9px);
+  opacity:.7;
 }
-.pcb-cap::after{content:"";position:absolute;left:3px;top:3px;width:3px;height:13px;background:#7d5610}
-.pcb-ic{                              /* USB-serial QFN */
-  left:212px;top:84px;width:36px;height:34px;border-radius:2px;
-  background:linear-gradient(150deg,#26262b,#101013);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.10), 0 2px 4px rgba(0,0,0,.5);
-}
-.pcb-ic::after{
-  content:"";position:absolute;inset:-3px;
-  background:repeating-linear-gradient(90deg,#8d949b 0 1.6px,transparent 1.6px 4.4px);
-  opacity:.55;z-index:-1;
-}
-.pcb-smd{background:#d7dade;border-radius:1px;box-shadow:0 1px 2px rgba(0,0,0,.5)}
-.pcb-smd.s1{left:196px;top:70px;width:9px;height:5px}
-.pcb-smd.s2{left:196px;top:126px;width:9px;height:5px}
-.pcb-smd.s3{left:254px;top:60px;width:5px;height:9px}
-.pcb-smd.s4{left:254px;top:124px;width:5px;height:9px}
-.pcb-smd.s5{left:236px;top:66px;width:9px;height:5px}
+.padblk .p-wall{background:transparent}
 
-/* buttons + USB-C */
-.pcb-btn{
-  width:23px;height:23px;border-radius:3px;left:272px;
-  background:linear-gradient(150deg,#2a2a2f,#111114);
-  box-shadow:0 2px 4px rgba(0,0,0,.55);
+/* buttons */
+.part.btn .p-top{background:linear-gradient(150deg,#2d2e34,#131418);border-radius:3px}
+.part.btn .p-wall{background:linear-gradient(#26272c,#0f1013)}
+.part.btn i{position:absolute;left:5px;top:5px;width:13px;height:13px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#eef2f5,#949ba2);
+  box-shadow:0 1px 2px rgba(0,0,0,.5)}
+
+/* USB-C */
+.usbc .p-top{background:linear-gradient(180deg,#ebbf97,#c08a5f 45%,#9d6b45);border-radius:4px}
+.usbc .p-top::after{content:"";position:absolute;left:7px;top:13px;right:6px;height:24px;
+  border-radius:12px;background:#3a2a1e;box-shadow:inset 0 1px 2px rgba(0,0,0,.75)}
+.usbc .p-wall{background:linear-gradient(#d3a077,#8f6140)}
+
+/* back-side solder joints */
+.solder .p-top{
+  background:
+    radial-gradient(circle at 7px 8.5px,#cfd6dc 0 3.2px,#7d858d 3.2px 4.6px,transparent 5px) 0 0/14px 17px repeat-x,
+    linear-gradient(#121316,#0a0b0d);
 }
-.pcb-btn i{
-  position:absolute;left:5px;top:5px;width:13px;height:13px;border-radius:50%;
-  background:radial-gradient(circle at 35% 30%,#e6eaee,#8f979e);
-}
-.pcb-btn.en{top:33px}
-.pcb-btn.io{top:114px}
-.pcb-usbc{
-  right:-3px;top:60px;width:33px;height:50px;border-radius:5px;
-  background:linear-gradient(180deg,#e6b58d,#c08a5f 45%,#9c6a44);
-  box-shadow:inset 0 2px 4px rgba(0,0,0,.35), 0 2px 5px rgba(0,0,0,.5);
-}
-.pcb-usbc::after{
-  content:"";position:absolute;left:7px;top:12px;right:6px;height:26px;border-radius:13px;
-  background:#3a2a1e;box-shadow:inset 0 1px 2px rgba(0,0,0,.7);
-}
-.pcb-silk{
-  font-family:var(--mono);font-size:7px;letter-spacing:.06em;color:#c9ced3;opacity:.75;
-}
-.silk-en{left:270px;top:24px}
-.silk-io{left:268px;top:139px}
-.pcb-led{
-  left:200px;top:52px;width:6px;height:6px;border-radius:50%;
-  background:var(--green);box-shadow:0 0 9px var(--green);
-  animation:pulse 1.6s infinite;
-}
+.solder .p-wall{background:#0e0f12}
+
+/* silkscreen text */
+.silk{position:absolute;font-family:var(--mono);letter-spacing:.06em;color:#c8ced4;opacity:.7;
+  transform:translateZ(6.4px);backface-visibility:hidden}
+.silk-en{left:270px;top:23px;font-size:7px}
+.silk-io{left:268px;top:139px;font-size:7px}
+.silk-b1{left:100px;top:34px;font-size:9px;opacity:.5}
+.silk-b2{left:100px;top:124px;font-size:7px;opacity:.42}
 
 @media(max-width:560px){
-  .board3d{padding:24px 0 30px;transform:scale(.76)}
+  .board3d{padding:24px 0 30px;transform:scale(.74)}
 }
 @media(prefers-reduced-motion:reduce){
   .pcb{animation:none}

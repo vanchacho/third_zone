@@ -135,7 +135,7 @@
       // 0 when the board sits just below the fold, 1 once it has passed the top
       var p = (vh - r.top) / (vh + r.height);
       p = Math.max(0, Math.min(1, p));
-      var rotY = -170 + p * 340;          // most of a full turn across the scroll
+      var rotY = -20 + p * 360;           // a full 360° turn across the scroll
       var rotX = -16 + Math.sin(p * Math.PI) * 9;
       var rotZ = (p - 0.5) * 6;
       boardStage.style.transform =
