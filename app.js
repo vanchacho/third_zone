@@ -135,13 +135,8 @@
       // continuous: rotation tracks scroll travel and never stalls
       var travel = vh - r.top;                 // grows steadily as you scroll down
       var rotY = -20 + travel * 0.62;          // ~360° per 580px of scroll
-      // gentle tilt that eases while the board crosses the viewport
-      var p = Math.max(0, Math.min(1, travel / (vh + r.height)));
-      var rotX = -16 + Math.sin(p * Math.PI) * 9;
-      var rotZ = (p - 0.5) * 6;
-      boardStage.style.transform =
-        "rotateX(" + rotX.toFixed(2) + "deg) rotateY(" + rotY.toFixed(2) +
-        "deg) rotateZ(" + rotZ.toFixed(2) + "deg)";
+      // one variable drives all three boards at once
+      boardStage.style.setProperty("--ry", rotY.toFixed(2) + "deg");
       boardTicking = false;
     }
     function onScrollBoard() {
@@ -151,7 +146,7 @@
     window.addEventListener("resize", onScrollBoard);
     drawBoard();
   } else if (boardStage) {
-    boardStage.style.transform = "rotateX(-16deg) rotateY(-24deg)";
+    boardStage.style.setProperty("--ry", "-24deg");
   }
 
   /* ---- Contact form ---- */

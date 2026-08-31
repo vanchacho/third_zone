@@ -640,6 +640,224 @@ a.game{cursor:pointer;color:inherit}
   .pcb{animation:none}
 }
 
+
+/* ===================== RIG: three connected boards ===================== */
+.rig{
+  display:flex;align-items:center;justify-content:center;
+  width:100%;
+}
+.rig-slot{
+  perspective:1500px;
+  display:flex;flex-direction:column;align-items:center;gap:16px;
+  flex:0 0 auto;
+}
+.board-spin{
+  transform-style:preserve-3d;
+  transform:scale(var(--s,1)) rotateX(-14deg) rotateY(var(--ry,-20deg));
+  transform-origin:center;
+}
+.rig-label{
+  font-family:var(--mono);font-size:11px;letter-spacing:.18em;
+  color:var(--muted-2);white-space:nowrap;
+}
+
+/* --- board sizing driven by custom properties --- */
+.pcb{
+  position:relative;width:var(--bw);height:var(--bh);transform-style:preserve-3d;
+  animation:boardFloat 6s ease-in-out infinite;
+}
+.pcb.rpi{animation-delay:-2s}
+.pcb.npu{animation-delay:-4s}
+.pcb-face{
+  position:absolute;left:50%;top:50%;
+  width:var(--bw);height:var(--bh);
+  margin-left:calc(var(--bw) / -2);margin-top:calc(var(--bh) / -2);
+  border-radius:9px;backface-visibility:hidden;
+}
+.pcb-front{transform:translateZ(calc(var(--bt) / 2))}
+.pcb-back {transform:translateZ(calc(var(--bt) / -2)) rotateY(180deg)}
+.pcb-edge{position:absolute;left:50%;top:50%;
+  background:linear-gradient(#33353a,#141518 55%,#0b0c0e)}
+.e-left{width:var(--bt);height:var(--bh);margin-left:calc(var(--bt) / -2);
+  margin-top:calc(var(--bh) / -2);transform:translateX(calc(var(--bw) / -2)) rotateY(-90deg)}
+.e-right{width:var(--bt);height:var(--bh);margin-left:calc(var(--bt) / -2);
+  margin-top:calc(var(--bh) / -2);transform:translateX(calc(var(--bw) / 2)) rotateY(90deg)}
+.e-top{width:var(--bw);height:var(--bt);margin-left:calc(var(--bw) / -2);
+  margin-top:calc(var(--bt) / -2);transform:translateY(calc(var(--bh) / -2)) rotateX(90deg)}
+.e-bottom{width:var(--bw);height:var(--bt);margin-left:calc(var(--bw) / -2);
+  margin-top:calc(var(--bt) / -2);transform:translateY(calc(var(--bh) / 2)) rotateX(-90deg)}
+.side{position:absolute;left:50%;top:50%;width:var(--bw);height:var(--bh);
+  margin-left:calc(var(--bw) / -2);margin-top:calc(var(--bh) / -2);transform-style:preserve-3d}
+.side-front .part{--zbase:calc(var(--bt) / 2)}
+.side-back{transform:rotateY(180deg)}
+
+/* --- board-specific substrate colours --- */
+.pcb.rpi .pcb-front{
+  background:
+    radial-gradient(120% 90% at 22% 12%,rgba(255,255,255,.07),transparent 60%),
+    repeating-linear-gradient(38deg,rgba(255,255,255,.02) 0 2px,transparent 2px 5px),
+    linear-gradient(152deg,#1e7a49 0%,#12603a 55%,#0b4327 100%);
+  box-shadow:inset 0 0 52px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.10);
+}
+.pcb.rpi .pcb-back{
+  background:linear-gradient(152deg,#1a6b41 0%,#0f5433 58%,#093a22 100%);
+  box-shadow:inset 0 0 52px rgba(0,0,0,.45);
+}
+.pcb.rpi .pcb-edge{background:linear-gradient(#2c9a5f,#0d4b2c 55%,#07341d)}
+.pcb.npu .pcb-front{
+  background:
+    radial-gradient(120% 90% at 24% 10%,rgba(70,230,140,.10),transparent 60%),
+    repeating-linear-gradient(38deg,rgba(255,255,255,.015) 0 2px,transparent 2px 5px),
+    linear-gradient(152deg,#141a20 0%,#0c1116 55%,#070a0d 100%);
+  box-shadow:inset 0 0 52px rgba(0,0,0,.6), inset 0 1px 0 rgba(46,230,122,.12);
+}
+.pcb.npu .pcb-back{background:linear-gradient(152deg,#11161b 0%,#090d11 60%,#06080a 100%)}
+
+/* ===================== Raspberry Pi parts ===================== */
+.gpio-rail .p-top{
+  background:
+    radial-gradient(circle at 8.5px 7px,rgba(255,255,255,.14) 0 3px,transparent 5px) 0 0/17px 13px repeat,
+    linear-gradient(#1a1b1f,#0c0d10);
+  border-radius:2px;
+}
+.gpio-rail .p-wall{background:linear-gradient(#191a1e,#0a0b0d)}
+
+.soc .p-top{
+  background:
+    radial-gradient(90% 70% at 26% 16%,rgba(255,255,255,.16),transparent 62%),
+    linear-gradient(150deg,#33353c,#0f1114);
+  border-radius:3px;display:flex;align-items:center;justify-content:center;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.16);
+}
+.soc .p-wall{background:linear-gradient(#2c2e34,#0d0e11)}
+.soc-l{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.08em;
+  color:#aeb6bd;text-align:center;line-height:1.15}
+.soc-l.sm{font-size:7px;letter-spacing:.1em;color:#9aa2a9}
+.ram .p-top{
+  background:
+    radial-gradient(90% 70% at 26% 16%,rgba(255,255,255,.12),transparent 62%),
+    linear-gradient(150deg,#2b2d33,#101215);
+  border-radius:2px;display:flex;align-items:center;justify-content:center;
+}
+.ram .p-wall{background:linear-gradient(#26282d,#0d0e11)}
+
+.can .p-top{
+  background:linear-gradient(150deg,#f2f5f7,#c0c8ce 42%,#8e969d 72%,#b9c1c7);
+  border-radius:2px;box-shadow:inset 0 1.5px 0 rgba(255,255,255,.9)}
+.can .p-wall{background:linear-gradient(#d5dce1,#79818a)}
+.can-t{position:absolute;left:6px;top:6px;right:6px;height:2px;background:rgba(0,0,0,.18)}
+
+.rj45 .p-top{
+  background:linear-gradient(160deg,#eef2f5,#b3bcc3 40%,#7f878f 78%,#a7aeb5);
+  border-radius:3px;box-shadow:inset 0 1.5px 0 rgba(255,255,255,.85)}
+.rj45 .p-wall{background:linear-gradient(#cdd5db,#6e767e)}
+.rj-slot{position:absolute;left:12px;right:12px;top:16px;bottom:8px;border-radius:2px;
+  background:linear-gradient(#0e1113,#20262a);box-shadow:inset 0 3px 6px rgba(0,0,0,.9)}
+.rj-led{position:absolute;top:5px;width:7px;height:5px;border-radius:1px}
+.rj-led.a{left:9px;background:#ffb03a;box-shadow:0 0 7px rgba(255,176,58,.9)}
+.rj-led.b{right:9px;background:#3ee87f;box-shadow:0 0 7px rgba(62,232,127,.9)}
+
+.usba .p-top{
+  background:linear-gradient(160deg,#eef2f5,#b3bcc3 40%,#7f878f 78%,#a7aeb5);
+  border-radius:3px;box-shadow:inset 0 1.5px 0 rgba(255,255,255,.85)}
+.usba .p-wall{background:linear-gradient(#cdd5db,#6e767e)}
+.ua{position:absolute;left:10px;right:10px;height:12px;border-radius:1.5px;
+  background:#14171a;box-shadow:inset 0 2px 4px rgba(0,0,0,.9)}
+.ua.u1{top:6px}
+.ua.u2{bottom:6px}
+.ua.blue{background:#1a3f7a;box-shadow:inset 0 2px 4px rgba(0,0,0,.8)}
+
+.hdmi .p-top{background:linear-gradient(160deg,#e8edf1,#a8b0b8 55%,#7d858c);border-radius:2px}
+.hdmi .p-wall{background:linear-gradient(#c6ced4,#6d757c)}
+.jack .p-top{background:radial-gradient(circle at 40% 35%,#3a4046,#111417);border-radius:4px}
+.jack .p-wall{background:linear-gradient(#2a2f34,#0d0f11)}
+.sdslot .p-top{background:linear-gradient(160deg,#dfe5ea,#9ea6ad 60%,#767e85);border-radius:2px}
+.sdslot .p-wall{background:linear-gradient(#c3cbd1,#6a7278)}
+.fpc .p-top{background:linear-gradient(160deg,#3b4148,#171a1d);border-radius:1.5px}
+.fpc .p-wall{background:linear-gradient(#32373d,#131518)}
+.led.green .p-top{background:radial-gradient(circle at 35% 30%,#b6ffd2,#33e07d);
+  box-shadow:0 0 12px rgba(51,224,125,.9);border-radius:2px;animation:pulse 2s infinite}
+.led.green .p-wall{background:#1a7a45}
+.rpi-name{left:100px;top:158px;font-size:9px;opacity:.5;color:#dff3e6}
+.rpi-sub{left:100px;top:172px;font-size:6.5px;opacity:.38;color:#dff3e6}
+
+/* ===================== NPU accelerator parts ===================== */
+.hs-base .p-top{
+  background:linear-gradient(150deg,#cfd6dc,#98a1a9 45%,#6f777e 78%,#aab2b9);
+  border-radius:3px;box-shadow:inset 0 1.5px 0 rgba(255,255,255,.6)}
+.hs-base .p-wall{background:linear-gradient(#b6bec5,#636b72)}
+.fin .p-top{
+  background:linear-gradient(90deg,#e9eef2,#b7bfc6 30%,#8d959c 70%,#c8cfd5);
+  border-radius:1px;box-shadow:inset 0 1px 0 rgba(255,255,255,.8)}
+.fin .p-wall{background:linear-gradient(#d2d9df,#767e85)}
+.fin .p-e::after{background:rgba(0,0,0,.34)}
+.edgecon .p-top{background:linear-gradient(160deg,#2b2f34,#121517);border-radius:2px}
+.edgecon .p-wall{background:linear-gradient(#25292e,#0f1214)}
+.ec{position:absolute;left:4px;right:4px;top:5px;bottom:5px;border-radius:1px;
+  background:repeating-linear-gradient(0deg,#d8b25a 0 3px,transparent 3px 6px);opacity:.9}
+.npu-name{left:38px;top:22px;font-size:8px;letter-spacing:.2em;opacity:.6;color:#8ff0bb}
+.npu-sub{left:38px;top:80px;font-size:6.5px;letter-spacing:.16em;opacity:.45;color:#8ff0bb}
+
+
+/* staggered spin so the three boards read as separate objects */
+.rig > .rig-slot:nth-child(3) .board-spin{
+  transform:scale(var(--s,1)) rotateX(-14deg) rotateY(calc(var(--ry,-20deg) + 24deg));
+}
+.rig > .rig-slot:nth-child(5) .board-spin{
+  transform:scale(var(--s,1)) rotateX(-14deg) rotateY(calc(var(--ry,-20deg) + 48deg));
+}
+
+/* ===================== connecting cables ===================== */
+.cable{
+  position:relative;flex:0 0 auto;width:86px;height:40px;
+  display:flex;align-items:center;
+  margin:0 -4px;
+}
+.wire{
+  position:absolute;left:0;right:0;height:2px;border-radius:2px;
+  background:linear-gradient(90deg,rgba(46,230,122,.15),rgba(46,230,122,.7),rgba(46,230,122,.15));
+  box-shadow:0 0 8px rgba(46,230,122,.35);
+  top:16px;
+}
+.wire.w2{top:23px;opacity:.5}
+.cable .pulse{
+  position:absolute;top:13px;left:0;width:8px;height:8px;border-radius:50%;
+  background:var(--green);box-shadow:0 0 12px var(--green),0 0 22px rgba(46,230,122,.6);
+  animation:dataFlow 2.2s linear infinite;
+}
+.cable .pulse.d2{animation-delay:.73s;top:20px;width:6px;height:6px;opacity:.75}
+.cable .pulse.d3{animation-delay:1.46s}
+@keyframes dataFlow{
+  0%{transform:translateX(-6px);opacity:0}
+  12%{opacity:1}
+  88%{opacity:1}
+  100%{transform:translateX(86px);opacity:0}
+}
+
+/* ===================== responsive ===================== */
+@media(max-width:1180px){ .rig{transform:scale(.9)} }
+@media(max-width:1040px){ .rig{transform:scale(.78)} }
+@media(max-width:900px){
+  .rig{flex-direction:column;transform:none;gap:0}
+  .cable{width:40px;height:78px;margin:6px 0}
+  .wire{left:18px;right:auto;top:0;bottom:0;width:2px;height:100%}
+  .wire.w2{left:25px;top:0}
+  .cable .pulse{left:15px;top:0;animation-name:dataFlowV}
+  .cable .pulse.d2{left:22px}
+  @keyframes dataFlowV{
+    0%{transform:translateY(-6px);opacity:0}
+    12%{opacity:1}88%{opacity:1}
+    100%{transform:translateY(78px);opacity:0}
+  }
+}
+@media(max-width:560px){
+  .rig-slot{--s:.5 !important}
+}
+@media(prefers-reduced-motion:reduce){
+  .pcb{animation:none}
+  .cable .pulse{animation:none;opacity:0}
+}
+
 /* ---------- PIPELINE SEQUENTIAL REVEAL ---------- */
 .steps.flow .step{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s ease}
 .steps.flow.in .step{opacity:1;transform:none}
