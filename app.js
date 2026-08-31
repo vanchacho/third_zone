@@ -124,43 +124,69 @@
     reset();
   }
 
-  /* ---- 3D board: rotates as it travels through the viewport ---- */
+  /* ---- Pipeline rig: stages light up one by one as you scroll ---- */
   var boardWrap = document.getElementById("board3d");
   var boardStage = document.getElementById("boardStage");
-  if (boardWrap && boardStage && !reduce) {
-    var boardTicking = false;
-    var boardVisible = false;
+  if (boardWrap && boardStage) {
+    var stages = boardWrap.querySelectorAll(".stage");
+    var cables = boardWrap.querySelectorAll(".cable");
+    var ticking = false;
+    var visible = false;
     var lastRot = null;
+    var lastLit = -1;
 
-    function drawBoard() {
-      boardTicking = false;
-      if (!boardVisible) return;               // never touch the scene off-screen
+    // how far the rig has travelled through the viewport, 0 -> 1
+    function progress(r, vh) {
+      return Math.max(0, Math.min(1, (vh * 0.85 - r.top) / (vh * 0.62 + r.height * 0.5)));
+    }
+
+    function draw() {
+      ticking = false;
+      if (!visible) return;
       var r = boardWrap.getBoundingClientRect();
       var vh = window.innerHeight || document.documentElement.clientHeight;
-      var travel = vh - r.top;                 // grows steadily as you scroll down
-      var rotY = -20 + travel * 0.62;          // ~360° per 580px of scroll
-      // skip sub-degree updates: a repaint of this scene is expensive
-      if (lastRot !== null && Math.abs(rotY - lastRot) < 0.6) return;
-      lastRot = rotY;
-      boardStage.style.setProperty("--ry", rotY.toFixed(1) + "deg");
-    }
-    function onScrollBoard() {
-      if (!boardTicking) { boardTicking = true; requestAnimationFrame(drawBoard); }
+
+      // 1. boards keep spinning with the scroll
+      var rotY = -20 + (vh - r.top) * 0.5;
+      if (lastRot === null || Math.abs(rotY - lastRot) >= 0.6) {
+        lastRot = rotY;
+        boardStage.style.setProperty("--ry", rotY.toFixed(1) + "deg");
+      }
+
+      // 2. light the stages in order: sensor -> edge -> AI -> score
+      var p = progress(r, vh);
+      var lit = Math.floor(p * (stages.length + 0.6));
+      if (lit === lastLit) return;
+      lastLit = lit;
+      for (var i = 0; i < stages.length; i++) {
+        stages[i].classList.toggle("on", i < lit);
+      }
+      for (var j = 0; j < cables.length; j++) {
+        cables[j].classList.toggle("on", j < lit - 1);
+      }
+      boardWrap.classList.toggle("complete", lit >= stages.length);
     }
 
-    // only run — and only animate — while the rig is actually on screen
-    var vizObs = new IntersectionObserver(function (entries) {
-      boardVisible = entries[0].isIntersecting;
-      boardWrap.classList.toggle("idle", !boardVisible);
-      if (boardVisible) onScrollBoard();
-    }, { rootMargin: "120px 0px" });
-    vizObs.observe(boardWrap);
+    function onScroll() {
+      if (!ticking) { ticking = true; requestAnimationFrame(draw); }
+    }
 
-    window.addEventListener("scroll", onScrollBoard, { passive: true });
-    window.addEventListener("resize", onScrollBoard);
-    drawBoard();
-  } else if (boardStage) {
-    boardStage.style.setProperty("--ry", "-24deg");
+    if (reduce) {
+      for (var k = 0; k < stages.length; k++) stages[k].classList.add("on");
+      for (var m = 0; m < cables.length; m++) cables[m].classList.add("on");
+      boardWrap.classList.add("complete");
+      boardStage.style.setProperty("--ry", "-24deg");
+    } else {
+      var vizObs = new IntersectionObserver(function (entries) {
+        visible = entries[0].isIntersecting;
+        boardWrap.classList.toggle("idle", !visible);
+        if (visible) onScroll();
+      }, { rootMargin: "140px 0px" });
+      vizObs.observe(boardWrap);
+      window.addEventListener("scroll", onScroll, { passive: true });
+      window.addEventListener("resize", onScroll);
+      draw();
+    }
   }
 
   /* ---- Contact form ---- */

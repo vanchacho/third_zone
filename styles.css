@@ -826,31 +826,6 @@ a.game{cursor:pointer;color:inherit}
 .pcb.rpi .ant .p-top{
   background:repeating-linear-gradient(0deg,#d9b45e 0 3px,transparent 3px 7px);opacity:.9}
 
-/* ===================== NPU accelerator parts ===================== */
-.hs-base .p-top{
-  background:linear-gradient(150deg,#cfd6dc,#98a1a9 45%,#6f777e 78%,#aab2b9);
-  border-radius:3px;box-shadow:inset 0 1.5px 0 rgba(255,255,255,.6)}
-.hs-base .p-wall{background:linear-gradient(#b6bec5,#636b72)}
-.fin .p-top{
-  background:linear-gradient(90deg,#e9eef2,#b7bfc6 30%,#8d959c 70%,#c8cfd5);
-  border-radius:1px;box-shadow:inset 0 1px 0 rgba(255,255,255,.8)}
-.fin .p-wall{background:linear-gradient(#d2d9df,#767e85)}
-.edgecon .p-top{background:linear-gradient(160deg,#2b2f34,#121517);border-radius:2px}
-.edgecon .p-wall{background:linear-gradient(#25292e,#0f1214)}
-.ec{position:absolute;left:4px;right:4px;top:5px;bottom:5px;border-radius:1px;
-  background:repeating-linear-gradient(0deg,#d8b25a 0 3px,transparent 3px 6px);opacity:.9}
-.npu-name{left:38px;top:22px;font-size:8px;letter-spacing:.2em;opacity:.6;color:#8ff0bb}
-.npu-sub{left:38px;top:80px;font-size:6.5px;letter-spacing:.16em;opacity:.45;color:#8ff0bb}
-
-
-/* staggered spin so the three boards read as separate objects */
-.rig > .rig-slot:nth-child(3) .board-spin{
-  transform:scale(var(--s,1)) rotateX(-14deg) rotateY(calc(var(--ry,-20deg) + 24deg));
-}
-.rig > .rig-slot:nth-child(5) .board-spin{
-  transform:scale(var(--s,1)) rotateX(-14deg) rotateY(calc(var(--ry,-20deg) + 48deg));
-}
-
 /* ===================== connecting cables ===================== */
 .cable{
   position:relative;flex:0 0 auto;width:86px;height:40px;
@@ -917,3 +892,152 @@ a.game{cursor:pointer;color:inherit}
 .board-spin{will-change:transform;backface-visibility:hidden}
 .board3d.idle .cable .pulse,
 .board3d.idle .led .p-top{animation-play-state:paused}
+
+/* ===================== staged pipeline ===================== */
+.rig{align-items:flex-start}
+.rig-slot{position:relative;padding-top:34px}
+
+/* step badge */
+.stage-n{
+  position:absolute;top:0;left:50%;transform:translateX(-50%);
+  font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.14em;
+  width:30px;height:30px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--line);color:var(--muted-2);background:var(--panel);
+  transition:color .45s ease,border-color .45s ease,box-shadow .45s ease,background .45s ease;
+}
+
+/* dimmed until the stage is reached */
+.stage .board-spin,.stage .aicore,.stage .gscreen{
+  filter:saturate(.15) brightness(.5);
+  opacity:.42;
+  transition:filter .7s ease,opacity .7s ease,transform .7s ease;
+}
+.stage .rig-label{color:var(--muted-2);opacity:.5;transition:color .5s ease,opacity .5s ease}
+
+/* lit */
+.stage.on .board-spin,.stage.on .aicore,.stage.on .gscreen{
+  filter:none;opacity:1;
+}
+.stage.on .rig-label{color:var(--green);opacity:1}
+.stage.on .stage-n{
+  color:#052213;background:var(--green);border-color:var(--green);
+  box-shadow:0 0 16px rgba(46,230,122,.5);
+}
+
+/* cables stay dark until the link is live */
+.cable{opacity:.25;transition:opacity .6s ease}
+.cable.on{opacity:1}
+.cable .pulse{opacity:0}
+.cable.on .pulse{opacity:1}
+
+/* ===================== stage 3 · neural network ===================== */
+.aicore{
+  position:relative;width:210px;height:172px;
+  border:1px solid var(--line);border-radius:14px;
+  background:
+    radial-gradient(120% 90% at 50% 0%,rgba(46,230,122,.10),transparent 62%),
+    linear-gradient(160deg,#101d2c,#0a1420);
+  box-shadow:inset 0 0 26px rgba(0,0,0,.5);
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+}
+.aicore svg{width:100%;height:auto;display:block;padding:6px 4px 20px}
+.nn-e{
+  stroke:rgba(46,230,122,.30);stroke-width:.8;
+  stroke-dasharray:5 9;
+}
+.stage.on .nn-e{
+  stroke:rgba(46,230,122,.55);
+  animation:nnFlow 1.5s linear infinite;
+  animation-delay:var(--d,0s);
+}
+@keyframes nnFlow{to{stroke-dashoffset:-28}}
+.nn-n{fill:#0d1a26;stroke:var(--green);stroke-width:1.6}
+.stage.on .nn-n{
+  animation:nnPulse 2.1s ease-in-out infinite;
+  animation-delay:var(--d,0s);
+}
+@keyframes nnPulse{
+  0%,100%{fill:#0d1a26}
+  50%{fill:rgba(46,230,122,.85)}
+}
+.nn-n.out{stroke-width:2.2}
+.ai-tags{
+  position:absolute;left:0;right:0;bottom:7px;
+  display:flex;justify-content:center;gap:6px;flex-wrap:wrap;
+}
+.ai-tags span{
+  font-family:var(--mono);font-size:7px;letter-spacing:.12em;
+  color:var(--muted-2);border:1px solid var(--line);border-radius:9px;
+  padding:2px 6px;transition:color .5s ease,border-color .5s ease;
+}
+.stage.on .ai-tags span{color:var(--green);border-color:rgba(46,230,122,.45)}
+
+/* ===================== stage 4 · live score screen ===================== */
+.gscreen{
+  position:relative;width:250px;height:172px;
+  border:1.5px solid var(--line);border-radius:12px;
+  background:linear-gradient(165deg,#0a1a2b,#061019);
+  box-shadow:0 18px 40px rgba(0,0,0,.55), inset 0 0 30px rgba(0,0,0,.5);
+  overflow:hidden;padding:14px;
+  display:flex;align-items:flex-end;
+}
+.stage.on .gscreen{border-color:rgba(46,230,122,.55);
+  box-shadow:0 18px 44px rgba(0,0,0,.6), 0 0 26px rgba(46,230,122,.22), inset 0 0 30px rgba(0,0,0,.45)}
+.gs-glass{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(90% 60% at 50% 0%,rgba(46,230,122,.14),transparent 62%),
+    repeating-linear-gradient(0deg,rgba(255,255,255,.028) 0 1px,transparent 1px 4px);
+  pointer-events:none;
+}
+.gs-hud{position:relative;width:100%;font-family:var(--mono)}
+.gs-top{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:8px;letter-spacing:.12em;color:var(--green);margin-bottom:10px;
+}
+.gs-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.gs-stats > div{border-left:2px solid rgba(46,230,122,.4);padding-left:7px}
+.gs-stats b{
+  font-family:var(--display);font-size:22px;color:#eafff2;line-height:1;
+  display:inline-block;
+}
+.gs-stats span{font-size:8px;color:var(--green);margin-left:2px}
+.gs-stats i{
+  display:block;font-style:normal;font-size:6.5px;letter-spacing:.16em;
+  color:var(--muted-2);margin-top:5px;
+}
+.gs-bar{
+  margin-top:12px;height:6px;border-radius:4px;
+  background:var(--panel-2);border:1px solid var(--line);overflow:hidden;
+}
+.gs-bar i{
+  display:block;height:100%;width:0;border-radius:4px;
+  background:linear-gradient(90deg,var(--green-dim),var(--green),var(--orange));
+  transition:width 1.1s cubic-bezier(.22,.8,.28,1);
+}
+.stage.on .gs-bar i{width:88%}
+
+/* ===================== responsive ===================== */
+@media(max-width:1180px){ .rig{transform:scale(.92)} }
+@media(max-width:1080px){ .rig{transform:scale(.8)} }
+@media(max-width:940px){
+  .rig{flex-direction:column;transform:none;align-items:center}
+  .rig-slot{padding-top:38px}
+  .cable{width:40px;height:70px;margin:4px 0}
+  .wire{left:18px;right:auto;top:0;bottom:0;width:2px;height:100%}
+  .wire.w2{left:25px;top:0}
+  .cable .pulse{left:15px;top:0;animation-name:dataFlowV}
+  .cable .pulse.d2{left:22px}
+}
+@keyframes dataFlowV{
+  0%{transform:translateY(-6px);opacity:0}
+  12%{opacity:1}88%{opacity:1}
+  100%{transform:translateY(70px);opacity:0}
+}
+@media(prefers-reduced-motion:reduce){
+  .stage .board-spin,.stage .aicore,.stage .gscreen{filter:none;opacity:1}
+  .stage .rig-label{opacity:1;color:var(--green)}
+  .cable{opacity:1}
+}

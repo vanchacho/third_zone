@@ -56,9 +56,10 @@
     <p class="lead" style="color:var(--muted);margin-bottom:34px;max-width:640px">Every bay runs on the same stack — a wall-sized screen, computer-vision AI, and sensors that read your real move and score it live, in under a tenth of a second. It's the same platform behind every game, and it gets sharper with each one played.</p>
 
 
-    <div class="board3d reveal" id="board3d" aria-hidden="true">
+    <div class="board3d reveal" id="board3d">
       <div class="rig" id="boardStage">
-      <div class="rig-slot" style="--s:.62">
+      <div class="rig-slot stage " data-stage="01" style="--s:.46">
+        <span class="stage-n">01</span>
         <div class="board-spin">
           <div class="pcb esp" style="--bw:440px;--bh:220px;--bt:16px">
             <div class="pcb-face pcb-front"></div>
@@ -153,10 +154,11 @@
             </div>
           </div>
         </div>
-        <div class="rig-label">ESP32 &middot; SENSORS</div>
+        <div class="rig-label">SENSORS &middot; ESP32</div>
       </div>
-      <div class="cable"><span class="wire"></span><span class="wire w2"></span><i class="pulse"></i><i class="pulse d2"></i><i class="pulse d3"></i></div>
-      <div class="rig-slot" style="--s:.78">
+      <div class="cable" data-cable="1"><span class="wire"></span><span class="wire w2"></span><i class="pulse"></i><i class="pulse d2"></i><i class="pulse d3"></i></div>
+      <div class="rig-slot stage " data-stage="02" style="--s:.56">
+        <span class="stage-n">02</span>
         <div class="board-spin">
           <div class="pcb rpi" style="--bw:340px;--bh:228px;--bt:14px">
             <div class="pcb-face pcb-front"></div>
@@ -167,50 +169,50 @@
             <div class="pcb-edge e-bottom"></div>
             <div class="side side-front">
             <div class="part gpio-rail" style="--x:56px;--y:6px;--z:7px;--w:198px;--h:26px;--d:9px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:60.0px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:60.0px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:69.8px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:69.8px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:79.7px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:79.7px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:89.5px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:89.5px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:99.4px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:99.4px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:109.2px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:109.2px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:119.1px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:119.1px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:128.9px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:128.9px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:138.8px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:138.8px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:148.6px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:148.6px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:158.5px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:158.5px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:168.3px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:168.3px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:178.2px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:178.2px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:188.0px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:188.0px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:197.9px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:197.9px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:207.8px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:207.8px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:217.6px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:217.6px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:227.4px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:227.4px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:237.3px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:237.3px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:247.2px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:247.2px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:60.0px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:60.0px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:69.8px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:69.8px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:79.7px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:79.7px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:89.5px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:89.5px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:99.4px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:99.4px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:109.2px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:109.2px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:119.1px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:119.1px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:128.9px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:128.9px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:138.8px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:138.8px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:148.6px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:148.6px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:158.5px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:158.5px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:168.3px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:168.3px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:178.2px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:178.2px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:188.0px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:188.0px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:197.9px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:197.9px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:207.8px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:207.8px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:217.6px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:217.6px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:227.4px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:227.4px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:237.3px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:237.3px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:247.2px;--y:10px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:247.2px;--y:20px;--z:16px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
             <div class="silk rpi-j8">J8</div>
             <div class="part usbc" style="--x:0px;--y:42px;--z:7px;--w:30px;--h:22px;--d:8px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part hdmi" style="--x:0px;--y:78px;--z:7px;--w:26px;--h:20px;--d:7px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part hdmi" style="--x:0px;--y:110px;--z:7px;--w:26px;--h:20px;--d:7px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+            <div class="part hdmi" style="--x:0px;--y:78px;--z:7px;--w:26px;--h:20px;--d:7px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part hdmi" style="--x:0px;--y:110px;--z:7px;--w:26px;--h:20px;--d:7px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
             <div class="part jack" style="--x:0px;--y:146px;--z:7px;--w:26px;--h:26px;--d:10px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
             <div class="silk rpi-lbl l1">PWR IN</div>
             <div class="silk rpi-lbl l2">HDMI0</div>
@@ -226,40 +228,40 @@
             <div class="part ic" style="--x:238px;--y:104px;--z:7px;--w:26px;--h:26px;--d:3.0px"><div class="p-top"><span class="soc-l xs">VL805</span></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
             <div class="part ic" style="--x:238px;--y:62px;--z:7px;--w:26px;--h:26px;--d:3.0px"><div class="p-top"><span class="soc-l xs">PHY</span></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
             <div class="part ic" style="--x:100px;--y:158px;--z:7px;--w:24px;--h:20px;--d:3.0px"><div class="p-top"><span class="soc-l xs">PMIC</span></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part fpc" style="--x:44px;--y:170px;--z:7px;--w:44px;--h:12px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part fpc" style="--x:200px;--y:176px;--z:7px;--w:44px;--h:12px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+            <div class="part fpc" style="--x:44px;--y:170px;--z:7px;--w:44px;--h:12px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part fpc" style="--x:200px;--y:176px;--z:7px;--w:44px;--h:12px;--d:4.5px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
             <div class="silk rpi-lbl f1">DISPLAY</div>
             <div class="silk rpi-lbl f2">CAMERA</div>
-            <div class="part pintip" style="--x:262px;--y:12px;--z:9px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:262px;--y:22px;--z:9px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:272px;--y:12px;--z:9px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part pintip" style="--x:272px;--y:22px;--z:9px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part mhole" style="--x:14px;--y:16px;--z:7px;--w:13px;--h:13px;--d:0.6px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part mhole" style="--x:246px;--y:16px;--z:7px;--w:13px;--h:13px;--d:0.6px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part mhole" style="--x:14px;--y:210px;--z:7px;--w:13px;--h:13px;--d:0.6px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part mhole" style="--x:246px;--y:210px;--z:7px;--w:13px;--h:13px;--d:0.6px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part cer" style="--x:100px;--y:76px;--z:7px;--w:10px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part cer" style="--x:114px;--y:76px;--z:7px;--w:10px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part cer" style="--x:128px;--y:76px;--z:7px;--w:10px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part cer" style="--x:186px;--y:76px;--z:7px;--w:10px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part cer" style="--x:200px;--y:76px;--z:7px;--w:10px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part cer" style="--x:100px;--y:132px;--z:7px;--w:10px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part cer" style="--x:186px;--y:142px;--z:7px;--w:10px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part cer" style="--x:200px;--y:142px;--z:7px;--w:10px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part cer" style="--x:152px;--y:158px;--z:7px;--w:10px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part cer" style="--x:166px;--y:158px;--z:7px;--w:10px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part res" style="--x:142px;--y:76px;--z:7px;--w:11px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part res" style="--x:156px;--y:76px;--z:7px;--w:11px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part res" style="--x:214px;--y:76px;--z:7px;--w:11px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part res" style="--x:142px;--y:158px;--z:7px;--w:11px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part res" style="--x:214px;--y:158px;--z:7px;--w:11px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part res" style="--x:228px;--y:158px;--z:7px;--w:11px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:262px;--y:12px;--z:9px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:262px;--y:22px;--z:9px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:272px;--y:12px;--z:9px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part pintip" style="--x:272px;--y:22px;--z:9px;--w:6px;--h:6px;--d:4.2px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part mhole" style="--x:14px;--y:16px;--z:7px;--w:13px;--h:13px;--d:0.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part mhole" style="--x:246px;--y:16px;--z:7px;--w:13px;--h:13px;--d:0.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part mhole" style="--x:14px;--y:210px;--z:7px;--w:13px;--h:13px;--d:0.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part mhole" style="--x:246px;--y:210px;--z:7px;--w:13px;--h:13px;--d:0.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part cer" style="--x:100px;--y:76px;--z:7px;--w:10px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part cer" style="--x:114px;--y:76px;--z:7px;--w:10px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part cer" style="--x:128px;--y:76px;--z:7px;--w:10px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part cer" style="--x:186px;--y:76px;--z:7px;--w:10px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part cer" style="--x:200px;--y:76px;--z:7px;--w:10px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part cer" style="--x:100px;--y:132px;--z:7px;--w:10px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part cer" style="--x:186px;--y:142px;--z:7px;--w:10px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part cer" style="--x:200px;--y:142px;--z:7px;--w:10px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part cer" style="--x:152px;--y:158px;--z:7px;--w:10px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part cer" style="--x:166px;--y:158px;--z:7px;--w:10px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part res" style="--x:142px;--y:76px;--z:7px;--w:11px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part res" style="--x:156px;--y:76px;--z:7px;--w:11px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part res" style="--x:214px;--y:76px;--z:7px;--w:11px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part res" style="--x:142px;--y:158px;--z:7px;--w:11px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part res" style="--x:214px;--y:158px;--z:7px;--w:11px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part res" style="--x:228px;--y:158px;--z:7px;--w:11px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
             <div class="part tant" style="--x:62px;--y:128px;--z:7px;--w:30px;--h:20px;--d:6.5px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part tp" style="--x:92px;--y:196px;--z:7px;--w:7px;--h:7px;--d:0.6px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part tp" style="--x:104px;--y:196px;--z:7px;--w:7px;--h:7px;--d:0.6px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part tp" style="--x:116px;--y:196px;--z:7px;--w:7px;--h:7px;--d:0.6px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part led red" style="--x:6px;--y:196px;--z:7px;--w:8px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part led green" style="--x:20px;--y:196px;--z:7px;--w:8px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+            <div class="part tp" style="--x:92px;--y:196px;--z:7px;--w:7px;--h:7px;--d:0.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part tp" style="--x:104px;--y:196px;--z:7px;--w:7px;--h:7px;--d:0.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part tp" style="--x:116px;--y:196px;--z:7px;--w:7px;--h:7px;--d:0.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part led red" style="--x:6px;--y:196px;--z:7px;--w:8px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part led green" style="--x:20px;--y:196px;--z:7px;--w:8px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
             <div class="silk rpi-lbl d1">PWR</div>
             <div class="silk rpi-lbl d2">ACT</div>
             <div class="silk rpi-logo"><svg viewBox="0 0 40 50" aria-hidden="true"><path d="M19.4 17.5C14 13.6 10.2 6.6 10.8 0.8c5.4 2.4 9.2 9.4 8.6 16.7z"/><path d="M20.6 17.5c5.4-3.9 9.2-10.9 8.6-16.7-5.4 2.4-9.2 9.4-8.6 16.7z"/><circle cx="20" cy="20.5" r="5.1"/><circle cx="13.2" cy="24.4" r="5.1"/><circle cx="26.8" cy="24.4" r="5.1"/><circle cx="8.6" cy="31" r="5.1"/><circle cx="20" cy="29.6" r="5.1"/><circle cx="31.4" cy="31" r="5.1"/><circle cx="13.2" cy="37.6" r="5.1"/><circle cx="26.8" cy="37.6" r="5.1"/><circle cx="20" cy="43.6" r="5.1"/></svg></div>
@@ -270,67 +272,50 @@
             <div class="part sdslot" style="--x:118px;--y:196px;--z:7px;--w:60px;--h:32px;--d:7px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
             <div class="silk rpi-lbl sd">microSD</div>
             <div class="part padblk" style="--x:70px;--y:56px;--z:7px;--w:200px;--h:120px;--d:0.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part res" style="--x:96px;--y:184px;--z:7px;--w:11px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part res" style="--x:140px;--y:184px;--z:7px;--w:11px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part res" style="--x:196px;--y:184px;--z:7px;--w:11px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part cer" style="--x:118px;--y:184px;--z:7px;--w:10px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part cer" style="--x:162px;--y:184px;--z:7px;--w:10px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+            <div class="part res" style="--x:96px;--y:184px;--z:7px;--w:11px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part res" style="--x:140px;--y:184px;--z:7px;--w:11px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part res" style="--x:196px;--y:184px;--z:7px;--w:11px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part cer" style="--x:118px;--y:184px;--z:7px;--w:10px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part cer" style="--x:162px;--y:184px;--z:7px;--w:10px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
             <div class="part ic" style="--x:200px;--y:96px;--z:7px;--w:30px;--h:26px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part mhole" style="--x:14px;--y:16px;--z:7px;--w:13px;--h:13px;--d:0.6px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part mhole" style="--x:246px;--y:16px;--z:7px;--w:13px;--h:13px;--d:0.6px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part mhole" style="--x:14px;--y:210px;--z:7px;--w:13px;--h:13px;--d:0.6px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part mhole" style="--x:246px;--y:210px;--z:7px;--w:13px;--h:13px;--d:0.6px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
+            <div class="part mhole" style="--x:14px;--y:16px;--z:7px;--w:13px;--h:13px;--d:0.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part mhole" style="--x:246px;--y:16px;--z:7px;--w:13px;--h:13px;--d:0.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part mhole" style="--x:14px;--y:210px;--z:7px;--w:13px;--h:13px;--d:0.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
+            <div class="part mhole" style="--x:246px;--y:210px;--z:7px;--w:13px;--h:13px;--d:0.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
             <div class="silk silk-b1">RPi 4B</div>
             </div>
           </div>
         </div>
-        <div class="rig-label">RASPBERRY PI &middot; EDGE</div>
+        <div class="rig-label">EDGE COMPUTE &middot; RASPBERRY PI</div>
       </div>
-      <div class="cable"><span class="wire"></span><span class="wire w2"></span><i class="pulse"></i><i class="pulse d2"></i><i class="pulse d3"></i></div>
-      <div class="rig-slot" style="--s:.88">
-        <div class="board-spin">
-          <div class="pcb npu" style="--bw:280px;--bh:190px;--bt:14px">
-            <div class="pcb-face pcb-front"></div>
-            <div class="pcb-face pcb-back"></div>
-            <div class="pcb-edge e-left"></div>
-            <div class="pcb-edge e-right"></div>
-            <div class="pcb-edge e-top"></div>
-            <div class="pcb-edge e-bottom"></div>
-            <div class="side side-front">
-            <div class="part soc" style="--x:40px;--y:96px;--z:8px;--w:66px;--h:62px;--d:4.4px"><div class="p-top"><span class="soc-l">NPU</span></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part ram" style="--x:40px;--y:40px;--z:8px;--w:40px;--h:34px;--d:3.2px"><div class="p-top"><span class="soc-l sm">HBM</span></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part ram" style="--x:88px;--y:40px;--z:8px;--w:40px;--h:34px;--d:3.2px"><div class="p-top"><span class="soc-l sm">HBM</span></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part hs-base" style="--x:140px;--y:34px;--z:8px;--w:124px;--h:124px;--d:5px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part fin" style="--x:144px;--y:38px;--z:13px;--w:116px;--h:6px;--d:26px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part fin" style="--x:144px;--y:49px;--z:13px;--w:116px;--h:6px;--d:26px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part fin" style="--x:144px;--y:60px;--z:13px;--w:116px;--h:6px;--d:26px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part fin" style="--x:144px;--y:71px;--z:13px;--w:116px;--h:6px;--d:26px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part fin" style="--x:144px;--y:82px;--z:13px;--w:116px;--h:6px;--d:26px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part fin" style="--x:144px;--y:93px;--z:13px;--w:116px;--h:6px;--d:26px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part fin" style="--x:144px;--y:104px;--z:13px;--w:116px;--h:6px;--d:26px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part fin" style="--x:144px;--y:115px;--z:13px;--w:116px;--h:6px;--d:26px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part fin" style="--x:144px;--y:126px;--z:13px;--w:116px;--h:6px;--d:26px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part fin" style="--x:144px;--y:137px;--z:13px;--w:116px;--h:6px;--d:26px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part fin" style="--x:144px;--y:148px;--z:13px;--w:116px;--h:6px;--d:26px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part edgecon" style="--x:0px;--y:66px;--z:8px;--w:24px;--h:60px;--d:6px"><div class="p-top"><i class="ec"></i></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part cer" style="--x:120px;--y:96px;--z:8px;--w:10px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part cer" style="--x:120px;--y:110px;--z:8px;--w:10px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part res" style="--x:120px;--y:124px;--z:8px;--w:11px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part reg" style="--x:40px;--y:166px;--z:8px;--w:32px;--h:18px;--d:5.0px"><div class="p-top"><i class="tab"></i></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part led green" style="--x:96px;--y:168px;--z:8px;--w:8px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part led green" style="--x:110px;--y:168px;--z:8px;--w:8px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="silk npu-name">EDGE AI ACCELERATOR</div>
-            <div class="silk npu-sub">40 TOPS · INT8</div>
+      <div class="cable" data-cable="2"><span class="wire"></span><span class="wire w2"></span><i class="pulse"></i><i class="pulse d2"></i><i class="pulse d3"></i></div>
+      <div class="rig-slot stage s-ai" data-stage="03">
+        <span class="stage-n">03</span>
+        <div class="aicore">
+          <svg viewBox="0 0 198 160" aria-hidden="true">
+            <g class="nn-edges"><line class="nn-e" x1="30" y1="30" x2="100" y2="16" style="--d:0.00s"/><line class="nn-e" x1="30" y1="30" x2="100" y2="48" style="--d:0.22s"/><line class="nn-e" x1="30" y1="30" x2="100" y2="80" style="--d:0.44s"/><line class="nn-e" x1="30" y1="30" x2="100" y2="112" style="--d:0.66s"/><line class="nn-e" x1="30" y1="30" x2="100" y2="144" style="--d:0.88s"/><line class="nn-e" x1="30" y1="62" x2="100" y2="16" style="--d:1.10s"/><line class="nn-e" x1="30" y1="62" x2="100" y2="48" style="--d:1.32s"/><line class="nn-e" x1="30" y1="62" x2="100" y2="80" style="--d:0.00s"/><line class="nn-e" x1="30" y1="62" x2="100" y2="112" style="--d:0.22s"/><line class="nn-e" x1="30" y1="62" x2="100" y2="144" style="--d:0.44s"/><line class="nn-e" x1="30" y1="94" x2="100" y2="16" style="--d:0.66s"/><line class="nn-e" x1="30" y1="94" x2="100" y2="48" style="--d:0.88s"/><line class="nn-e" x1="30" y1="94" x2="100" y2="80" style="--d:1.10s"/><line class="nn-e" x1="30" y1="94" x2="100" y2="112" style="--d:1.32s"/><line class="nn-e" x1="30" y1="94" x2="100" y2="144" style="--d:0.00s"/><line class="nn-e" x1="30" y1="126" x2="100" y2="16" style="--d:0.22s"/><line class="nn-e" x1="30" y1="126" x2="100" y2="48" style="--d:0.44s"/><line class="nn-e" x1="30" y1="126" x2="100" y2="80" style="--d:0.66s"/><line class="nn-e" x1="30" y1="126" x2="100" y2="112" style="--d:0.88s"/><line class="nn-e" x1="30" y1="126" x2="100" y2="144" style="--d:1.10s"/><line class="nn-e" x1="100" y1="16" x2="168" y2="56" style="--d:1.32s"/><line class="nn-e" x1="100" y1="16" x2="168" y2="104" style="--d:0.00s"/><line class="nn-e" x1="100" y1="48" x2="168" y2="56" style="--d:0.22s"/><line class="nn-e" x1="100" y1="48" x2="168" y2="104" style="--d:0.44s"/><line class="nn-e" x1="100" y1="80" x2="168" y2="56" style="--d:0.66s"/><line class="nn-e" x1="100" y1="80" x2="168" y2="104" style="--d:0.88s"/><line class="nn-e" x1="100" y1="112" x2="168" y2="56" style="--d:1.10s"/><line class="nn-e" x1="100" y1="112" x2="168" y2="104" style="--d:1.32s"/><line class="nn-e" x1="100" y1="144" x2="168" y2="56" style="--d:0.00s"/><line class="nn-e" x1="100" y1="144" x2="168" y2="104" style="--d:0.22s"/></g>
+            <g class="nn-nodes"><circle class="nn-n in" cx="30" cy="30" r="7" style="--d:0.00s"/><circle class="nn-n in" cx="30" cy="62" r="7" style="--d:0.12s"/><circle class="nn-n in" cx="30" cy="94" r="7" style="--d:0.24s"/><circle class="nn-n in" cx="30" cy="126" r="7" style="--d:0.36s"/><circle class="nn-n hid" cx="100" cy="16" r="8" style="--d:0.30s"/><circle class="nn-n hid" cx="100" cy="48" r="8" style="--d:0.42s"/><circle class="nn-n hid" cx="100" cy="80" r="8" style="--d:0.54s"/><circle class="nn-n hid" cx="100" cy="112" r="8" style="--d:0.66s"/><circle class="nn-n hid" cx="100" cy="144" r="8" style="--d:0.78s"/><circle class="nn-n out" cx="168" cy="56" r="9" style="--d:0.80s"/><circle class="nn-n out" cx="168" cy="104" r="9" style="--d:0.95s"/></g>
+          </svg>
+          <div class="ai-tags"><span>POSE</span><span>SPIN</span><span>FORCE</span><span>ANGLE</span></div>
+        </div>
+        <div class="rig-label">AI MODEL &middot; SCORING</div>
+      </div>
+      <div class="cable" data-cable="3"><span class="wire"></span><span class="wire w2"></span><i class="pulse"></i><i class="pulse d2"></i><i class="pulse d3"></i></div>
+      <div class="rig-slot stage s-out" data-stage="04">
+        <span class="stage-n">04</span>
+        <div class="gscreen">
+          <div class="gs-glass"></div>
+          <div class="gs-hud">
+            <div class="gs-top"><span>PLAYER: ALEX</span><span class="hud-live"><span class="pulse"></span>LIVE</span></div>
+            <div class="gs-stats">
+              <div><b>184</b><span>YDS</span><i>DISTANCE</i></div>
+              <div><b>116</b><span>MPH</span><i>SWING</i></div>
+              <div><b>94</b><span>%</span><i>ACCURACY</i></div>
             </div>
-            <div class="side side-back">
-            <div class="part padblk" style="--x:30px;--y:50px;--z:8px;--w:180px;--h:100px;--d:0.6px"><div class="p-top"></div><div class="p-wall p-n"></div><div class="p-wall p-s"></div><div class="p-wall p-w"></div><div class="p-wall p-e"></div></div>
-            <div class="part res" style="--x:60px;--y:166px;--z:8px;--w:11px;--h:6px;--d:2.6px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="part cer" style="--x:100px;--y:166px;--z:8px;--w:10px;--h:6px;--d:3.0px"><div class="p-top"></div><div class="p-wall p-s"></div><div class="p-wall p-e"></div></div>
-            <div class="silk silk-b1">TZ-NPU-01</div>
-            </div>
+            <div class="gs-bar"><i></i></div>
           </div>
         </div>
-        <div class="rig-label">NPU &middot; INFERENCE</div>
+        <div class="rig-label">LIVE SCORE &middot; ON THE WALL</div>
       </div>
       </div>
     </div>
