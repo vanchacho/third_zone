@@ -401,50 +401,57 @@ a.game{cursor:pointer;color:inherit}
 
 /* ---------- 3D ESP32 DEVKIT BOARD ---------- */
 .board3d{
-  position:relative;perspective:1300px;
+  position:relative;perspective:1500px;
   display:flex;align-items:center;justify-content:center;
-  padding:48px 0 56px;
+  padding:52px 0 60px;
 }
 .board3d::after{
-  content:"";position:absolute;bottom:26px;width:300px;height:34px;border-radius:50%;
+  content:"";position:absolute;bottom:26px;width:360px;height:38px;border-radius:50%;
   background:radial-gradient(ellipse,rgba(46,230,122,.20),transparent 70%);
-  filter:blur(12px);pointer-events:none;
+  filter:blur(14px);pointer-events:none;
 }
 .board3d-stage{transform-style:preserve-3d;will-change:transform}
 .pcb{
-  position:relative;width:340px;height:170px;transform-style:preserve-3d;
+  position:relative;width:440px;height:220px;transform-style:preserve-3d;
   animation:boardFloat 6s ease-in-out infinite;
 }
-@keyframes boardFloat{0%,100%{transform:translateY(-7px)}50%{transform:translateY(7px)}}
+@keyframes boardFloat{0%,100%{transform:translateY(-8px)}50%{transform:translateY(8px)}}
 
-/* board substrate */
+/* ---- PCB substrate: matte black solder mask ---- */
 .pcb-face{
   position:absolute;left:50%;top:50%;
-  width:340px;height:170px;margin-left:-170px;margin-top:-85px;border-radius:7px;
+  width:440px;height:220px;margin-left:-220px;margin-top:-110px;border-radius:9px;
   backface-visibility:hidden;
 }
 .pcb-front{
-  transform:translateZ(6px);
-  background:linear-gradient(152deg,#191a1d 0%,#0e0f12 55%,#08090b 100%);
-  box-shadow:inset 0 0 42px rgba(0,0,0,.55);
+  transform:translateZ(8px);
+  background:
+    radial-gradient(120% 90% at 22% 12%,rgba(255,255,255,.055),transparent 60%),
+    repeating-linear-gradient(38deg,rgba(255,255,255,.014) 0 2px,transparent 2px 5px),
+    linear-gradient(152deg,#1b1c20 0%,#101114 52%,#08090b 100%);
+  box-shadow:inset 0 0 52px rgba(0,0,0,.6), inset 0 1px 0 rgba(255,255,255,.07);
 }
 .pcb-back{
-  transform:translateZ(-6px) rotateY(180deg);
-  background:linear-gradient(152deg,#151619 0%,#0b0c0e 60%,#070809 100%);
-  box-shadow:inset 0 0 42px rgba(0,0,0,.55);
+  transform:translateZ(-8px) rotateY(180deg);
+  background:
+    radial-gradient(120% 90% at 78% 12%,rgba(255,255,255,.04),transparent 60%),
+    repeating-linear-gradient(-38deg,rgba(255,255,255,.012) 0 2px,transparent 2px 5px),
+    linear-gradient(152deg,#17181b 0%,#0c0d10 58%,#070809 100%);
+  box-shadow:inset 0 0 52px rgba(0,0,0,.6);
 }
-.pcb-edge{position:absolute;left:50%;top:50%;background:linear-gradient(#2a2b2f,#0e0f11)}
-.e-left  {width:12px;height:170px;margin-left:-6px;margin-top:-85px;transform:translateX(-170px) rotateY(-90deg)}
-.e-right {width:12px;height:170px;margin-left:-6px;margin-top:-85px;transform:translateX(170px) rotateY(90deg)}
-.e-top   {width:340px;height:12px;margin-left:-170px;margin-top:-6px;transform:translateY(-85px) rotateX(90deg)}
-.e-bottom{width:340px;height:12px;margin-left:-170px;margin-top:-6px;transform:translateY(85px) rotateX(-90deg)}
+.pcb-edge{position:absolute;left:50%;top:50%;
+  background:linear-gradient(#33353a,#141518 55%,#0b0c0e)}
+.e-left  {width:16px;height:220px;margin-left:-8px;margin-top:-110px;transform:translateX(-220px) rotateY(-90deg)}
+.e-right {width:16px;height:220px;margin-left:-8px;margin-top:-110px;transform:translateX(220px) rotateY(90deg)}
+.e-top   {width:440px;height:16px;margin-left:-220px;margin-top:-8px;transform:translateY(-110px) rotateX(90deg)}
+.e-bottom{width:440px;height:16px;margin-left:-220px;margin-top:-8px;transform:translateY(110px) rotateX(-90deg)}
 
-/* component side containers */
-.side{position:absolute;left:50%;top:50%;width:340px;height:170px;
-  margin-left:-170px;margin-top:-85px;transform-style:preserve-3d}
+/* ---- side containers ---- */
+.side{position:absolute;left:50%;top:50%;width:440px;height:220px;
+  margin-left:-220px;margin-top:-110px;transform-style:preserve-3d}
 .side-back{transform:rotateY(180deg)}
 
-/* generic extruded 3D part */
+/* ---- generic extruded part ---- */
 .part{
   position:absolute;left:0;top:0;
   width:var(--w);height:var(--h);
@@ -452,167 +459,182 @@ a.game{cursor:pointer;color:inherit}
   transform:translate3d(var(--x),var(--y),var(--z));
 }
 .p-top{position:absolute;inset:0;transform:translateZ(var(--d));backface-visibility:hidden;border-radius:1.5px}
-.p-wall{position:absolute;left:0;top:0;transform-origin:0 0;background:#111}
+.p-wall{position:absolute;left:0;top:0;transform-origin:0 0;background:#121316}
 .p-n{width:var(--w);height:var(--d);transform:rotateX(90deg)}
 .p-s{width:var(--w);height:var(--d);transform:translateY(var(--h)) rotateX(90deg)}
 .p-w{width:var(--d);height:var(--h);transform:rotateY(-90deg)}
 .p-e{width:var(--d);height:var(--h);transform:translateX(var(--w)) rotateY(-90deg)}
 
-/* pin headers: black plastic bar with chrome balls on top */
+/* directional lighting so every extrusion reads solid */
+.p-wall::after{content:"";position:absolute;inset:0}
+.p-n::after{background:rgba(255,255,255,.12)}
+.p-w::after{background:rgba(255,255,255,.05)}
+.p-e::after{background:rgba(0,0,0,.28)}
+.p-s::after{background:rgba(0,0,0,.46)}
+
+/* ---- pin headers ---- */
 .hdr .p-top{
   background:
-    radial-gradient(circle at 7px 8.5px,#f4f7f9 0 2.5px,#b3bbc2 2.5px 4.2px,#596068 4.2px 5.3px,transparent 5.7px) 0 0/14px 17px repeat-x,
-    linear-gradient(#16171a,#0b0c0e);
+    radial-gradient(circle at 14px 11px,rgba(255,255,255,.16) 0 4px,transparent 7px) 0 0/28px 22px repeat-x,
+    linear-gradient(#1a1b1f,#0c0d10);
   border-radius:2px;
 }
-.hdr .p-wall{background:linear-gradient(#141518,#0a0b0d)}
-.hdr .p-n,.hdr .p-s{
-  background:
-    linear-gradient(90deg,rgba(165,173,181,.6) 0 5px,transparent 5px 14px) 0 0/14px 100% repeat-x,
-    linear-gradient(#141518,#0a0b0d);
+.hdr .p-wall{background:linear-gradient(#191a1e,#0a0b0d)}
+
+/* metal pin tips + protruding male pins (brushed nickel) */
+.pintip .p-top,.pinpost .p-top{
+  background:linear-gradient(138deg,#ffffff 0%,#dfe5ea 18%,#a9b1b8 46%,#e6ebef 64%,#7f878e 88%,#b8c0c6 100%);
+  border-radius:1px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9), 0 0 4px rgba(255,255,255,.25);
+}
+.pintip .p-wall,.pinpost .p-wall{
+  background:linear-gradient(90deg,#e8edf1 0%,#b6bec5 35%,#828a91 70%,#aeb6bd 100%);
 }
 
-/* WROOM module + gold shield */
-.mod .p-top{background:linear-gradient(150deg,#141519,#0c0d10);border-radius:2px}
-.mod .p-wall{background:#101114}
-.shield .p-top{
-  background:linear-gradient(158deg,#f4dc95 0%,#ddb964 26%,#b6923f 52%,#e7c878 74%,#ab8739 100%);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.55), inset 0 -1px 0 rgba(0,0,0,.3);
-  border-radius:2px;overflow:hidden;
+/* ---- ESP32-WROOM module ---- */
+.mod .p-top{
+  background:
+    radial-gradient(100% 80% at 20% 10%,rgba(255,255,255,.05),transparent 60%),
+    linear-gradient(150deg,#17181c,#0d0e11);
+  border-radius:2px;
 }
-.shield .p-wall{background:linear-gradient(#cfae5c,#8e6f2c)}
-.mod-name{position:absolute;left:0;right:0;top:15px;text-align:center;
-  font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.06em;color:#4a3a14}
-.mod-wifi{position:absolute;left:12px;top:39px;width:26px;height:9px;
-  background:repeating-linear-gradient(90deg,#5c4718 0 5px,transparent 5px 8px);opacity:.75}
-.mod-cert{position:absolute;left:12px;bottom:13px;width:52px;height:8px;
-  background:repeating-linear-gradient(90deg,#5c4718 0 7px,transparent 7px 11px);opacity:.6}
-.mod-qr{position:absolute;right:11px;bottom:11px;width:26px;height:26px;
+.mod .p-wall{background:linear-gradient(#141519,#0a0b0d)}
+.shield .p-top{
+  background:
+    repeating-linear-gradient(118deg,rgba(255,255,255,.10) 0 1px,transparent 1px 4px),
+    radial-gradient(90% 70% at 22% 8%,rgba(255,255,255,.45),transparent 55%),
+    linear-gradient(158deg,#fbe6a4 0%,#e3c273 22%,#bd9a45 48%,#f0d385 68%,#a8843a 88%,#d8b96a 100%);
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,.7), inset 0 -1.5px 0 rgba(0,0,0,.35);
+  border-radius:2.5px;overflow:hidden;
+}
+.shield .p-wall{background:linear-gradient(#e2c274,#9c7a30)}
+.mod-name{position:absolute;left:0;right:0;top:17px;text-align:center;
+  font-family:var(--mono);font-size:17px;font-weight:700;letter-spacing:.08em;color:#4a3a14;
+  text-shadow:0 1px 0 rgba(255,255,255,.35)}
+.mod-sub{position:absolute;left:0;right:0;top:40px;text-align:center;
+  font-family:var(--mono);font-size:9px;letter-spacing:.16em;color:#5c4718;opacity:.85}
+.mod-wifi{position:absolute;left:15px;top:60px;width:34px;height:11px;
+  background:repeating-linear-gradient(90deg,#5c4718 0 6px,transparent 6px 10px);opacity:.7}
+.mod-cert{position:absolute;left:15px;bottom:16px;width:70px;height:10px;
+  background:repeating-linear-gradient(90deg,#5c4718 0 9px,transparent 9px 14px);opacity:.55}
+.mod-lot{position:absolute;left:15px;bottom:32px;width:48px;height:5px;
+  background:repeating-linear-gradient(90deg,#5c4718 0 5px,transparent 5px 8px);opacity:.45}
+.mod-qr{position:absolute;right:14px;bottom:14px;width:34px;height:34px;
   background:repeating-conic-gradient(#4a3a14 0% 25%,transparent 0% 50%);
-  background-size:4.4px 4.4px;opacity:.8;border:1px solid rgba(74,58,20,.55)}
-.ant .p-top{background:repeating-linear-gradient(0deg,#c9a44e 0 3px,transparent 3px 7px);opacity:.85}
+  background-size:4px 4px;opacity:.82;border:1px solid rgba(74,58,20,.55)}
+.ant .p-top{background:repeating-linear-gradient(0deg,#d4ae57 0 4px,transparent 4px 9px);opacity:.85}
 .ant .p-wall{background:#8e6f2c}
 
-/* discrete parts */
-.ic .p-top{background:linear-gradient(150deg,#2b2c32,#121317);border-radius:2px;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.09)}
-.ic .p-wall{background:linear-gradient(#26272c,#0e0f12)}
-.led .p-top{background:var(--green);border-radius:50%;box-shadow:0 0 10px var(--green);
-  animation:pulse 1.6s infinite}
-.led .p-wall{background:#1c8f4c}
+/* ---- component families ---- */
+.reg .p-top{background:
+    radial-gradient(90% 70% at 25% 15%,rgba(255,255,255,.14),transparent 60%),
+    linear-gradient(150deg,#31323a,#101114);border-radius:2px}
+.reg .p-wall{background:linear-gradient(#2b2c32,#0e0f12)}
+.reg .tab{position:absolute;left:3px;top:3px;width:29px;height:9px;border-radius:1px;
+  background:linear-gradient(#f4f8fa,#a8b0b7);box-shadow:0 1px 2px rgba(0,0,0,.55)}
+
+.res .p-top{
+  background:linear-gradient(90deg,#e6ebef 0 3px,#2a2b30 3px calc(100% - 3px),#e6ebef calc(100% - 3px));
+  border-radius:1px;box-shadow:inset 0 1px 0 rgba(255,255,255,.14)}
+.res .p-wall{background:#55585e}
+
+.cer .p-top{
+  background:linear-gradient(90deg,#dfe4e8 0 2.5px,#cbae78 2.5px calc(100% - 2.5px),#dfe4e8 calc(100% - 2.5px));
+  border-radius:1px;box-shadow:inset 0 1px 0 rgba(255,255,255,.28)}
+.cer .p-wall{background:#9c8757}
+
+.tant .p-top{background:
+    radial-gradient(80% 70% at 30% 20%,rgba(255,255,255,.3),transparent 60%),
+    linear-gradient(160deg,#f9c94f,#c98d1e);border-radius:2px}
+.tant .p-top::after{content:"";position:absolute;left:4px;top:4px;width:4px;height:17px;
+  background:#7d5610;border-radius:1px}
+.tant .p-wall{background:linear-gradient(#e0ae38,#9c7018)}
+
+.sot .p-top{background:linear-gradient(150deg,#32333a,#131417);border-radius:1.5px}
+.sot .p-wall{background:linear-gradient(#2b2c32,#0e0f12)}
+.sot .lg{position:absolute;width:4px;height:2.5px;background:#d6dbe0;border-radius:.5px}
+.sot .lg.l1{left:1.5px;top:-2px}
+.sot .lg.l2{right:1.5px;top:-2px}
+.sot .lg.l3{left:5.5px;bottom:-2px}
+
+.xtal .p-top{background:
+    linear-gradient(150deg,#ffffff,#c8d0d6 40%,#8f979e 70%,#b9c1c8);
+  border-radius:4px;box-shadow:inset 0 1.5px 0 rgba(255,255,255,.9)}
+.xtal .p-wall{background:linear-gradient(#d5dce1,#798188)}
+
+.ic .p-top{background:
+    radial-gradient(90% 70% at 25% 15%,rgba(255,255,255,.11),transparent 60%),
+    linear-gradient(150deg,#2e2f36,#111216);border-radius:2px}
+.ic .p-wall{background:linear-gradient(#2a2b31,#0e0f12)}
+
+.led.red .p-top{background:radial-gradient(circle at 35% 30%,#ff9c8c,#ff4a33);
+  box-shadow:0 0 12px rgba(255,74,51,.9);border-radius:2px;animation:none}
+.led.red .p-wall{background:#93281a}
+.led.blue .p-top{background:radial-gradient(circle at 35% 30%,#a8d8ff,#3d9bff);
+  box-shadow:0 0 12px rgba(61,155,255,.85);border-radius:2px;animation:pulse 2.4s infinite}
+.led.blue .p-wall{background:#1d4f80}
+
+.part.btn .p-top{background:
+    radial-gradient(85% 70% at 28% 18%,rgba(255,255,255,.12),transparent 60%),
+    linear-gradient(150deg,#34353c,#141518);border-radius:3px}
+.part.btn .p-wall{background:linear-gradient(#2c2d33,#101114)}
+.part.btn i{position:absolute;left:6px;top:6px;width:18px;height:18px;border-radius:50%;
+  background:radial-gradient(circle at 33% 28%,#ffffff,#c3cad0 45%,#8b939a);
+  box-shadow:0 1px 3px rgba(0,0,0,.6), inset 0 -1px 1px rgba(0,0,0,.25)}
+
+/* ---- USB Type-C: stainless steel shell ---- */
+.usbc .p-top{
+  background:linear-gradient(180deg,#fbfdfe 0%,#d6dde2 14%,#a3abb2 38%,#eef2f5 52%,
+                             #8f979e 74%,#c3cad0 90%,#7d858c 100%);
+  border-radius:7px;
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,.95), inset 0 -1.5px 0 rgba(0,0,0,.4),
+             0 2px 6px rgba(0,0,0,.5);
+}
+.usbc .p-top::before{                 /* the oval cavity */
+  content:"";position:absolute;left:8px;right:7px;top:19px;height:26px;border-radius:13px;
+  background:linear-gradient(#0c0e10,#1e2226);
+  box-shadow:inset 0 3px 6px rgba(0,0,0,.95), inset 0 -1px 0 rgba(255,255,255,.10);
+}
+.usbc .p-top::after{                  /* the contact tongue inside */
+  content:"";position:absolute;left:14px;right:13px;top:28px;height:8px;border-radius:4px;
+  background:linear-gradient(#4b525a,#2a2f34);
+  box-shadow:0 1px 1px rgba(0,0,0,.8);
+}
+.usbc .p-wall{
+  background:linear-gradient(90deg,#eef2f5 0%,#b4bcc3 30%,#7f878e 65%,#aab2b9 100%);
+}
+
+/* ---- back side ---- */
+.solder .p-top{
+  background:
+    radial-gradient(circle at 14px 11px,#e3e9ee 0 5px,#8d959c 5px 7px,transparent 7.5px) 0 0/28px 22px repeat-x,
+    linear-gradient(#141518,#0b0c0e);
+}
+.solder .p-wall{background:#0f1013}
 .padblk .p-top{
   background:
-    repeating-linear-gradient(90deg,rgba(120,128,136,.30) 0 2px,transparent 2px 8px),
-    repeating-linear-gradient(0deg,rgba(120,128,136,.22) 0 2px,transparent 2px 9px);
-  opacity:.7;
+    repeating-linear-gradient(90deg,rgba(130,138,146,.30) 0 3px,transparent 3px 11px),
+    repeating-linear-gradient(0deg,rgba(130,138,146,.22) 0 3px,transparent 3px 12px);
+  opacity:.65;
 }
 .padblk .p-wall{background:transparent}
 
+/* ---- silkscreen ---- */
+.silk{position:absolute;font-family:var(--mono);letter-spacing:.06em;color:#d2d8de;opacity:.72;
+  transform:translateZ(8.4px);backface-visibility:hidden;white-space:nowrap}
+.silk-en{left:350px;top:30px;font-size:8px}
+.silk-io{left:346px;top:180px;font-size:8px}
+.silk-b1{left:126px;top:44px;font-size:12px;opacity:.5}
+.silk-b2{left:126px;top:158px;font-size:9px;opacity:.4}
+.pinrow{left:12px;font-size:5.6px;letter-spacing:.09em;opacity:.45;color:#e4e9ee}
+.pinrow-t{top:31px}
+.pinrow-b{top:184px}
 
-
-/* ===== directional shading so every extrusion reads as solid ===== */
-.p-wall::after{content:"";position:absolute;inset:0}
-.p-n::after{background:rgba(255,255,255,.10)}
-.p-w::after{background:rgba(255,255,255,.05)}
-.p-e::after{background:rgba(0,0,0,.26)}
-.p-s::after{background:rgba(0,0,0,.44)}
-
-/* ===== header pins ===== */
-/* square metal tips poking through the plastic on the top side */
-.pintip .p-top{
-  background:linear-gradient(140deg,#f6f9fb,#c2c9cf 45%,#8f979e);
-  border-radius:.5px;box-shadow:0 0 3px rgba(255,255,255,.35);
+@media(max-width:900px){
+  .board3d{transform:scale(.82)}
 }
-.pintip .p-wall{background:linear-gradient(#d3d9de,#798087)}
-
-/* male pins protruding from the underside */
-.pinpost .p-top{
-  background:linear-gradient(140deg,#eef2f5,#aab2b9 50%,#7c848b);
-  border-radius:.5px;
-}
-.pinpost .p-wall{background:linear-gradient(#cdd4d9,#6e767d)}
-.pinpost .p-e::after{background:rgba(0,0,0,.34)}
-.pinpost .p-s::after{background:rgba(0,0,0,.5)}
-
-/* ===== real component families ===== */
-
-/* AMS1117-3.3 LDO regulator (SOT-223: black body + big metal tab) */
-.reg .p-top{background:linear-gradient(150deg,#2a2b30,#101114);border-radius:2px;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.10)}
-.reg .p-wall{background:linear-gradient(#26272c,#0e0f12)}
-.reg .tab{position:absolute;left:2px;top:2px;width:23px;height:7px;border-radius:1px;
-  background:linear-gradient(#e3e8ec,#a8b0b7);box-shadow:0 1px 1px rgba(0,0,0,.5)}
-
-/* chip resistor — dark body, silver terminations */
-.res .p-top{
-  background:linear-gradient(90deg,#d3d8dc 0 2px,#232428 2px calc(100% - 2px),#d3d8dc calc(100% - 2px));
-  border-radius:1px;
-}
-.res .p-wall{background:#4a4d52}
-
-/* MLCC ceramic capacitor — tan body, silver terminations */
-.cer .p-top{
-  background:linear-gradient(90deg,#c9ced3 0 1.6px,#c2a571 1.6px calc(100% - 1.6px),#c9ced3 calc(100% - 1.6px));
-  border-radius:1px;
-}
-.cer .p-wall{background:#8e7a4d}
-
-/* tantalum capacitor — yellow with polarity stripe */
-.tant .p-top{background:linear-gradient(160deg,#f5c14a,#cc9224);border-radius:2px}
-.tant .p-top::after{content:"";position:absolute;left:3px;top:3px;width:3px;height:13px;background:#7d5610}
-.tant .p-wall{background:linear-gradient(#d9a736,#9c7018)}
-
-/* SOT-23 transistor — black body, three legs */
-.sot .p-top{background:linear-gradient(150deg,#2b2c32,#121317);border-radius:1.5px}
-.sot .p-wall{background:linear-gradient(#26272c,#0e0f12)}
-.sot .lg{position:absolute;width:3px;height:2px;background:#c3c9cf;border-radius:.5px}
-.sot .lg.l1{left:1px;top:-1.5px}
-.sot .lg.l2{right:1px;top:-1.5px}
-.sot .lg.l3{left:4.5px;bottom:-1.5px}
-
-/* crystal oscillator — brushed metal can */
-.xtal .p-top{background:linear-gradient(150deg,#eef2f5,#a9b1b8 55%,#7f878e);border-radius:3px;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.7)}
-.xtal .p-wall{background:linear-gradient(#c3cad0,#767d84)}
-
-/* LEDs */
-.led.red .p-top{background:#ff5a45;box-shadow:0 0 9px rgba(255,90,69,.85);border-radius:1.5px;animation:none}
-.led.red .p-wall{background:#8e2a1e}
-.led.blue .p-top{background:#4aa8ff;box-shadow:0 0 9px rgba(74,168,255,.8);border-radius:1.5px;
-  animation:pulse 2.4s infinite}
-.led.blue .p-wall{background:#1d4f80}
-
-/* buttons */
-.part.btn .p-top{background:linear-gradient(150deg,#2d2e34,#131418);border-radius:3px}
-.part.btn .p-wall{background:linear-gradient(#26272c,#0f1013)}
-.part.btn i{position:absolute;left:5px;top:5px;width:13px;height:13px;border-radius:50%;
-  background:radial-gradient(circle at 35% 30%,#eef2f5,#949ba2);
-  box-shadow:0 1px 2px rgba(0,0,0,.5)}
-
-/* USB-C */
-.usbc .p-top{background:linear-gradient(180deg,#ebbf97,#c08a5f 45%,#9d6b45);border-radius:4px}
-.usbc .p-top::after{content:"";position:absolute;left:7px;top:13px;right:6px;height:24px;
-  border-radius:12px;background:#3a2a1e;box-shadow:inset 0 1px 2px rgba(0,0,0,.75)}
-.usbc .p-wall{background:linear-gradient(#d3a077,#8f6140)}
-
-/* back-side solder joints */
-.solder .p-top{
-  background:
-    radial-gradient(circle at 7px 8.5px,#cfd6dc 0 3.2px,#7d858d 3.2px 4.6px,transparent 5px) 0 0/14px 17px repeat-x,
-    linear-gradient(#121316,#0a0b0d);
-}
-.solder .p-wall{background:#0e0f12}
-
-/* silkscreen text */
-.silk{position:absolute;font-family:var(--mono);letter-spacing:.06em;color:#c8ced4;opacity:.7;
-  transform:translateZ(6.4px);backface-visibility:hidden}
-.silk-en{left:270px;top:23px;font-size:7px}
-.silk-io{left:268px;top:139px;font-size:7px}
-.silk-b1{left:100px;top:34px;font-size:9px;opacity:.5}
-.silk-b2{left:100px;top:124px;font-size:7px;opacity:.42}
-
 @media(max-width:560px){
-  .board3d{padding:24px 0 30px;transform:scale(.74)}
+  .board3d{padding:22px 0 28px;transform:scale(.58)}
 }
 @media(prefers-reduced-motion:reduce){
   .pcb{animation:none}
