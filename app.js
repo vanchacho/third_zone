@@ -124,6 +124,21 @@
     reset();
   }
 
+  /* ---- Deep link: /contact.html#deck preselects the pitch-deck enquiry ---- */
+  if (location.hash === "#deck") {
+    var typeSel = document.getElementById("cf-type");
+    if (typeSel) {
+      for (var i = 0; i < typeSel.options.length; i++) {
+        if (typeSel.options[i].text.indexOf("pitch deck") !== -1) {
+          typeSel.selectedIndex = i;
+          break;
+        }
+      }
+      var nameField = document.getElementById("cf-name");
+      if (nameField) nameField.focus({ preventScroll: true });
+    }
+  }
+
   /* ---- Contact form ---- */
   // Submits to Netlify (when hosted there) via AJAX so the inline
   // "thanks" message still shows; degrades gracefully anywhere else.

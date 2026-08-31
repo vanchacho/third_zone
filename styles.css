@@ -378,6 +378,68 @@ a.game{cursor:pointer;color:inherit}
   .steps.four{grid-template-columns:1fr}
   .feat-grid.four{grid-template-columns:1fr}
 }
+/* ---------- ARCHITECTURE DIAGRAM ---------- */
+.arch-wrap{
+  border:1px solid var(--line);border-radius:16px;background:var(--panel);
+  padding:26px 22px;overflow-x:auto;
+}
+.arch-wrap svg{display:block;min-width:820px;width:100%;height:auto}
+.arch-box{fill:var(--panel-2);stroke:var(--line);stroke-width:1.5}
+.arch-box.hot{stroke:var(--green);stroke-width:2}
+.arch-t{font-family:var(--mono);font-size:11px;letter-spacing:.14em;fill:var(--green)}
+.arch-h{font-family:var(--display);font-size:16px;font-weight:700;fill:var(--text)}
+.arch-p{font-family:var(--body);font-size:12.5px;fill:var(--muted)}
+.arch-line{stroke:var(--green);stroke-width:1.6;fill:none}
+.arch-feedback{stroke:var(--orange);stroke-width:1.4;fill:none;stroke-dasharray:5 4}
+.arch-fb-t{font-family:var(--mono);font-size:11px;letter-spacing:.1em;fill:var(--orange)}
+.arch-legend{display:flex;gap:22px;flex-wrap:wrap;margin-top:18px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--muted-2)}
+.arch-legend i{display:inline-block;width:16px;height:0;border-top:2px solid var(--green);margin-right:8px;vertical-align:middle}
+.arch-legend i.dash{border-top:2px dashed var(--orange)}
+
+/* ---------- DATA FLYWHEEL ---------- */
+.fly-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.fly-ring{max-width:420px;margin:0 auto;width:100%}
+.fly-ring svg{width:100%;height:auto;display:block}
+.fly-c{fill:none;stroke:var(--line);stroke-width:1.5}
+.fly-arc{fill:none;stroke:var(--green);stroke-width:2.5;stroke-linecap:round}
+.fly-node{fill:var(--panel-2);stroke:var(--green);stroke-width:1.6}
+.fly-n{font-family:var(--mono);font-size:12px;fill:var(--green);font-weight:700}
+.fly-l{font-family:var(--display);font-size:13px;font-weight:700;fill:var(--text)}
+.fly-mid{font-family:var(--display);font-size:15px;font-weight:700;fill:var(--green)}
+.fly-steps{list-style:none;display:grid;gap:14px}
+.fly-steps li{
+  display:flex;gap:14px;align-items:flex-start;padding:16px 18px;
+  border:1px solid var(--line);border-radius:12px;background:var(--panel);
+}
+.fly-steps .k{
+  font-family:var(--mono);font-size:12px;font-weight:700;color:var(--green);
+  border:1px solid var(--green);border-radius:50%;width:26px;height:26px;
+  display:flex;align-items:center;justify-content:center;flex:0 0 auto;
+}
+.fly-steps b{display:block;font-family:var(--display);font-size:15px;margin-bottom:3px}
+.fly-steps p{color:var(--muted);font-size:14px}
+.moat{
+  margin-top:26px;padding:20px 24px;border-radius:12px;
+  border:1px solid rgba(46,230,122,.4);background:rgba(46,230,122,.07);
+  color:var(--text);font-size:15px;
+}
+.moat b{color:var(--green)}
+
+/* ---------- PIPELINE SEQUENTIAL REVEAL ---------- */
+.steps.flow .step{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+.steps.flow.in .step{opacity:1;transform:none}
+.steps.flow.in .step:nth-child(2){transition-delay:.16s}
+.steps.flow.in .step:nth-child(3){transition-delay:.32s}
+.steps.flow.in .step:nth-child(4){transition-delay:.48s}
+.steps.flow.in .step .n{box-shadow:0 0 0 4px rgba(46,230,122,.12)}
+
+@media(max-width:960px){
+  .fly-grid{grid-template-columns:1fr;gap:34px}
+}
+@media(prefers-reduced-motion:reduce){
+  .steps.flow .step{opacity:1;transform:none}
+}
+
 .techstats{
   display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
   padding:30px 24px;border:1px solid var(--line);border-radius:16px;background:var(--panel-2);
