@@ -194,21 +194,47 @@
   }
 
   /* ---- Contact form ---- */
-  // Submits to Netlify (when hosted there) via AJAX so the inline
-  // "thanks" message still shows; degrades gracefully anywhere else.
+  // Posts to Netlify Forms via AJAX so the inline confirmation still shows.
+  // Only reports success when the server actually accepted the submission.
   var form = document.getElementById("contactForm");
   if (form) {
+    var sending = false;
     form.addEventListener("submit", function (e) {
       e.preventDefault();
+      if (sending) return;
+
       var ok = document.getElementById("formOk");
+      var err = document.getElementById("formErr");
+      var btn = form.querySelector('button[type="submit"]');
+      if (ok) ok.classList.remove("show");
+      if (err) err.classList.remove("show");
+
+      // the form carries novalidate, so check the fields ourselves
+      if (!form.checkValidity()) {
+        var bad = form.querySelector(":invalid");
+        if (bad) { bad.focus(); }
+        form.classList.add("show-errors");
+        return;
+      }
+
+      sending = true;
+      if (btn) { btn.disabled = true; btn.dataset.label = btn.textContent; btn.textContent = "Sending…"; }
+
       var body = new URLSearchParams(new FormData(form)).toString();
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: body
-      }).catch(function () {}).then(function () {
+      }).then(function (res) {
+        if (!res.ok) throw new Error("HTTP " + res.status);
         if (ok) ok.classList.add("show");
         form.reset();
+        form.classList.remove("show-errors");
+      }).catch(function () {
+        if (err) err.classList.add("show");
+      }).then(function () {
+        sending = false;
+        if (btn) { btn.disabled = false; btn.textContent = btn.dataset.label || "Send message"; }
       });
     });
   }
