@@ -31,8 +31,9 @@
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="games.html">Games</a>
-      <a href="how.html">How it works</a>
+      <a href="play-hospitality.html">Play hospitality</a>
       <a href="model.html">Model</a>
+      <a href="landlords.html">Landlords</a>
       <a href="contact.html" class="active">Contact</a>
       <a href="contact.html" class="btn btn-primary">Get in touch</a>
     </div>
@@ -41,9 +42,10 @@
   <div class="mobile-panel" id="mobilePanel">
     <a href="index.html">Home</a>
     <a href="games.html">Games</a>
-    <a href="how.html">How it works</a>
+    <a href="play-hospitality.html">Play hospitality</a>
     <a href="model.html">Model</a>
-    <a href="contact.html">Contact</a>
+    <a href="landlords.html">Landlords</a>
+    <a href="contact.html" class="active">Contact</a>
     <a href="contact.html" class="btn btn-primary">Get in touch</a>
   </div>
 </nav>
@@ -54,7 +56,7 @@
     <div class="crumbs"><a href="index.html">Home</a> / Contact</div>
     <span class="eyebrow">Get in touch</span>
     <h1>Let's <span class="accent">talk.</span></h1>
-    <p class="lead">Venues, operators, investors and press. Tell us a little.</p>
+    <p class="lead">Landlords, venues and investors. Tell us a little.</p>
   </div>
 </header>
 
@@ -66,46 +68,54 @@
       <h2 style="font-size:clamp(26px,3.6vw,38px);margin-bottom:24px">Send us a message.</h2>
       <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
         <input type="hidden" name="form-name" value="contact">
+        <input type="hidden" name="subject" id="cf-subject" value="Website">
         <p hidden><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
         <div class="field">
           <label for="cf-name">Name</label>
           <input id="cf-name" name="name" type="text" placeholder="Your name" required>
         </div>
         <div class="field">
+          <label for="cf-company">Company</label>
+          <input id="cf-company" name="company" type="text" placeholder="Your company">
+        </div>
+        <div class="field">
           <label for="cf-email">Email</label>
           <input id="cf-email" name="email" type="email" placeholder="you@company.com" required>
         </div>
         <div class="field">
-          <label for="cf-type">I'm reaching out as</label>
-          <select id="cf-type" name="type">
-            <option>Venue (bar, arcade, bowling)</option>
-            <option>Investor</option>
-            <option>Game operator</option>
-            <option>Press</option>
-            <option>Just curious</option>
+          <label for="cf-type">I am a&hellip;</label>
+          <select id="cf-type" name="type" required>
+            <option value="Landlord">Landlord or property owner</option>
+            <option value="Venue">Bar or venue operator</option>
+            <option value="Investor">Investor</option>
           </select>
         </div>
         <div class="field">
           <label for="cf-msg">Message</label>
           <textarea id="cf-msg" name="message" placeholder="A line or two about what you have in mind…"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Send message</button>
+        <button type="submit" class="btn btn-primary">Send</button>
         <p class="form-note">We'll only use your details to reply. See our <a href="privacy.html">Privacy Policy</a>.</p>
-        <div class="form-ok" id="formOk">Thanks — your message is on its way. We'll reply to your email shortly.</div>
+        <div class="form-ok" id="formOk">Thanks &mdash; Mika will reply within 48 hours.</div>
         <div class="form-err" id="formErr">Couldn't send that — please email <a href="mailto:contact@third-zone.com">contact@third-zone.com</a> instead.</div>
       </form>
     </div>
 
     <div class="contact-side reveal">
       <div class="ccard">
-        <h3>Investors</h3>
-        <p>Meet us at TechCrunch Disrupt, October 13&ndash;15, San Francisco, and at CREtech New York, October 20&ndash;21, New York.</p>
-        <a href="mailto:contact@third-zone.com?subject=Meeting%20at%20Disrupt%20or%20CREtech" class="btn btn-primary">Request a meeting</a>
+        <h3>Landlords</h3>
+        <p>Give us one vacant floor as a pilot. No rent. No capital. A profit share.</p>
+        <a href="contact.html?as=landlord#contactForm" class="btn btn-primary">Partner a floor</a>
       </div>
       <div class="ccard">
         <h3>Venues</h3>
-        <p>Bars, arcades and bowling alleys: host one of our pilot walls.</p>
-        <a href="mailto:contact@third-zone.com?subject=Pilot%20venue" class="btn btn-ghost">Host a pilot</a>
+        <p>Host a pilot wall in your bar or venue. Buy it, lease it, or share the games.</p>
+        <a href="contact.html?as=venue#contactForm" class="btn btn-ghost">Host a pilot wall</a>
+      </div>
+      <div class="ccard">
+        <h3>Investors</h3>
+        <p>Raising seed. Software live, wall next. 20 years of operations behind it.</p>
+        <a href="contact.html?as=investor#contactForm" class="btn btn-ghost">Request a meeting</a>
       </div>
       <div class="ccard">
         <h3>Follow along</h3>
@@ -133,13 +143,16 @@
       <nav class="sf-col" aria-label="Product">
         <h4>Product</h4>
         <a href="games.html">The game</a>
+        <a href="play-hospitality.html">Play hospitality</a>
         <a href="how.html">How it works</a>
         <a href="model.html">Business model</a>
       </nav>
       <nav class="sf-col" aria-label="Company">
         <h4>Company</h4>
         <a href="contact.html">Contact</a>
-        <a href="contact.html">Host a pilot</a>
+        <a href="landlords.html">Partner a floor</a>
+        <a href="contact.html?as=venue#contactForm">Host a pilot wall</a>
+        <a href="deck.pdf" target="_blank" rel="noopener">Investor deck</a>
         <a href="https://www.linkedin.com/company/third-zone-lls/" target="_blank" rel="noopener">LinkedIn</a>
       </nav>
     </div>

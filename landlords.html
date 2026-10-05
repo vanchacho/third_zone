@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Games — Third Zone</title>
-<meta name="description" content="Two real, physical games — American football and baseball — scored by sensors in the wall, no cameras.">
+<title>Landlords — Third Zone</title>
+<meta name="description" content="Give us one vacant floor as a pilot. No rent. No capital. A profit share.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Third Zone">
-<meta property="og:title" content="Games — Third Zone">
-<meta property="og:description" content="Two real, physical games — American football and baseball — scored by sensors in the wall, no cameras.">
+<meta property="og:title" content="Landlords — Third Zone">
+<meta property="og:description" content="Give us one vacant floor as a pilot. No rent. No capital. A profit share.">
 <meta property="og:image" content="https://third-zone.com/assets/football-throw.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Games — Third Zone">
-<meta name="twitter:description" content="Two real, physical games — American football and baseball — scored by sensors in the wall, no cameras.">
+<meta name="twitter:title" content="Landlords — Third Zone">
+<meta name="twitter:description" content="Give us one vacant floor as a pilot. No rent. No capital. A profit share.">
 <meta name="twitter:image" content="https://third-zone.com/assets/football-throw.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,10 +30,10 @@
     <a class="brand" href="index.html"><img class="brand-logo" src="assets/logo-nav.png" alt="Third Zone 3Z logo">THIRD ZONE</a>
     <div class="nav-links">
       <a href="index.html">Home</a>
-      <a href="games.html" class="active">Games</a>
+      <a href="games.html">Games</a>
       <a href="play-hospitality.html">Play hospitality</a>
       <a href="model.html">Model</a>
-      <a href="landlords.html">Landlords</a>
+      <a href="landlords.html" class="active">Landlords</a>
       <a href="contact.html">Contact</a>
       <a href="contact.html" class="btn btn-primary">Get in touch</a>
     </div>
@@ -41,10 +41,10 @@
   </div>
   <div class="mobile-panel" id="mobilePanel">
     <a href="index.html">Home</a>
-    <a href="games.html" class="active">Games</a>
+    <a href="games.html">Games</a>
     <a href="play-hospitality.html">Play hospitality</a>
     <a href="model.html">Model</a>
-    <a href="landlords.html">Landlords</a>
+    <a href="landlords.html" class="active">Landlords</a>
     <a href="contact.html">Contact</a>
     <a href="contact.html" class="btn btn-primary">Get in touch</a>
   </div>
@@ -53,92 +53,57 @@
 <!-- PAGE HERO -->
 <header class="page-hero">
   <div class="wrap">
-    <div class="crumbs"><a href="index.html">Home</a> / Games</div>
-    <span class="eyebrow">The line-up</span>
-    <h1>One wall. <span class="accent">The system keeps score.</span></h1>
-    <p class="lead">A real ball, thrown by hand. Sensors in the wall score every throw.</p>
+    <div class="crumbs"><a href="index.html">Home</a> / Landlords</div>
+    <span class="eyebrow">Landlords</span>
+    <h1>Give us one vacant floor <span class="accent">as a pilot.</span></h1>
+    <p class="lead">No rent. No capital. A profit share.</p>
+    <div class="hero-cta">
+      <a href="contact.html?as=landlord#contactForm" class="btn btn-primary">Partner a floor</a>
+    </div>
   </div>
 </header>
 
-<!-- GAME LIBRARY -->
-<section class="section games">
+<!-- THE SHIFT -->
+<section class="section">
   <div class="wrap">
-    <div class="filterbar reveal" role="tablist" aria-label="Filter games">
-      <span class="filter active">All games</span>
-      <span class="filter">Sports</span>
-      <span class="filter">Skill</span>
-      <span class="filter">Party</span>
-      <span class="filter">Team building</span>
-    </div>
-
-    <div class="gcard-grid reveal" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
-
-      <!-- Football -->
-      <div class="gcard" data-cat="sports skill">
-        <a class="gcard-link" href="football.html" aria-label="Football — game details"></a>
-        <div class="gcard-top">
-          <img loading="lazy" src="assets/football-throw.jpg" alt="A football target wall with touchdown and field goal holes">
-          <span class="gcard-badge">Main game</span>
-        </div>
-        <div class="gcard-body">
-          <h3>American Football</h3>
-          <div class="gcard-cat">Sports · Throw</div>
-          <p>Throw a real ball at moving targets. Speed, range and accuracy, graded.</p>
-          <div class="gcard-metrics">
-            <span class="metric"><span class="mlbl">RANGE</span>45y</span>
-            <span class="metric"><span class="mlbl">SPEED</span>55mph</span>
-            <span class="metric"><span class="mlbl">ACC</span>88%</span>
-          </div>
-        </div>
+    <span class="eyebrow">The shift</span>
+    <h2 style="font-size:clamp(28px,4vw,42px);max-width:18ch;margin-bottom:36px">AI empties office floors. We fill them.</h2>
+    <div class="model-grid reveal">
+      <div class="mcard">
+        <div class="k">Today</div>
+        <p>AI companies are the biggest new tenants in Manhattan and San Francisco.</p>
       </div>
-
-      <!-- Baseball -->
-      <div class="gcard" data-cat="sports">
-        <a class="gcard-link" href="baseball.html" aria-label="Baseball — game details"></a>
-        <div class="gcard-top">
-          <img loading="lazy" src="assets/baseball-new.jpg" alt="Player pitching at a wall of lit target rings">
-          <span class="gcard-badge">Next</span>
-        </div>
-        <div class="gcard-body">
-          <h3>Baseball</h3>
-          <div class="gcard-cat">Sports · Power</div>
-          <p>Pitch at a wall of lit rings. Same sensors, same engine.</p>
-          <div class="gcard-metrics">
-            <span class="metric"><span class="mlbl">EXIT</span>78mph</span>
-            <span class="metric"><span class="mlbl">LAUNCH</span>24°</span>
-            <span class="metric"><span class="mlbl">HITS</span>HR</span>
-          </div>
-        </div>
+      <div class="mcard">
+        <div class="k">Tomorrow</div>
+        <p>They run on agents. A 100-person team becomes 10. The floor stays leased. The desks stay empty.</p>
       </div>
-
-
     </div>
+    <p class="reveal" style="margin-top:28px;font-family:var(--display);font-weight:500;font-size:clamp(19px,2vw,24px);line-height:1.4;max-width:820px">Landlords will need tenants who bring people in, not seats to fill. <span class="accent">That's us &mdash; play, food, a reason to leave home.</span></p>
   </div>
 </section>
 
-<!-- HOW SCORED -->
-<section class="section how">
+<!-- PARTNERSHIP -->
+<section class="section model">
   <div class="wrap">
-    <span class="eyebrow">Under the hood</span>
-    <h2>How a throw is scored.</h2>
-    <div class="feat-grid reveal" style="margin-top:8px">
-      <div class="feat"><h3>Sensors in the wall</h3><p>A beam in every hole and impact sensors behind the board. No cameras.</p></div>
-      <div class="feat"><h3>Points on your screen</h3><p>Your score is private. Shared boards are opt-in.</p></div>
-      <div class="feat"><h3>A game that fits you</h3><p>The next target matches your level, so the whole group stays in.</p></div>
+    <span class="eyebrow">Partner floors</span>
+    <h2>How the partnership works.</h2>
+    <div class="model-grid reveal" style="grid-template-columns:minmax(0,1fr);max-width:760px">
+      <div class="mcard">
+        <div class="k">Partner floors</div>
+        <h3>Landlord partnership</h3>
+        <p>A vacant floor from the landlord &mdash; 5&ndash;10k sq ft of retail or office space. Our build-out, games, food and operation. No rent &mdash; the landlord takes a share of profit, puts in no capital, and gets a floor full of people five nights a week.</p>
+      </div>
     </div>
-    <p class="how-note reveal">Want the details? <a href="how.html" class="accent">See how it works &rarr;</a></p>
   </div>
 </section>
 
 <!-- CTA -->
 <section class="section cta">
   <div class="wrap">
-    <span class="eyebrow">Bring the games in</span>
-    <h2>Want these games in <span class="accent">your space?</span></h2>
-    <p class="lead">Bars, arcades and bowling alleys: the wall goes in without a build-out.</p>
+    <h2>One floor. <span class="accent">One pilot.</span></h2>
     <div class="hero-cta" style="justify-content:center">
-      <a href="contact.html" class="btn btn-primary">Get in touch</a>
-      <a href="model.html" class="btn btn-ghost">See the model</a>
+      <a href="contact.html?as=landlord#contactForm" class="btn btn-primary">Partner a floor</a>
+      <a href="model.html" class="btn btn-ghost">See the full model</a>
     </div>
   </div>
 </section>

@@ -193,6 +193,12 @@
     }
   }
 
+  /* ---- Contact form: preselect "I am a..." from ?as=landlord|venue|investor ---- */
+  var asParam = new URLSearchParams(location.search).get("as");
+  var typeField = document.getElementById("cf-type");
+  var asMap = { landlord: "Landlord", venue: "Venue", investor: "Investor" };
+  if (typeField && asParam && asMap[asParam]) typeField.value = asMap[asParam];
+
   /* ---- Contact form ---- */
   // Posts to Netlify Forms via AJAX so the inline confirmation still shows.
   // Only reports success when the server actually accepted the submission.
@@ -217,6 +223,14 @@
         return;
       }
 
+      var subj = document.getElementById("cf-subject");
+      var typeSel = document.getElementById("cf-type");
+      var comp = document.getElementById("cf-company");
+      if (subj) {
+        subj.value = "Website — " + (typeSel ? typeSel.value : "Contact") +
+          " — " + ((comp && comp.value.trim()) || "No company");
+      }
+
       sending = true;
       if (btn) { btn.disabled = true; btn.dataset.label = btn.textContent; btn.textContent = "Sending…"; }
 
@@ -234,7 +248,7 @@
         if (err) err.classList.add("show");
       }).then(function () {
         sending = false;
-        if (btn) { btn.disabled = false; btn.textContent = btn.dataset.label || "Send message"; }
+        if (btn) { btn.disabled = false; btn.textContent = btn.dataset.label || "Send"; }
       });
     });
   }

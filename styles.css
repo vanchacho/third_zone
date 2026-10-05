@@ -1177,3 +1177,21 @@ a.game{cursor:pointer;color:inherit}
 .sf-legal{color:var(--muted);font-size:12px;line-height:1.6;padding-bottom:24px;max-width:860px}
 .sf-bottom a.sf-link{color:var(--muted);text-decoration:underline;text-underline-offset:2px}
 .sf-bottom a.sf-link:hover{color:var(--green)}
+
+/* ---------- v2: three closing cards, conference line, rig captions ---------- */
+.cta-cards.three{grid-template-columns:repeat(3,1fr);max-width:1100px}
+.meet-line{margin:32px auto 0;max-width:900px;color:var(--muted);font-size:14px;line-height:1.7;text-align:center}
+.rig-slot .rig-cap{grid-column:2;justify-self:start;color:var(--muted);font-size:14px;line-height:1.55;max-width:340px;margin:0}
+.rig-slot .stage-n{grid-row:1 / span 3}
+@media (max-width:900px){.cta-cards.three{grid-template-columns:1fr}}
+[id]{scroll-margin-top:84px}
+.nav-links a.btn-primary,.mobile-panel a.btn-primary{color:#04120a}
+@media (max-width:600px){
+  .board3d{overflow:hidden;max-width:100%}
+  .rig-slot{grid-template-columns:36px minmax(0,1fr);column-gap:14px}
+  .rig-slot .board-spin{zoom:.62}
+  .aicore{width:100%;max-width:300px}
+  .tech-split{grid-template-columns:minmax(0,1fr)}
+  .tech-claim{max-width:100%;min-width:0}
+  .tech-claim h3{font-size:clamp(34px,10vw,44px)}
+}
